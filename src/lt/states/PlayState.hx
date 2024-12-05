@@ -50,6 +50,7 @@ class PlayState extends StateBase {
     }
     override function create() {
         instance = this;
+        Conductor.instance.time = 0;
 
         gameCamera = new FlxCamera();
 		FlxG.cameras.reset(gameCamera);
