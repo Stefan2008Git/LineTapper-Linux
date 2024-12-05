@@ -3,16 +3,25 @@ import haxe.Json;
 import sys.FileSystem;
 import sys.io.File;
 
+using StringTools;
+
 typedef TileData =
 {
-	var step:Int;
+	var time:Float;
 	var direction:Int;
+	var type:String;
+	var length:Float;
+	var event:Array<{name:String, values:Array<String>}>;
 }
 
 typedef LineMap =
 {
+	var name:String;
 	var tiles:Array<TileData>;
 	var bpm:Float;
+	var data:{version:String, apiLevel:Int};
+	var meta:Array<{name:String, value:String}>;
+	var lyrics:Bool;
 }
 
 typedef WeirdData = {
@@ -37,19 +46,32 @@ class FNFToLineMap
 		Sys.command(isWindows ? "cls" : "clear");
 		Sys.println("[ \x1b[36mFNF To LineMap\x1b[0m ]");
         Sys.print("Path: ./fnfchart/");
-		var path:String = "./fnfchart/" + Sys.stdin().readLine();
+		var name:String = Sys.stdin().readLine();
+		var path:String = "./fnfchart/" + name;
 		if (FileSystem.exists(path))
 		{
             var tileData:LineMap = {
+				name: name.replace(".json", ""),
                 tiles: [],
-                bpm: 0
+                bpm: 0,
+				data: {
+					version: "LineTapper v0.1.0",
+					apiLevel: 1
+				},
+				meta: [
+					{
+						name: "Artist", 
+						value: "Unknown"
+					}
+				],
+				lyrics: true
             }
 			var mainChart = Json.parse(File.getContent(path)).song;
             updateBPM(mainChart.bpm);
             tileData.bpm = mainChart.bpm;
             var anotherWeird:WeirdData = Json.parse(File.getContent(path)).song;
 			var lastDirs:Array<Int> = [];
-			var lastSteps:Array<Int> = [];
+			var lastSteps:Array<Float> = [];
 			var maxNote:Int = 0;
 
 			for (e in anotherWeird.notes){
@@ -81,10 +103,10 @@ class FNFToLineMap
 						Sys.sleep(0.01); // Small delay to visualize progress
 					}
 	
-					var stp:Int = Math.round((i[0] - offset) / step_ms);
-					if (lastSteps.contains(stp)) continue;
+					var time:Float = i[0] - offset;
+					if (lastSteps.contains(time)) continue;
 	
-					lastSteps.push(stp);
+					lastSteps.push(time);
 					var rand:Int;
 					do {
 						rand = Math.round(Math.random() * 3);
@@ -94,9 +116,12 @@ class FNFToLineMap
 					if (lastDirs.length > 2)
 						lastDirs.shift();
 	
-					tileData.tiles.push(cast {
-						step: stp,
-						direction: rand
+					tileData.tiles.push({
+						time: time,
+						direction: rand,
+						length: i[2],
+						type: "",
+						event: []
 					});
 				}
 			}
@@ -106,9 +131,9 @@ class FNFToLineMap
 			tileData.tiles.sort((a:TileData, b:TileData)->{
 				var result:Int = 0;
 		
-				if (a.step < b.step)
+				if (a.time < b.time)
 					result = -1;
-				else if (a.step > b.step)
+				else if (a.time > b.time)
 					result = 1;
 		
 				return result;

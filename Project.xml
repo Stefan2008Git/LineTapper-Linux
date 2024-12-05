@@ -30,7 +30,7 @@
 	<!-- _____________________________ Path Settings ____________________________ -->
 
 	<set name="BUILD_DIR" value="export" />
-	<source path="source" />
+	<source path="src" />
 	<assets path="assets" />
 
 	<!-- _____________________________ Game Settings ____________________________ -->

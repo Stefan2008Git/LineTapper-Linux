@@ -1,2 +1,4 @@
 export/
 .vscode/
+.gitignore
+source/bak/

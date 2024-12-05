@@ -1,0 +1,4714 @@
+{
+	"name": "heartbass",
+	"lyrics": true,
+	"tiles": [
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 2684.21052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 2842.10526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 236.842105263158,
+			"time": 3000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 3315.78947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 3947.36842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 4105.26315789474,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 4263.15789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 4421.05263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 4578.94736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 4736.84210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 4894.73684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 5210.52631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 5368.42105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 5526.31578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 5684.21052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 5842.1052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 6000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 6157.8947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 6473.68421052631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 6631.57894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 6789.47368421053,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 6947.36842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 7105.26315789474,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 7263.15789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 7421.05263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 7736.84210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 7894.73684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 236.842105263158,
+			"time": 8052.63157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 8368.42105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 9000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 9157.8947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 9315.78947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 9473.68421052632,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 9631.57894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 9789.47368421053,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 9947.36842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 10263.1578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 10421.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 10578.9473684211,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 10736.8421052632,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 10894.7368421053,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 11052.6315789474,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 11210.5263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 11526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 11684.2105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 11842.1052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 12000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 12157.8947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 12315.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 12473.6842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 12631.5789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 12789.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 12947.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 13105.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 13263.1578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 13421.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 13578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 13736.8421052632,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 14052.6315789474,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 14131.5789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 14210.5263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 14368.4210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 14526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 14684.2105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 14842.1052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 15000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 15157.8947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 15315.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 15473.6842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 15789.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 15947.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 16105.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 16263.1578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 16578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 16736.8421052632,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 236.842105263158,
+			"time": 16894.7368421053,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 17210.5263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 17368.4210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 17526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 17684.2105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 17842.1052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 18000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 18157.8947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 18315.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 18473.6842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 18631.5789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 18789.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 19105.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 19184.2105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 19263.1578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 19421.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 19578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 19736.8421052632,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 19894.7368421053,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 20052.6315789474,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 20210.5263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 20368.4210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 20526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 20842.1052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 21000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 21157.8947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 21315.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 21631.5789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 21789.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 236.842105263158,
+			"time": 21947.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 22105.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 22263.1578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 22421.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 22578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 236.842105263158,
+			"time": 22736.8421052632,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 23052.6315789474,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 23210.5263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 23526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 710.526315789474,
+			"time": 23842.1052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 24631.5789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 24947.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 236.842105263158,
+			"time": 25263.1578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 25578.9473684211,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 25736.8421052632,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 26052.6315789474,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 315.789473684211,
+			"time": 26368.4210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 26842.1052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 27157.8947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 27473.6842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 236.842105263158,
+			"time": 27789.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 28105.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 28263.1578947369,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 28578.9473684211,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 394.736842105263,
+			"time": 28894.7368421053,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 236.842105263158,
+			"time": 29368.4210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 29684.2105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 29842.1052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 29921.052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 236.842105263158,
+			"time": 30000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 236.842105263158,
+			"time": 30315.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 30631.5789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 30789.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 31105.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 315.789473684211,
+			"time": 31421.052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 32210.5263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 32526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 236.842105263158,
+			"time": 32842.1052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 33157.8947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 33315.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 33631.5789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 710.526315789474,
+			"time": 33947.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 34736.8421052632,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 35052.6315789474,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 236.842105263158,
+			"time": 35368.4210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 35684.2105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 35842.1052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 36157.8947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 315.789473684211,
+			"time": 36473.6842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 36947.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 37263.1578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 37421.052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 37500,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 37578.9473684211,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 236.842105263158,
+			"time": 37894.7368421053,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 38210.5263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 38368.4210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 38684.2105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 394.736842105263,
+			"time": 39000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 236.842105263158,
+			"time": 39473.6842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 39789.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 39947.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 40026.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 236.842105263158,
+			"time": 40105.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 236.842105263158,
+			"time": 40421.052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 40736.8421052632,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 40894.7368421053,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 41210.5263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 315.789473684211,
+			"time": 41526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 42315.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 42631.5789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 42947.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 43105.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 43184.2105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 43263.1578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 43421.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 43578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 43736.8421052632,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 43894.7368421053,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 44052.6315789474,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 44210.5263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 44368.4210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 44447.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 44526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 44605.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 44684.2105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 44842.1052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 45000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 45157.8947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 45315.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 45473.6842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 45631.5789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 45710.5263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 78.9473684210526,
+			"time": 45789.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 78.9473684210526,
+			"time": 45947.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 46105.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 46263.1578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 46421.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 46578.9473684211,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 46736.8421052632,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 46894.7368421053,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 46973.6842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 47052.6315789474,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 47131.5789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 47210.5263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 78.9473684210526,
+			"time": 47368.4210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 47526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 78.9473684210526,
+			"time": 47684.2105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 47842.1052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 48000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 48157.8947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 48315.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 48473.6842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 78.9473684210526,
+			"time": 48631.5789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 48789.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 157.894736842105,
+			"time": 49105.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 49421.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 49500,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 49578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 49736.8421052631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 49894.7368421052,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 50052.6315789474,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 50210.5263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 50368.4210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 50526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 50684.2105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 78.9473684210526,
+			"time": 50842.1052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 78.9473684210526,
+			"time": 51000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 51315.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 51473.6842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 51631.5789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 51789.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 51868.4210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 78.9473684210526,
+			"time": 51947.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 78.9473684210526,
+			"time": 52105.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 78.9473684210526,
+			"time": 52263.1578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 52421.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 52578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 52736.8421052631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 52894.7368421052,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 53052.6315789473,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 53210.5263157894,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 53289.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 53368.4210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 53526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 53684.2105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 53842.1052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 53921.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 54000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 54157.8947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 54315.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 54473.6842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 54552.6315789473,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 54631.5789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 54710.5263157894,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 54789.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 78.9473684210526,
+			"time": 54947.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 55105.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 78.9473684210526,
+			"time": 55263.1578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 55421.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 55578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 55736.8421052631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 55815.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 55894.7368421052,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 56052.6315789473,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 56210.5263157894,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 78.9473684210526,
+			"time": 56368.4210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 56526.3157894736,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 56684.2105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 56842.1052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 56921.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 78.9473684210526,
+			"time": 57000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 78.9473684210526,
+			"time": 57157.8947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 78.9473684210526,
+			"time": 57315.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 78.9473684210526,
+			"time": 57473.6842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 78.9473684210526,
+			"time": 57631.5789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 78.9473684210526,
+			"time": 57789.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 78.9473684210526,
+			"time": 57947.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 58105.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 58263.1578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 58421.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 58578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 58736.8421052631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 78.9473684210526,
+			"time": 58894.7368421052,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 157.894736842105,
+			"time": 59210.5263157894,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 59526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 59605.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 59684.2105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 59842.1052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 78.9473684210526,
+			"time": 60000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 60157.8947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 78.9473684210526,
+			"time": 60315.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 60473.6842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 60631.5789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 60789.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 78.9473684210526,
+			"time": 60947.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 78.9473684210526,
+			"time": 61105.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 61421.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 61578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 61736.8421052631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 61894.7368421052,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 61973.6842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 78.9473684210526,
+			"time": 62052.6315789473,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 78.9473684210526,
+			"time": 62210.5263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 78.9473684210526,
+			"time": 62368.4210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 62526.3157894736,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 62526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 62684.2105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 62842.1052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 78.9473684210526,
+			"time": 63000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 236.842105263158,
+			"time": 63157.8947368422,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 63473.6842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 63631.5789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 63947.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 710.526315789474,
+			"time": 64263.1578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 65052.6315789473,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 65368.4210526315,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 236.842105263158,
+			"time": 65684.2105263157,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 66000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 66157.8947368422,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 66473.6842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 315.789473684211,
+			"time": 66789.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 67263.1578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 67578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 67894.7368421053,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 236.842105263158,
+			"time": 68210.5263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 68526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 68684.2105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 69000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 394.736842105263,
+			"time": 69315.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 236.842105263158,
+			"time": 69789.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 70105.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 70263.1578947369,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 70342.105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 236.842105263158,
+			"time": 70421.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 236.842105263158,
+			"time": 70736.8421052631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 71052.6315789473,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 71210.5263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 71526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 315.789473684211,
+			"time": 71842.105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 72631.5789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 72947.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 236.842105263158,
+			"time": 73263.1578947369,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 73578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 73736.8421052631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 74052.6315789473,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 710.526315789474,
+			"time": 74368.4210526315,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 75157.894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 75473.6842105262,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 236.842105263158,
+			"time": 75789.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 76105.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 76263.1578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 76578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 315.789473684211,
+			"time": 76894.7368421052,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 77368.4210526315,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 77684.2105263157,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 77999.9999999999,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 236.842105263158,
+			"time": 78315.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 78631.5789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 78789.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 79105.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 394.736842105263,
+			"time": 79421.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 236.842105263158,
+			"time": 79894.7368421053,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 80210.5263157894,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 80368.4210526315,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 80447.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 236.842105263158,
+			"time": 80526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 236.842105263158,
+			"time": 80842.105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 81157.894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 81315.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 81631.5789473685,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 315.789473684211,
+			"time": 81947.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 82736.8421052631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 83052.6315789473,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 83368.4210526315,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 83526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 83605.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 83684.2105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 83842.1052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 84000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 84157.8947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 84236.8421052631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 84315.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 84473.6842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 84631.5789473685,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 84789.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 84868.4210526315,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 84947.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 85026.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 85105.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 85263.1578947369,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 85421.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 85578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 85736.8421052631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 85894.7368421053,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 86052.6315789473,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 86210.5263157894,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 86368.4210526315,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 86526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 86684.2105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 86842.1052631578,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 87000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 87157.8947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 87315.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 87473.6842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 87631.5789473685,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 87789.4736842104,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 87947.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 88105.2631578946,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 88263.1578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 78.9473684210526,
+			"time": 88421.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 78.9473684210526,
+			"time": 88578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 78.9473684210526,
+			"time": 88736.8421052631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 78.9473684210526,
+			"time": 88894.7368421052,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 78.9473684210526,
+			"time": 89052.6315789474,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 89210.5263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 157.894736842105,
+			"time": 89526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 89842.1052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 89921.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 90000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 90157.8947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 90315.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 90473.6842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 90631.5789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 90789.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 157.894736842105,
+			"time": 90947.3684210525,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 90947.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 91105.2631578946,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 78.9473684210526,
+			"time": 91263.1578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 78.9473684210526,
+			"time": 91421.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 91736.8421052631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 91894.7368421053,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 92052.6315789474,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 92210.5263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 92289.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 78.9473684210526,
+			"time": 92368.4210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 78.9473684210526,
+			"time": 92526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 78.9473684210526,
+			"time": 92684.2105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 92842.1052631578,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 92999.9999999999,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 93157.8947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 93315.7894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 93473.6842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 93631.5789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 93789.4736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 93947.3684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 94105.2631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 94263.1578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 94421.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 94578.9473684211,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 94736.8421052632,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 94894.7368421053,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 95052.6315789474,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 95210.5263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 95368.4210526315,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 95526.3157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 95684.2105263157,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 95842.1052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 78.9473684210526,
+			"time": 95999.9999999999,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 78.9473684210526,
+			"time": 96157.894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 78.9473684210526,
+			"time": 96315.7894736841,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 78.9473684210526,
+			"time": 96473.6842105262,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 78.9473684210526,
+			"time": 96631.5789473683,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 96789.4736842104,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 78.9473684210526,
+			"time": 96947.3684210525,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 78.9473684210526,
+			"time": 97105.2631578946,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 78.9473684210526,
+			"time": 97263.1578947367,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 78.9473684210526,
+			"time": 97421.0526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 78.9473684210526,
+			"time": 97578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 78.9473684210526,
+			"time": 97736.8421052631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 78.9473684210526,
+			"time": 97894.7368421052,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 78.9473684210526,
+			"time": 98052.6315789473,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 78.9473684210526,
+			"time": 98210.5263157894,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 78.9473684210526,
+			"time": 98368.4210526315,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 98526.3157894736,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 98842.1052631578,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 157.894736842105,
+			"time": 99157.894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 99473.6842105262,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 99631.5789473683,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 99947.3684210525,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 100263.157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 100578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 100736.842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 100894.736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 101052.631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 101210.526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 78.9473684210526,
+			"time": 101368.421052631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 101526.315789474,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 101842.105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 102000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 102157.894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 102315.789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 102394.736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 102473.684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 102631.578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 102789.47368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 102947.368421053,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 103105.263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 103263.157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 103421.052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 103736.842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 103894.736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 236.842105263158,
+			"time": 104052.631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 104368.421052632,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 105000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 105157.894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 105315.789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 105473.684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 105631.578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 105789.473684211,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 105947.368421053,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 106263.157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 106421.052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 106578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 106736.842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 106894.736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 107052.631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 107210.526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 107526.315789474,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 107684.210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 107842.105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 108000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 108315.789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 108789.473684211,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 108947.368421053,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 236.842105263158,
+			"time": 109105.263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 109421.052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 110052.631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 110210.526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 110368.421052632,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 110526.315789474,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 110684.210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 110842.105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 157.894736842105,
+			"time": 111000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 111315.789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 111473.684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 111631.578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 111789.473684211,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 111947.368421053,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 112105.263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 112263.157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 112578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 112736.842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 112894.736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 113052.631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 113368.421052631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 236,
+			"time": 113684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 236.842105263158,
+			"time": 113684.210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 114000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 114157,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 114157.894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 114473,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 114473.684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 710,
+			"time": 114789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 710.526315789474,
+			"time": 114789.473684211,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 115578,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 115578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 115894,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 115894.736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 236,
+			"time": 116210,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 236.842105263158,
+			"time": 116210.526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 116526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 116526.315789474,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 116684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 116684.210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 117000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 315,
+			"time": 117315,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 315.789473684211,
+			"time": 117315.789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 117789.47368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 118105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 118105.263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 118421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 118421.052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 236,
+			"time": 118736,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 236.842105263158,
+			"time": 118736.842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 119052,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 119052.631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 119210,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 119210.52631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 119526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 119526.315789474,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 394,
+			"time": 119842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 394.736842105263,
+			"time": 119842.105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 236,
+			"time": 120315,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 236.842105263158,
+			"time": 120315.789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 120631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 120631.578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 120789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 120789.473684211,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 120868,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 120868.421052632,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 236,
+			"time": 120947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 236.842105263158,
+			"time": 120947.368421053,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 236.842105263158,
+			"time": 121263.157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 121578,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 121578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 121736,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 121736.842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 122052,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 122052.631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 315,
+			"time": 122368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 315.789473684211,
+			"time": 122368.421052632,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 123157,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 123157.894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 123473,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 123473.684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 236,
+			"time": 123789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 236.842105263158,
+			"time": 123789.47368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 236.842105263158,
+			"time": 123789.473684211,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 124105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 124105.263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 124263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 124263.157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 124578,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 124578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 710,
+			"time": 124894,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 315.789473684211,
+			"time": 124894.736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 157.894736842105,
+			"time": 125368.421052631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 125684.210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 126000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 126157.894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 236.842105263158,
+			"time": 126315.789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 126473.684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 126631.578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 126789.47368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 127105.263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 157.894736842105,
+			"time": 127263.157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 315.789473684211,
+			"time": 127421.052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 78.9473684210526,
+			"time": 127578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 127736.842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 127815.789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 127894.736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 128210.526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 128368.421052631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 128526.315789474,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 128684.210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 128842.105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 129000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 129157.894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 315.789473684211,
+			"time": 129315.789473684,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 129631.578947368,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 129789.47368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 315.789473684211,
+			"time": 129947.368421052,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 157.894736842105,
+			"time": 130421.052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 130736.842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 130894.736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 130973.684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 157.894736842105,
+			"time": 131052.631578947,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 157.894736842105,
+			"time": 131368.421052631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 131684.210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 131842.105263158,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 132157.894736842,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 552.631578947368,
+			"time": 132473.684210526,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 133263.157894737,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 133578.947368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 157.894736842105,
+			"time": 133894.736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 134210.526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 134368.421052631,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 134684.210526316,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 631.578947368421,
+			"time": 135000,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 135789.47368421,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
+			"length": 0,
+			"time": 136105.263157895,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 157.894736842105,
+			"time": 136421.052631579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 136736.842105263,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 136894.736842105,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 137210.526315789,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 157.894736842105,
+			"time": 137526.315789474,
+			"event": [],
+			"type": ""
+		}
+	],
+	"meta": [
+		{
+			"name": "Artist",
+			"value": "Unknown"
+		}
+	],
+	"bpm": 190,
+	"data": {
+		"version": "LineTapper v0.1.0",
+		"apiLevel": 1
+	}
+}
