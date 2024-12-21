@@ -44,6 +44,11 @@ class PlayState extends StateBase {
 
     public var playbackRate:Float = 0.9;
 
+    public var paused:Bool = false;
+	public var pauseBG:FlxSprite;
+	public var pauseTextBG:FlxSprite;
+	public var pauseText:FlxText;
+
     public function new(?song:String) {
         super();
         songName = song ?? "Tutorial";
@@ -110,6 +115,25 @@ class PlayState extends StateBase {
         timing.y = FlxG.height - 25;
         timing.cameras = [hudCamera];
         add(timing);
+
+		pauseBG = new FlxSprite(0,0).makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+        pauseBG.alpha = 0.0;
+		pauseBG.cameras = [hudCamera];
+        add(pauseBG);
+
+		pauseText = makeText(0,0,"Paused", 32, true, CENTER);
+		pauseText.screenCenter();
+		pauseText.alpha = 0.0;
+		pauseText.cameras = [hudCamera];
+        
+		pauseTextBG = new FlxSprite(0, 0).makeGraphic(Std.int(pauseText.width + 16), Std.int(pauseText.height + 16), FlxColor.BLACK);
+		pauseTextBG.alpha = 0.0;
+		pauseTextBG.cameras = [hudCamera];
+		pauseTextBG.screenCenter();
+
+        add(pauseTextBG);
+        add(pauseText);
+
     }
 
     function loadSong(_song:String) {
@@ -122,21 +146,54 @@ class PlayState extends StateBase {
         return mapAsset.map;
     }
 
+    public var started:Bool = false;
+
     override function update(elapsed:Float) {
-        if (FlxG.keys.justPressed.SPACE) {
+		if (FlxG.keys.justPressed.SPACE && !started) {
             stage.start();
             FlxG.sound.music.play();
+			started = true;
         }
-		camFollow.x = FlxMath.lerp(player.getMidpoint().x, camFollow.x, 1 - (elapsed * 12));
-		camFollow.y = FlxMath.lerp(player.getMidpoint().y, camFollow.y, 1 - (elapsed * 12));
 
-        timeBar.percent = (Conductor.instance.time / FlxG.sound.music.length)*100;
-		timeTextLeft.text = Utils.formatMS(Conductor.instance.time);
-		timeTextRight.text =  Utils.formatMS(FlxG.sound.music.length);
-		timeTextRight.x = FlxG.width - (timeTextRight.width+10);
+		if (FlxG.keys.justPressed.ENTER && started)
+        {
+            paused = !paused;
+			stage.paused = paused;
 
-        playerText.updateHitbox();
-        playerText.setPosition(10, FlxG.height - (playerText.height + 10));
+			var targABG:Float = 0.0;
+			var targATXT:Float = 0.0;
+			if (paused)
+				targABG = 0.5;
+			if (paused)
+				targATXT = 1.0;
+			if (paused)
+                FlxG.sound.music.pause();
+            else
+                FlxG.sound.music.play();
+
+			FlxTween.tween(pauseBG, {alpha: targABG}, 1.0);
+			FlxTween.tween(pauseText, {alpha: targATXT}, 1.0);
+			FlxTween.tween(pauseTextBG, {alpha: targATXT}, 1.0);
+        }
+
+		if (!paused) {
+			camFollow.x = FlxMath.lerp(player.getMidpoint().x, camFollow.x, 1 - (elapsed * 12));
+			camFollow.y = FlxMath.lerp(player.getMidpoint().y, camFollow.y, 1 - (elapsed * 12));
+
+			timeBar.percent = (Conductor.instance.time / FlxG.sound.music.length) * 100;
+			timeTextLeft.text = Utils.formatMS(Conductor.instance.time);
+			timeTextRight.text = Utils.formatMS(FlxG.sound.music.length);
+			timeTextRight.x = FlxG.width - (timeTextRight.width + 10);
+
+			playerText.updateHitbox();
+			playerText.setPosition(10, FlxG.height - (playerText.height + 10));
+		} else {
+            if (FlxG.keys.justReleased.ESCAPE)
+            {
+				Utils.switchState(new MenuState(), "Leaving Gameplay");
+            }
+        }
+
         super.update(elapsed);
     }
 

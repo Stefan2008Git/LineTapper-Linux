@@ -112,9 +112,10 @@ class GameplayStage extends FlxSpriteGroup {
     }
 
     var _desyncCount:Int = 0;
+	public var paused:Bool = false;
     override function update(elapsed:Float) {
         if (!editing) {
-            if (!started) 
+			if (!paused){if (!started) 
                 return super.update(elapsed);
     
             conduct.time += elapsed*1000*parent.playbackRate;
@@ -124,7 +125,7 @@ class GameplayStage extends FlxSpriteGroup {
             }
             _updateGameplay(elapsed);
             _updateTiles(elapsed);
-            _updatePlayer(elapsed);    
+            _updatePlayer(elapsed);   } 
         } else {
             player.editing = editing;
             tiles.forEachAlive((tile:Tile) -> {
