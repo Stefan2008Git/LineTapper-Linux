@@ -8,16 +8,16 @@ enum abstract Direction(Int) {
 	var RIGHT = 3;
 }
 
-class Player extends FlxSprite {
+class Player extends Sprite {
     public static var BOX_SIZE:Int = 50;
 	/** Defines current direction of the player. **/
 	public var direction:Direction = DOWN;
     public var showTrails:Bool = true;
-    public var trails:Array<FlxSprite> = [];
+    public var trails:Array<Sprite> = [];
     public var trails_delay:Float = 0.05;
 
 	public var glowLevel:Float = 0;
-	public var glowObject:FlxSprite;
+	public var glowObject:Sprite;
 
 	public var editing:Bool = false;
 
@@ -25,7 +25,7 @@ class Player extends FlxSprite {
         super(nX, nY);
         makeGraphic(BOX_SIZE, BOX_SIZE);
 
-		glowObject = new FlxSprite().loadGraphic(Assets.image("play/glow"));
+		glowObject = new Sprite().loadGraphic(Assets.image("play/glow"));
 		glowObject.scale.x = glowObject.scale.y = (BOX_SIZE + 120) / glowObject.frameWidth;
 		glowObject.updateHitbox();
 		glowObject.active = false;
@@ -71,7 +71,7 @@ class Player extends FlxSprite {
         _trailTime += FlxG.elapsed;
 
 		if (_trailTime > trails_delay) {
-			var n:FlxSprite = new FlxSprite(x, y).makeGraphic(BOX_SIZE, BOX_SIZE, 0xFFFFFFFF);
+			var n:Sprite = new Sprite(x, y).makeGraphic(BOX_SIZE, BOX_SIZE, 0xFFFFFFFF);
 			n.alpha = 0.8;
 			n.active = false;
 			n.blend = ADD;

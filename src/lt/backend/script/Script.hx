@@ -140,7 +140,7 @@ class Script {
                 this.trace("Imported " + splitClassName[splitClassName.length - 1]);
             }
         });
-        setVariable("FlxSprite", FlxSprite);
+        setVariable("Sprite", Sprite);
 		setVariable('FlxCamera', FlxCamera);
 		setVariable('FlxTimer', FlxTimer);
 		setVariable('FlxTween', FlxTween);

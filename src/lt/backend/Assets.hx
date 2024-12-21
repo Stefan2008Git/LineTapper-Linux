@@ -17,14 +17,14 @@ import sys.io.File;
 class Assets
 {
 	/** Path to asset folders, modify only if necessary. **/
-	inline public static var _ASSET_PATH:String = "./assets";
+	@:noCompletion inline public static var _ASSET_PATH:String = "./assets";
 
-	inline public static var _DATA_PATH:String = '$_ASSET_PATH/data';
-	inline public static var _FONT_PATH:String = '$_DATA_PATH/fonts';
-	inline public static var _MAP_PATH:String = '$_DATA_PATH/maps';
+	@:noCompletion inline public static var _DATA_PATH:String = '$_ASSET_PATH/data';
+	@:noCompletion inline public static var _FONT_PATH:String = '$_DATA_PATH/fonts';
+	@:noCompletion inline public static var _MAP_PATH:String = '$_DATA_PATH/maps';
 
-	inline public static var _IMAGE_PATH:String = '$_ASSET_PATH/images';
-	inline public static var _SOUND_PATH:String = '$_ASSET_PATH/sounds';
+	@:noCompletion inline public static var _IMAGE_PATH:String = '$_ASSET_PATH/images';
+	@:noCompletion inline public static var _SOUND_PATH:String = '$_ASSET_PATH/sounds';
 
 	/** Trackers for loaded assets. **/
 	public static var loaded_images:Map<String, Bool> = new Map();
@@ -62,8 +62,16 @@ class Assets
 	{
 		var path:String = '$_FONT_PATH/$name.ttf';
 
-		if (!FileSystem.exists(path))
-			return null;
+		// try ttf
+		if (!FileSystem.exists(path)) {
+			//try otf
+			path = '$_FONT_PATH/$name.otf';
+			if (!FileSystem.exists(path))
+				return null;
+			else
+				return path;
+		}
+
 
 		return path;
 	}

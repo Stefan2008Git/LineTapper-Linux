@@ -1,5 +1,6 @@
 package lt.states;
 
+import lt.substates.SettingsSubstate;
 import flixel.util.FlxTimer;
 import flixel.graphics.FlxGraphic;
 import lt.objects.menu.Profile;
@@ -15,26 +16,26 @@ import flixel.tweens.FlxTween;
 /**
  * Main Menu of LineTapper.
  */
-class MenuState extends StateBase {
+class MenuState extends State {
 	var bg:FlxSprite;
-	var boxBelow:FlxSprite;
-	var logo:FlxSprite;
+	var boxBelow:Sprite;
+	var logo:Sprite;
 
-	var ind_top:FlxSprite;
-	var ind_bot:FlxSprite;
+	var ind_top:Sprite;
+	var ind_bot:Sprite;
 
 	var user_profile:Profile;
 
-	var particles:FlxSpriteGroup;
+	var particles:SpriteGroup;
 	var menuGroup:FlxTypedGroup<FlxText>;
-	var tri_top:FlxSprite; // Triangle Top
-	var tri_bot:FlxSprite; // Triangle Bottom
+	var tri_top:Sprite; // Triangle Top
+	var tri_bot:Sprite; // Triangle Bottom
 
 	var curSelected:Int = 0;
 	var options(get, never):Array<Dynamic>;
 	function get_options():Array<Dynamic>{
 		return [
-			["options", () -> trace("wawer")],
+			["settings", () -> openSubState(new SettingsSubstate())],
 			["play", () -> Utils.switchState(new MenuDebugState(), "Song Select")],
 			["edit", () -> Utils.switchState(new LevelEditorState(), "Level Editor")]
 		];	
@@ -44,15 +45,16 @@ class MenuState extends StateBase {
 	override function create() {
 		_scaleDiff = 1 - IntroState._scaleDec;
 
+		persistentUpdate = true;
 		// Objects
-		bg = FlxGradient.createGradientFlxSprite(FlxG.width, FlxG.height, [FlxColor.BLACK, FlxColor.WHITE], 1, 90, true);
+		bg = cast FlxGradient.createGradientFlxSprite(FlxG.width, FlxG.height, [FlxColor.BLACK, FlxColor.WHITE], 1, 90, true);
 		bg.alpha = 0;
 		add(bg);
 
-		particles = new FlxSpriteGroup();
+		particles = new SpriteGroup();
 		add(particles);
 
-		boxBelow = new FlxSprite().makeGraphic(Std.int(IntroState._boxSize * _scaleDiff), Std.int(IntroState._boxSize * _scaleDiff));
+		boxBelow = new Sprite().makeGraphic(Std.int(IntroState._boxSize * _scaleDiff), Std.int(IntroState._boxSize * _scaleDiff));
 		boxBelow.screenCenter();
 		add(boxBelow);
 
@@ -61,7 +63,7 @@ class MenuState extends StateBase {
 
 		generateOptions();
 
-		logo = new FlxSprite().loadGraphic(Assets.image("menu/logo"));
+		logo = new Sprite().loadGraphic(Assets.image("menu/logo"));
 		logo.screenCenter(X);
 		logo.y = 30;
 		logo.scale.set(0.6, 0.6);
@@ -98,13 +100,13 @@ class MenuState extends StateBase {
 			menuGroup.add(txt);
 		}
 
-		tri_top = new FlxSprite().loadGraphic(Assets.image("ui/triangle"));
+		tri_top = new Sprite().loadGraphic(Assets.image("ui/triangle"));
 		tri_top.screenCenter(X);
 		tri_top.y = boxBelow.y - (tri_top.height + 5);
 		tri_top.flipY = true;
 		add(tri_top);
 
-		tri_bot = new FlxSprite().loadGraphic(Assets.image("ui/triangle"));
+		tri_bot = new Sprite().loadGraphic(Assets.image("ui/triangle"));
 		tri_bot.screenCenter(X);
 		tri_bot.y = boxBelow.y + boxBelow.height + 5;
 		add(tri_bot);
@@ -135,24 +137,28 @@ class MenuState extends StateBase {
 	var confirmed:Bool = false;
 
 	override function update(elapsed:Float) {
-		if (FlxG.keys.justPressed.SPACE) {
+		if (FlxG.keys.justPressed.SPACE && subState == null) {
 			FlxG.resetState();
 		}
 
-		if (!confirmed) {
+		if (!confirmed && subState == null) {
 			if (FlxG.keys.justPressed.ENTER) {
-				confirmed = true;
-				FlxG.sound.play(Assets.sound("menu/select"));
-                for (obj in menuGroup.members) {
-                    if (curSelected == obj.ID) {
-						FlxTween.tween(boxBelow.scale,{x: (obj.width+20*2) / (Std.int(IntroState._boxSize * _scaleDiff))},1,{ease:FlxEase.expoOut});
-                        FlxFlicker.flicker(obj,1, 0.04,false,true,(_)->{
-                            options[curSelected][1]();   
-                        });
-                    } else {
-                        FlxTween.tween(obj, {alpha:0}, 1);
-                    }
-                }
+				if (options[curSelected][0] != "settings") {
+					confirmed = true;
+					FlxG.sound.play(Assets.sound("menu/select"));
+					for (obj in menuGroup.members) {
+						if (curSelected == obj.ID) {
+							FlxTween.tween(boxBelow.scale,{x: (obj.width+20*2) / (Std.int(IntroState._boxSize * _scaleDiff))},1,{ease:FlxEase.expoOut});
+							FlxFlicker.flicker(obj,1, 0.04,false,true,(_)->{
+								options[curSelected][1]();   
+							});
+						} else {
+							FlxTween.tween(obj, {alpha:0}, 1);
+						}
+					}
+				} else {
+					options[curSelected][1](); 
+				}
 			}
 
 			if (FlxG.keys.justPressed.LEFT || FlxG.keys.justPressed.RIGHT) {
@@ -180,7 +186,7 @@ class MenuState extends StateBase {
 
 		if (_timePassed - _timeTracked > FlxG.random.float(0.4, 1.3)) {
 			_timeTracked = _timePassed;
-			var s:FlxSprite = new FlxSprite(FlxG.random.float(0, FlxG.width), FlxG.height + FlxG.random.float(30, 50));
+			var s:Sprite = new Sprite(FlxG.random.float(0, FlxG.width), FlxG.height + FlxG.random.float(30, 50));
 			if (_cachedGraphic == null) {
 				s.makeGraphic(10, 10);
 				_cachedGraphic = s.graphic;
@@ -193,7 +199,7 @@ class MenuState extends StateBase {
 			particles.add(s);
 		}
 
-		particles.forEachAlive((spr:FlxSprite) -> {
+		particles.forEachAlive((spr:Sprite) -> {
 			spr.y -= (100 * spr.scale.x) * elapsed;
 			spr.angle += (150 * spr.scale.x) * elapsed;
 			if (spr.y < -20) {

@@ -6,7 +6,7 @@ import openfl.display.BitmapData;
 import openfl.utils.ByteArray;
 import flixel.math.FlxRect;
 
-class Tile extends FlxSprite {
+class Tile extends Sprite {
     /**
      * Time offset for a tile's entrance animation, measured in steps.
      * This determines how early the animation starts relative to the current audio time.
@@ -79,8 +79,8 @@ class Tile extends FlxSprite {
     public var hitOutline:TileEffect;
 
     // Used by hold tiles.
-    public var holdSprite:FlxSprite;
-    public var releaseSprite:FlxSprite;
+    public var holdSprite:Sprite;
+    public var releaseSprite:Sprite;
 
     private var conduct:Conductor = null;
 
@@ -104,13 +104,13 @@ class Tile extends FlxSprite {
 		hitOutline.updateHitbox();
 
         if (length > 0) {
-            holdSprite = new FlxSprite().loadGraphic(Assets.image("play/hold"));
+            holdSprite = new Sprite().loadGraphic(Assets.image("play/hold"));
             holdSprite.scale.x = (length/conduct.step_ms) * Player.BOX_SIZE;
             holdSprite.scale.y = (Player.BOX_SIZE*0.65) / holdSprite.frameHeight;
             holdSprite.updateHitbox();
             holdSprite.active = false;
             
-            releaseSprite = new FlxSprite().loadGraphic(Assets.image("play/stop_tile"));
+            releaseSprite = new Sprite().loadGraphic(Assets.image("play/stop_tile"));
             releaseSprite.active = false;
             releaseSprite.setGraphicSize(Player.BOX_SIZE, Player.BOX_SIZE);
             releaseSprite.updateHitbox();
@@ -177,7 +177,7 @@ class Tile extends FlxSprite {
     }    
     
 
-    function propDraw(spr:FlxSprite) {
+    function propDraw(spr:Sprite) {
         spr.alpha = alpha;
         spr.color = color;
         spr.draw();
@@ -255,7 +255,7 @@ class Tile extends FlxSprite {
 /**
  * The hit approach outline of a Tile object.
  */
-class TileEffect extends FlxSprite {
+class TileEffect extends Sprite {
     public var outline(default, set):Float = 0;
     var _ogPixels:BitmapData;
 

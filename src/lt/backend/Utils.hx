@@ -81,15 +81,15 @@ class Utils {
         @:privateAccess{
             if (!nextState.isInstance() || FlxG.canSwitchTo(cast nextState)) {
                 try {
-                    cast(FlxG.state,StateBase)._transText = transText;
+                    cast(FlxG.state,State)._transText = transText;
                 } catch(e) {
-                    trace("Transition fail: Could not set transition text, maybe it's not extending StateBase?");
+                    trace("Transition fail: Could not set transition text, maybe it's not extending State?");
                 }
                 FlxG.state.startOutro(function() {
                     try {
-                        cast(nextState,StateBase)._transText = transText;
+                        cast(nextState,State)._transText = transText;
                     } catch(e) {
-                        trace("Transition fail: Could not set transition text, maybe it's not extending StateBase?");
+                        trace("Transition fail: Could not set transition text, maybe it's not extending State?");
                     }
 
                     if (FlxG.state == stateOnCall)
@@ -103,7 +103,7 @@ class Utils {
     }
 
     public static inline function getTileColor(time:Float, subtractOffset:Bool = false) {
-        var _quant:Int = Std.int(((time-(subtractOffset ? 0 : Conductor.instance?.offset)) / Conductor.instance.step_ms) % 4);
+        var _quant:Int = Std.int((((time-(subtractOffset ? 0 : Conductor.instance?.offset)) / Conductor.instance.step_ms)+1) % 4);
         var _colorList:Array<FlxColor> = [0xFFFF8800, 0xFFFBFF00, 0xFF00EEFF, 0xFFFF00FF];
     
         return (_quant < _colorList.length) ? _colorList[_quant] : 0xFFFFFFFF;

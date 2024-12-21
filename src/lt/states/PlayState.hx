@@ -7,7 +7,7 @@ import lt.backend.MapData.MapAsset;
 import lt.objects.play.Player;
 import lt.objects.play.GameplayStage;
 
-class PlayState extends StateBase {
+class PlayState extends State {
     /**
      * Current active instance of PlayState.
      */
@@ -42,7 +42,7 @@ class PlayState extends StateBase {
     public var score:Int = 0;
     public var combo:Int = 0;
 
-    public var playbackRate:Float = 0.9;
+    public var playbackRate:Float = 1;
 
     public function new(?song:String) {
         super();

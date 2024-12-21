@@ -10,11 +10,11 @@ import flixel.math.FlxMath;
 
 using StringTools;
 
-class MenuDebugState extends StateBase {
+class MenuDebugState extends State {
     var topText:FlxText;
     var inputText:FlxText;
     var noType:Bool = false;
-    var inputCaret:FlxSprite;
+    var inputCaret:Sprite;
     var lastInvalidSong:String = "";
     var song(default,set):String = "Tutorial";
     function set_song(val:String):String {
@@ -33,7 +33,7 @@ class MenuDebugState extends StateBase {
 		inputText.setFormat(Assets.font("extenro-bold"), 20, FlxColor.WHITE, CENTER, OUTLINE, FlxColor.BLACK);
 		add(inputText);
 
-        inputCaret = new FlxSprite().makeGraphic(4,Std.int(inputText.height));
+        inputCaret = new Sprite().makeGraphic(4,Std.int(inputText.height));
         add(inputCaret);
         super.create();
     }

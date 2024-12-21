@@ -14,8 +14,12 @@ import flixel.tweens.FlxTween;
 
 import lt.backend.Assets;
 import lt.backend.Utils;
-import lt.backend.StateBase;
+import lt.backend.State;
 import lt.backend.Conductor;
+import lt.backend.Preferences;
+
+import lt.objects.Sprite;
+import lt.objects.Text;
 
 using StringTools;
 #end
