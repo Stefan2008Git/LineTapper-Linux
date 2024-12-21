@@ -160,6 +160,8 @@ class PlayState extends StateBase {
             paused = !paused;
 			stage.paused = paused;
 
+            var fadeSpd:Float = 0.5;
+
 			var targABG:Float = 0.0;
 			var targATXT:Float = 0.0;
 			if (paused)
@@ -171,9 +173,9 @@ class PlayState extends StateBase {
             else
                 FlxG.sound.music.play();
 
-			FlxTween.tween(pauseBG, {alpha: targABG}, 1.0);
-			FlxTween.tween(pauseText, {alpha: targATXT}, 1.0);
-			FlxTween.tween(pauseTextBG, {alpha: targATXT}, 1.0);
+			FlxTween.tween(pauseBG, {alpha: targABG}, fadeSpd);
+			FlxTween.tween(pauseText, {alpha: targATXT}, fadeSpd);
+			FlxTween.tween(pauseTextBG, {alpha: targATXT}, fadeSpd);
         }
 
 		if (!paused) {
