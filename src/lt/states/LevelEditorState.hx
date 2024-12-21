@@ -8,7 +8,7 @@ import lt.objects.play.Player;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.display.FlxBackdrop;
 
-class LevelEditorState extends StateBase {
+class LevelEditorState extends State {
     var stage:GameplayStage;
     var dummy:DummyTile;
 
@@ -22,7 +22,7 @@ class LevelEditorState extends StateBase {
     }
     override function create() {
         super.create();
-        var wawa:FlxBackdrop = new FlxBackdrop(FlxGridOverlay.createGrid(Player.BOX_SIZE,Player.BOX_SIZE,Player.BOX_SIZE*2,Player.BOX_SIZE*2,true,0xFF353535,0xFF505050));
+        var wawa:FlxBackdrop = new FlxBackdrop(FlxGridOverlay.createGrid(Player.BOX_SIZE,Player.BOX_SIZE,Player.BOX_SIZE*2,Player.BOX_SIZE*2,true,0xFF1B1B1B,0xFF2B2B2B));
         wawa.alpha = 0.2;
         add(wawa);
 
@@ -78,6 +78,15 @@ class LevelEditorState extends StateBase {
         // EDITING //
         if (FlxG.mouse.justPressed)
             placeTile();
+        if (FlxG.mouse.justPressedRight) 
+            removeTile();
+    }
+
+    function removeTile() {
+        var tile:Tile = stage.tiles.getLastTile();
+        if (tile == null) return;
+        stage.removeTile(tile);
+        stage.updateTileDirections();
     }
 
     function placeTile() {
@@ -103,7 +112,7 @@ class LevelEditorState extends StateBase {
         }
     
         newTile.direction = UNKNOWN;
-        newTile.time = tile.time + (conduct.step_ms * Math.abs(diff));
+        newTile.time = tile.time + (conduct.step_ms * (Math.abs(diff)-1));
     
         trace('${dummy.direction} >> $diff // ${newTile.x} // ${newTile.y} // ${newTile.direction} // ${newTile.time} // ${(conduct.step_ms * Math.abs(diff))}');
         stage.addTile(newTile);

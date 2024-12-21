@@ -2,3 +2,4 @@ export/
 .vscode/
 .gitignore
 src/bak/
+resource/testing/

@@ -270,7 +270,7 @@ class GameplayStage extends FlxSpriteGroup {
 
     public function removeTile(tile:Tile) {
         tile.kill();
-        tiles.remove(tile);
+        tiles.remove(tile, true);
         tile.destroy();
     }
 

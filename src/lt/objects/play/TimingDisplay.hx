@@ -1,7 +1,7 @@
 package lt.objects.play;
 
-class TimingDisplay extends FlxSprite {
-    var indicators:Array<{spr:FlxSprite,diff:Float}> = [];
+class TimingDisplay extends Sprite {
+    var indicators:Array<{spr:Sprite,diff:Float}> = [];
     public function new() {
         super();
         loadGraphic(Assets.image("play/hit_bar"));
@@ -13,7 +13,7 @@ class TimingDisplay extends FlxSprite {
     override function draw() {
         super.draw();
         for (i in indicators) {
-            var sprite:FlxSprite = i.spr;
+            var sprite:Sprite = i.spr;
             var mappedPosition:Float = (i.diff + 250) / 500 * width;
             sprite.cameras = cameras;
             sprite.x = x + mappedPosition - (sprite.width * 0.5);
@@ -32,7 +32,7 @@ class TimingDisplay extends FlxSprite {
     
 
     public function addBar(ms:Float) {
-        var spr:FlxSprite = new FlxSprite().makeGraphic(1,1);
+        var spr:Sprite = new Sprite().makeGraphic(1,1);
         spr.scale.x = 2;
         spr.scale.y = height + 20;
         spr.active = false;

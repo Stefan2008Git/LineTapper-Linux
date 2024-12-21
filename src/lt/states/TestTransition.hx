@@ -5,7 +5,7 @@ import flixel.addons.transition.FlxTransitionSprite;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.display.FlxBackdrop;
 
-class TestTransition extends StateBase {
+class TestTransition extends State {
     var f:Tile;
     override function create() {
         super.create();

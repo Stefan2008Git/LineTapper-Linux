@@ -1,5 +1,6 @@
 package;
 
+import lt.backend.Preferences;
 import lime.app.Application;
 import lt.backend.native.NativeUtil;
 import flixel.FlxGame;
@@ -13,7 +14,7 @@ class Main extends Sprite
 	{
 		super();
 		_conductor = new Conductor();
-
+		Preferences.init();
 		NativeUtil.setDPIAware();
 
 		lime.app.Application.current.window.title = "LineTapper - CoreCat's Build";

@@ -5,7 +5,7 @@ import flixel.util.typeLimit.NextState;
 /**
  * Hi future CoreCat pls tidy this up holy heck
  */
-class StateBase extends FlxState {
+class State extends FlxState {
     var _defaultCamera:FlxCamera;
     var _transIn:Bool = false;
     var _transOut:Bool = false;
@@ -30,7 +30,7 @@ class StateBase extends FlxState {
         _transCam.bgColor = FlxColor.TRANSPARENT;
         FlxG.cameras.add(_transCam, false);
         
-        var _tr_bg:FlxSprite = new FlxSprite(FlxG.width).loadGraphic(Assets.image("ui/transition"));
+        var _tr_bg:Sprite = new Sprite(FlxG.width).loadGraphic(Assets.image("ui/transition"));
         _tr_bg.cameras = [_transCam];
         _tr_bg.screenCenter();
         add(_tr_bg);
@@ -58,7 +58,7 @@ class StateBase extends FlxState {
         _transCam.bgColor = FlxColor.TRANSPARENT;
         FlxG.cameras.add(_transCam, false);
         
-        var _tr_bg:FlxSprite = new FlxSprite(FlxG.width).loadGraphic(Assets.image("ui/transition"));
+        var _tr_bg:Sprite = new Sprite(FlxG.width).loadGraphic(Assets.image("ui/transition"));
         _tr_bg.cameras = [_transCam];
         add(_tr_bg);
         

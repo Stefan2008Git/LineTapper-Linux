@@ -7,8 +7,8 @@ class IntroState extends FlxState {
     public static var _boxSize:Int = 72;
     public static var _scaleDec:Float = 0.3;
 
-	var playerBox:FlxSprite;
-	var tileBox:FlxSprite;
+	var playerBox:Sprite;
+	var tileBox:Sprite;
 	var ltText:FlxText;
 
     var currentlyLoading:Bool = false;
@@ -28,13 +28,13 @@ class IntroState extends FlxState {
         // Player Box sprite
         var _centerOffset:Float = 90;
  
-        playerBox = new FlxSprite().makeGraphic(_boxSize, _boxSize);
+        playerBox = new Sprite().makeGraphic(_boxSize, _boxSize);
         playerBox.x = ((FlxG.width - playerBox.width) * 0.5) - _centerOffset;
         playerBox.screenCenter(Y);
         add(playerBox);
 
         // Tile Box sprite
-        tileBox = new FlxSprite().loadGraphic(Assets.image("play/tile"));
+        tileBox = new Sprite().loadGraphic(Assets.image("play/tile"));
         tileBox.setGraphicSize(playerBox.frameWidth, playerBox.frameHeight);
         tileBox.updateHitbox();
         tileBox.x = ((FlxG.width - tileBox.width) * 0.5) + _centerOffset;

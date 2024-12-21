@@ -21,7 +21,7 @@ class User {
     public var profile_url:String;
 }
 
-class Profile extends FlxSprite {
+class Profile extends Sprite {
     public static var size = {
         width: 50,
         height: 50
@@ -66,8 +66,8 @@ class Profile extends FlxSprite {
         var img:URLLoader = new URLLoader(new URLRequest(Utils.PLAYER.profile_url));
         img.dataFormat = BINARY;
         img.addEventListener(Event.COMPLETE, (e:Event) -> {
-            var temp:FlxSprite = new FlxSprite().loadGraphic(BitmapData.fromBytes(cast(img.data, ByteArray)));
-            var circ:FlxSprite = new FlxSprite().makeGraphic(Std.int(temp.width),Std.int(temp.height),FlxColor.TRANSPARENT);
+            var temp:Sprite = new Sprite().loadGraphic(BitmapData.fromBytes(cast(img.data, ByteArray)));
+            var circ:Sprite = new Sprite().makeGraphic(Std.int(temp.width),Std.int(temp.height),FlxColor.TRANSPARENT);
             FlxSpriteUtil.drawCircle(circ,-1,-1,-1,FlxColor.BLACK);
             FlxSpriteUtil.alphaMask(this,temp.pixels,circ.pixels);
             setGraphicSize(size.width,size.height);
