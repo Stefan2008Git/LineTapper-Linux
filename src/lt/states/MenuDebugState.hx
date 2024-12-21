@@ -16,7 +16,7 @@ class MenuDebugState extends State {
     var noType:Bool = false;
     var inputCaret:Sprite;
     var lastInvalidSong:String = "";
-    var song(default,set):String = "Tutorial";
+    var song(default,set):String = "tutorial";
     function set_song(val:String):String {
         if (inputText != null)
             inputText.text = val;
