@@ -1,5 +1,6 @@
 package lt.substates;
 
+import lt.objects.ui.CategoryGroup.CategoryType;
 import lt.objects.ui.InputBox;
 import flixel.FlxSubState;
 
@@ -57,6 +58,18 @@ class SettingsSubstate extends FlxSubState {
     }
 }
 
+typedef SettingsChild = {
+    name:String,
+    field:String,
+    desc:String,
+    type:CategoryType,
+    min:Float, // Used by "Scroll Bar" type.
+    max:Float  // Used by "Scroll Bar" type.
+}
+typedef SettingsCategory = {
+    name:String,
+    child:Array<SettingsChild>
+}
 class SettingsPanel extends Sprite {
     var bgCover:Sprite;
     var title:Text;
@@ -70,7 +83,9 @@ class SettingsPanel extends Sprite {
         "Let me guess, offset?"
     ];
 
+    public var categories:Array<SettingsCategory> = [];
     public var objects:Array<Dynamic> = [];
+    public var settings:Array<Dynamic> = [];
     public var scrollY:Float = 0;
     public function new():Void {
         super();
@@ -93,6 +108,41 @@ class SettingsPanel extends Sprite {
 
         divider = new Sprite().makeGraphic(Std.int(width-80), 1, 0xFF303030);
         objects.push(divider);
+
+        generateSettings();
+    }
+    
+    function generateSettings() {
+        // Add the category and it's child //
+        addCategory("Graphics", [
+            makeCategoryChild("Antialiasing", "Whether to use antialiasing for sprites (smoother visuals)", "antialiasing", CHECKBOX)
+        ]);
+        addCategory("Gameplay", [
+            makeCategoryChild("Tile Offset", "Defines offset value used in-game (Tile time offset)", "offset", CHECKBOX)
+        ]);
+
+        // Then generate the UI //
+        for (category in categories) {
+            var wawa;
+        }
+    }
+
+    function addCategory(name:String, child:Array<SettingsChild>) {
+        categories.push({
+            name: name,
+            child: child
+        });
+    }
+
+    function makeCategoryChild(name:String, desc:String, field:String, type:CategoryType, ?min:Float = 0, ?max:Float = 1):SettingsChild {
+        return {
+            name: name,
+            desc: desc,
+            field: field,
+            type: type,
+            min: min,
+            max: max
+        }
     }
 
     override function update(elapsed:Float) {
@@ -118,6 +168,13 @@ class SettingsPanel extends Sprite {
         divider.y = bgCover.y + bgCover.height;
 
         for (obj in objects) {
+            obj.draw();
+        }
+
+        var lastPos:Float = 0;
+        var lastHeight:Float = 0;
+        for (obj in settings) {
+            obj.y = divider.y + 40 + scrollY + lastPos + 
             obj.draw();
         }
     }
