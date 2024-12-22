@@ -49,6 +49,7 @@ class CreditsState extends State
 		super.create();
 	}
 
+	var TEXTGRP_ITEM_MOVESPEED:Float = 150.0;
     override function update(elapsed:Float) {
         super.update(elapsed);
 
@@ -57,12 +58,11 @@ class CreditsState extends State
 		}
 
 		for (item in textGrp) {
-			item.y -= TEXTGRP_ITEM_MOVESPEED;
+			// this means the item will move 150 pixels for every 1 second
+			item.y -= TEXTGRP_ITEM_MOVESPEED * elapsed;
 
 			if (item.y < (0 - creditsFile.length * 30))
 				item.y = FlxG.height + creditsFile.length * 21;
 		}
     }
-
-	var TEXTGRP_ITEM_MOVESPEED:Float = 1.0;
 }
