@@ -13,6 +13,11 @@ class PrefData {
     public var antialiasing:Bool = true;
     /** Defines offset value used in-game (Tile time offset) **/
     public var offset:Float = 120;
+    /** Whether to use less Graphical Effects **/
+    public var masterVolume:Float = 1;
+
+    public var musicVolume:Float = 1;
+    public var sfxVolume:Float = 1;
 }
 
 class Preferences {
@@ -24,6 +29,7 @@ class Preferences {
      * Loads your preferences, if it doesn't exists, it'll create a new one.
      */
     public static function init():Void {
+        trace(FileSystem.exists(PATH) ? "Found preferences file." : "No preferences file found.");
         if (FileSystem.exists(PATH)) {
             load();
         } else {
@@ -50,7 +56,13 @@ class Preferences {
             trace("Could not find any save files.");
             return;
         }
-        Unserializer.run(File.getContent(PATH));
+        var w:Any = Json.parse(Unserializer.run(File.getContent(PATH)));
+        data = {};
+
+        for (field in Reflect.fields(w)) {
+            Reflect.setProperty(data, field, Reflect.getProperty(w, field));
+        }
+        trace(data);
     }
 
     static function convert(data:String):PrefData {

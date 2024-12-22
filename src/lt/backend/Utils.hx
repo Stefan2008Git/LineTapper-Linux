@@ -1,5 +1,7 @@
 package lt.backend;
 
+import openfl.text.TextFormat;
+import openfl.text.TextField;
 import flixel.util.typeLimit.NextState;
 import lt.objects.menu.Profile.User;
 
@@ -78,6 +80,20 @@ class Utils {
 		}
 		return shit;
 	}
+  
+  /**
+	 * Converts bytes int to formatted sizes. (ex: 10 MB, 100 GB, 1000 TB, etc)
+	 * @param bytes		Bytes number that will be converted
+	 * @return String	Formatted size of the bytes
+	 */
+	public static function formatBytes(bytes:Float):String {
+        if (bytes == 0)
+            return "0 B";
+
+        var size_name:Array<String> = ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+        var digit:Int = Std.int(Math.log(bytes) / Math.log(1024));
+        return FlxMath.roundDecimal(bytes / Math.pow(1024, digit), 2) + " " + size_name[digit];
+  }
 
 	public static inline function switchState(nextState:NextState, ?transText:String = ""):Void {
 		if (!SCENE_TRANSITIONING) {
@@ -113,4 +129,8 @@ class Utils {
 
 		return (_quant < _colorList.length) ? _colorList[_quant] : 0xFFFFFFFF;
 	}
+      public static function normalize(value:Float, min:Float, max:Float){
+        var val:Float = (value - min) / (max - min);
+        return FlxMath.bound(val, 0, 1);
+    }
 }

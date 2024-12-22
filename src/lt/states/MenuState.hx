@@ -1,6 +1,7 @@
 package lt.states;
 
 import lt.backend.Game;
+import lt.macros.Github;
 import lime.app.Application;
 import lt.substates.SettingsSubstate;
 import flixel.util.FlxTimer;
@@ -92,10 +93,10 @@ class MenuState extends State {
 		});
 		
 		var localChanges:Bool = Github.getGitHasLocalChanges();
-		var debugTXT:String = ' (DEBUG)\n${Github.getGitBranch()}/${Github.getGitCommitHash()}${localChanges ? ' (Modified)' : ''}'
-      
+		var debugTXT:String = ' (DEBUG)\n${Github.getGitBranch()}/${Github.getGitCommitHash()}${localChanges ? ' (Modified)' : ''}';
 		var versionText:Text = new Text(0,0,'v${Game.VERSION #if debug + debugTXT #end}', 14);
-    versionText.setFont("musticapro");
+		versionText.setFont("musticapro");
+
 		versionText.setPosition(10, FlxG.height - versionText.height - 10);
 		versionText.alpha = 0.0;
 		add(versionText);

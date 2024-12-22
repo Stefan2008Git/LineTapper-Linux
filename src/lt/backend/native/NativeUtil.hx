@@ -9,11 +9,11 @@ class NativeUtil {
      * If the platform is unsupported, it will return Garbage Collector memory.
      */
     public static function getUsedMemory() {
-        #if windows
-        return Windows.getCurrentUsedMemory();
-        #else
+        //#if windows
+        //return Windows.getCurrentUsedMemory();
+        //#else
         return openfl.system.System.totalMemory;
-        #end
+        //#end
     }
 
     public static function setWindowDarkMode(title:String, enable:Bool) {

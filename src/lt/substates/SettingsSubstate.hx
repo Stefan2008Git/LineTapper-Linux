@@ -1,5 +1,7 @@
 package lt.substates;
 
+import lt.objects.ui.CategoryGroup;
+import lt.objects.ui.CategoryGroup.CategoryType;
 import lt.objects.ui.InputBox;
 import flixel.FlxSubState;
 
@@ -57,6 +59,20 @@ class SettingsSubstate extends FlxSubState {
     }
 }
 
+typedef SettingsChild = {
+    name:String,
+    field:String,
+    desc:String,
+    type:CategoryType,
+    min:Float, // Used by "Scroll Bar" type.
+    max:Float,  // Used by "Scroll Bar" type.
+    suffix:String,
+    onChange:Dynamic -> Void
+}
+typedef SettingsCategory = {
+    name:String,
+    child:Array<SettingsChild>
+}
 class SettingsPanel extends Sprite {
     var bgCover:Sprite;
     var title:Text;
@@ -67,11 +83,16 @@ class SettingsPanel extends Sprite {
 
     var messages:Array<String> = [
         "Adjust these to your preferences.",
-        "Let me guess, offset?"
+        "Let me guess, offset?",
+        "Looking for something?",
+        ""
     ];
 
+    public var categories:Array<SettingsCategory> = [];
     public var objects:Array<Dynamic> = [];
+    public var settings:Array<CategoryGroup> = [];
     public var scrollY:Float = 0;
+    private var _scrollY:Float = 0;
     public function new():Void {
         super();
         loadGraphic(Assets.image("ui/settings/panel"));
@@ -93,10 +114,81 @@ class SettingsPanel extends Sprite {
 
         divider = new Sprite().makeGraphic(Std.int(width-80), 1, 0xFF303030);
         objects.push(divider);
+
+        generateSettings();
+    }
+    
+    function generateSettings() {
+        // Add the category and it's child //
+        addCategory("Graphics", [
+            makeCategoryChild("Antialiasing", "Whether to use antialiasing for sprites (smoother visuals)", "antialiasing", CHECKBOX)
+        ]);
+        addCategory("Gameplay", [
+            makeCategoryChild("Tile Offset", "Defines offset value used in-game (Tile time offset)", "offset", SCROLLBAR, -600, 600, "ms")
+        ]);
+        addCategory("Audio", [
+            makeCategoryChild("Master Volume", "Adjust how loud the game's audio.", "masterVolume", SCROLLBAR, 0, 100, "%", (val:Dynamic) -> {
+                FlxG.sound.volume = val/100;
+            }),
+            makeCategoryChild("Music Volume", "Adjust how loud are musics supposed to be.", "musicVolume", SCROLLBAR, 0, 100, "%"),
+            makeCategoryChild("SFX Volume", "Adjust how loud are sound effects supposed to be.", "sfxVolume", SCROLLBAR, 0, 100, "%"),
+        ]);
+
+        // Then generate the UI //
+        for (category in categories) {
+            var wawa:CategoryGroup = new CategoryGroup(0,0, category.name);
+            for (child in category.child) {
+                switch (child.type) {
+                    case CHECKBOX:
+                        wawa.addCheckBox(child.name, Reflect.getProperty(Preferences.data,child.field),(val:Bool)->{
+                            Reflect.setProperty(Preferences.data, child.field, val);
+                            child.onChange(val);
+                        });
+                    case SCROLLBAR:
+                        wawa.addScrollBar(child.name, child.suffix, Reflect.getProperty(Preferences.data,child.field), child.min, child.max,(val:Float)->{
+                            Reflect.setProperty(Preferences.data, child.field, val);
+                            child.onChange(val);
+                        });
+                        // do nothing
+                }
+            }
+            
+            settings.push(wawa);
+        }
+    }
+
+    function addCategory(name:String, child:Array<SettingsChild>) {
+        categories.push({
+            name: name,
+            child: child
+        });
+    }
+
+    function makeCategoryChild(name:String, desc:String, field:String, type:CategoryType, ?min:Float = 0, ?max:Float = 1, ?suffix:String = "", ?onChange:Dynamic -> Void):SettingsChild {
+        return {
+            name: name,
+            desc: desc,
+            field: field,
+            type: type,
+            min: min,
+            max: max,
+            suffix: suffix,
+            onChange: (w:Dynamic)->{
+                if (onChange != null)
+                    onChange(w);
+            }
+        }
     }
 
     override function update(elapsed:Float) {
         searchBar.update(elapsed);
+        if (FlxG.mouse.wheel != 0) {
+            scrollY += 20 * FlxG.mouse.wheel;
+        }
+        _scrollY = FlxMath.lerp(_scrollY, scrollY, 12*elapsed);
+        for (obj in settings) {
+            obj.update(elapsed);
+        }
         super.update(elapsed);
     }
 
@@ -116,6 +208,17 @@ class SettingsPanel extends Sprite {
 
         objectCenterX(divider);
         divider.y = bgCover.y + bgCover.height;
+
+        var lastPos:Float = 0;
+        var lastHeight:Float = 0;
+        for (obj in settings) {
+            obj.exists = true;
+            obj.setPosition(x + 40, divider.y + 40 + _scrollY + lastPos + lastHeight + 10);
+            obj.draw();
+
+            lastPos = obj.y - (divider.y + 40 + _scrollY);
+            lastHeight = obj.height;
+        }
 
         for (obj in objects) {
             obj.draw();
