@@ -30,7 +30,7 @@ class Checkbox extends Text {
         if (FlxG.mouse.overlaps(check) && FlxG.mouse.justPressed) {
             checked = !checked;
         }
-        check.color = checked ? 0xFF000000 : 0xFFFFFFFF;
+        check.color = checked ? 0xFFFFFFFF : 0xFF000000;
         check.x = x + (width - check.width);
         check.y = y + (height - check.height) * 0.5;
 
