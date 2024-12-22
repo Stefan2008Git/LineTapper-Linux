@@ -44,4 +44,10 @@ class Checkbox extends Text {
         super.get_width();
         return nWidth;
     }
+
+    override function destroy() {
+        check?.destroy();
+        checkOutline?.destroy();
+        super.destroy();
+    }
 }

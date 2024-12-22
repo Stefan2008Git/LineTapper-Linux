@@ -29,6 +29,7 @@ class CategoryGroup extends FlxSpriteGroup {
         displayText = new FlxText(indicator.x + indicator.width + 20, indicator.y + indicator.height * 0.5, -1, name.toUpperCase(), 14);
         displayText.font = Assets.font("extenro-bold");
         displayText.y -= displayText.height * 0.5;
+        displayText.antialiasing = Preferences.data.antialiasing;
         add(displayText);
 
         childIndicator = new FlxSprite(indicator.x + indicator.width*0.5, indicator.y + indicator.height + 10).makeGraphic(1,1,0xFFFFFFFF);
@@ -39,6 +40,13 @@ class CategoryGroup extends FlxSpriteGroup {
     }
 
     override function update(elapsed:Float) {
+        var lastHeight:Float = 0;
+        var lastPos:Float = child.y;
+        for (c in child.members) {
+            c.y = lastPos+lastHeight+10;
+            lastPos = c.y;
+            lastHeight = c.height;
+        }
         childIndicator.scale.y = child.height;
         childIndicator.offset.y = -(child.height*0.5);
         super.update(elapsed);

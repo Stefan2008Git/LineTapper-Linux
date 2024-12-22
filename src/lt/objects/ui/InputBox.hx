@@ -20,13 +20,10 @@ class InputBox extends FlxInputText {
             placeholder.setPosition(x, y);
             placeholder.draw();
         }
-
     }
 
-    override function update(elapsed:Float) {
-        if (hasFocus) {
-
-        }
-        super.update(elapsed);
+    override function destroy() {
+        placeholder?.destroy();
+        super.destroy();
     }
 }

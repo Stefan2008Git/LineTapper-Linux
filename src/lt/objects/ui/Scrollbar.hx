@@ -79,4 +79,11 @@ class Scrollbar extends Text {
     override function get_height():Float {
         return super.get_height() + 10 + bar.height;
     }
+
+    override function destroy() {
+        bar?.destroy();
+        barHandle?.destroy();
+        valueIndicator?.destroy();
+        super.destroy();
+    }
 }

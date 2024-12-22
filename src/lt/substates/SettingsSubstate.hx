@@ -66,7 +66,8 @@ typedef SettingsChild = {
     type:CategoryType,
     min:Float, // Used by "Scroll Bar" type.
     max:Float,  // Used by "Scroll Bar" type.
-    suffix:String
+    suffix:String,
+    onChange:Dynamic -> Void
 }
 typedef SettingsCategory = {
     name:String,
@@ -123,7 +124,14 @@ class SettingsPanel extends Sprite {
             makeCategoryChild("Antialiasing", "Whether to use antialiasing for sprites (smoother visuals)", "antialiasing", CHECKBOX)
         ]);
         addCategory("Gameplay", [
-            makeCategoryChild("Tile Offset", "Defines offset value used in-game (Tile time offset)", "offset", SCROLLBAR)
+            makeCategoryChild("Tile Offset", "Defines offset value used in-game (Tile time offset)", "offset", SCROLLBAR, -600, 600, "ms")
+        ]);
+        addCategory("Audio", [
+            makeCategoryChild("Master Volume", "Adjust how loud the game's audio.", "masterVolume", SCROLLBAR, 0, 100, "%", (val:Dynamic) -> {
+                FlxG.sound.volume = val/100;
+            }),
+            makeCategoryChild("Music Volume", "Adjust how loud are musics supposed to be.", "musicVolume", SCROLLBAR, 0, 100, "%"),
+            makeCategoryChild("SFX Volume", "Adjust how loud are sound effects supposed to be.", "sfxVolume", SCROLLBAR, 0, 100, "%"),
         ]);
 
         // Then generate the UI //
@@ -134,10 +142,12 @@ class SettingsPanel extends Sprite {
                     case CHECKBOX:
                         wawa.addCheckBox(child.name, Reflect.getProperty(Preferences.data,child.field),(val:Bool)->{
                             Reflect.setProperty(Preferences.data, child.field, val);
+                            child.onChange(val);
                         });
                     case SCROLLBAR:
-                        wawa.addScrollBar(child.name, "ms", Reflect.getProperty(Preferences.data,child.field), -600, 600,(val:Float)->{
+                        wawa.addScrollBar(child.name, child.suffix, Reflect.getProperty(Preferences.data,child.field), child.min, child.max,(val:Float)->{
                             Reflect.setProperty(Preferences.data, child.field, val);
+                            child.onChange(val);
                         });
                         // do nothing
                 }
@@ -154,7 +164,7 @@ class SettingsPanel extends Sprite {
         });
     }
 
-    function makeCategoryChild(name:String, desc:String, field:String, type:CategoryType, ?min:Float = 0, ?max:Float = 1, ?suffix:String = ""):SettingsChild {
+    function makeCategoryChild(name:String, desc:String, field:String, type:CategoryType, ?min:Float = 0, ?max:Float = 1, ?suffix:String = "", ?onChange:Dynamic -> Void):SettingsChild {
         return {
             name: name,
             desc: desc,
@@ -162,7 +172,11 @@ class SettingsPanel extends Sprite {
             type: type,
             min: min,
             max: max,
-            suffix: suffix
+            suffix: suffix,
+            onChange: (w:Dynamic)->{
+                if (onChange != null)
+                    onChange(w);
+            }
         }
     }
 
