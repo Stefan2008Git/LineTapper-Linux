@@ -1,5 +1,6 @@
 package lt.states;
 
+import lt.backend.Game;
 import lime.app.Application;
 import lt.substates.SettingsSubstate;
 import flixel.util.FlxTimer;
@@ -34,11 +35,13 @@ class MenuState extends State {
 
 	var curSelected:Int = 0;
 	var options(get, never):Array<Dynamic>;
+	var MENUGROUP_MEMBER_DISTANCE(default, null):Float = 150;
 	function get_options():Array<Dynamic>{
 		return [
 			["settings", () -> openSubState(new SettingsSubstate())],
 			["play", () -> Utils.switchState(new MenuDebugState(), "Song Select")],
-			["edit", () -> Utils.switchState(new LevelEditorState(), "Level Editor")]
+			["edit", () -> Utils.switchState(new LevelEditorState(), "Level Editor")],
+			["credits", () -> Utils.switchState(new CreditsState(), "Credits")],
 		];	
 	} 
 	var canInteract:Bool = false;
@@ -76,7 +79,7 @@ class MenuState extends State {
 		//user_profile.x -= user_profile.nWidth + 10;
 		//add(user_profile);
 
-		var scaleXTarget:Float = (FlxG.width * 0.75) / boxBelow.width;
+		var scaleXTarget:Float = (FlxG.width * 1) / boxBelow.width;
 		var scaleYTarget:Float = (boxBelow.height - 30) / boxBelow.height;
 
 		FlxTween.tween(boxBelow, {alpha: 0.3}, 1, {ease: FlxEase.expoInOut});
@@ -88,7 +91,7 @@ class MenuState extends State {
 			}
 		});
 
-		var versionText:Text = new Text(0,0,'v${Application.current.meta.get('version')}', 14);
+		var versionText:Text = new Text(0,0,'v${Game.VERSION}', 14);
 		versionText.setPosition(10, FlxG.height - versionText.height - 10);
 		versionText.alpha = 0.0;
 		add(versionText);
@@ -103,7 +106,7 @@ class MenuState extends State {
 		for (index => data in options) {
 			var txt:FlxText = new FlxText(0, 0, -1, data[0].toUpperCase(), 8);
 			txt.setFormat(Assets.font("extenro-bold"), 18, FlxColor.WHITE, CENTER);
-			txt.x = ((FlxG.width - txt.width) * 0.5) + ((130) * (curSelected - index));
+			txt.x = ((FlxG.width - txt.width) * 0.5) + ((MENUGROUP_MEMBER_DISTANCE) * (curSelected - index));
 			txt.alpha = 0;
 			txt.active = false;
 			txt.ID = index;
@@ -224,7 +227,7 @@ class MenuState extends State {
 			var diff:Int = curSelected - obj.ID;
 			obj.screenCenter(Y);
 
-			obj.x = FlxMath.lerp(((FlxG.width - obj.width) * 0.5) + ((130) * diff), obj.x, lerpFactor);
+			obj.x = FlxMath.lerp(((FlxG.width - obj.width) * 0.5) + ((MENUGROUP_MEMBER_DISTANCE) * diff), obj.x, lerpFactor);
 			if (!confirmed) obj.alpha = FlxMath.lerp(curSelected == obj.ID ? 1 : 0.4, obj.alpha, lerpFactor);
 			obj.scale.x = obj.scale.y = FlxMath.lerp(curSelected == obj.ID ? 1 : 0.7, obj.scale.x, lerpFactor);
 		}
