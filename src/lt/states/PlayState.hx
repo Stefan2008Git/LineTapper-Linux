@@ -132,7 +132,7 @@ class PlayState extends State {
 			started = true;
         }
 
-		if ((FlxG.keys.justPressed.ESCAPE || FlxG.keys.justPressed.BACKSPACE) && started)
+		if ((FlxG.keys.justReleased.ESCAPE || FlxG.keys.justReleased.BACKSPACE) && started)
             pauseGame();
 
         camFollow.x = FlxMath.lerp(player.getMidpoint().x, camFollow.x, 1 - (elapsed * 12));
