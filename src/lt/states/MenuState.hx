@@ -90,8 +90,12 @@ class MenuState extends State {
 				startMenu();
 			}
 		});
-
-		var versionText:Text = new Text(0,0,'v${Game.VERSION}', 14);
+		
+		var localChanges:Bool = Github.getGitHasLocalChanges();
+		var debugTXT:String = ' (DEBUG)\n${Github.getGitBranch()}/${Github.getGitCommitHash()}${localChanges ? ' (Modified)' : ''}'
+      
+		var versionText:Text = new Text(0,0,'v${Game.VERSION #if debug + debugTXT #end}', 14);
+    versionText.setFont("musticapro");
 		versionText.setPosition(10, FlxG.height - versionText.height - 10);
 		versionText.alpha = 0.0;
 		add(versionText);

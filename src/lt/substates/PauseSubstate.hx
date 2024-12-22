@@ -5,7 +5,7 @@ import flixel.FlxSubState;
 import lt.states.MenuState;
 
 class PauseSubstate extends FlxSubState {
-    public static inline var FADE_IN_DURATION:Float = 0.2;
+    public static inline var FADE_DURATION:Float = 0.2;
 
     var pauseBG:Sprite;
     var pauseText:Text;
@@ -30,9 +30,9 @@ class PauseSubstate extends FlxSubState {
 
         add(pauseText);
 
-        FlxTween.tween(pauseBG, {alpha: 0.5}, FADE_IN_DURATION, {ease: FlxEase.expoOut});
-        FlxTween.tween(pauseText, {alpha: 1}, FADE_IN_DURATION, {ease: FlxEase.expoOut});
-        FlxTween.tween(pauseTextBG, {alpha: 1}, FADE_IN_DURATION, {ease: FlxEase.expoOut});
+        FlxTween.tween(pauseBG, {alpha: 0.5}, FADE_DURATION, {ease: FlxEase.expoOut});
+        FlxTween.tween(pauseText, {alpha: 1}, FADE_DURATION, {ease: FlxEase.expoOut});
+        FlxTween.tween(pauseTextBG, {alpha: 1}, FADE_DURATION, {ease: FlxEase.expoOut});
 
         cameras = [parent.hudCamera];
     }
@@ -41,9 +41,9 @@ class PauseSubstate extends FlxSubState {
         if (FlxG.keys.justReleased.ESCAPE) {
             Utils.switchState(new MenuState(), "Leaving Gameplay");
         } else if (FlxG.keys.justPressed.ANY) {
-            FlxTween.tween(pauseBG, {alpha: 0}, FADE_IN_DURATION, {ease: FlxEase.expoOut});
-            FlxTween.tween(pauseText, {alpha: 0}, FADE_IN_DURATION, {ease: FlxEase.expoOut});
-            FlxTween.tween(pauseTextBG, {alpha: 0}, FADE_IN_DURATION, {ease: FlxEase.expoOut, onComplete: (_)->{
+            FlxTween.tween(pauseBG, {alpha: 0}, FADE_DURATION, {ease: FlxEase.expoOut});
+            FlxTween.tween(pauseText, {alpha: 0}, FADE_DURATION, {ease: FlxEase.expoOut});
+            FlxTween.tween(pauseTextBG, {alpha: 0}, FADE_DURATION, {ease: FlxEase.expoOut, onComplete: (_)->{
                 close();
             }});
         }
