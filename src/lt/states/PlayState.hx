@@ -1,5 +1,6 @@
 package lt.states;
 
+import lt.substates.PauseSubstate;
 import lt.objects.play.Tile;
 import lt.objects.play.TimingDisplay;
 import flixel.ui.FlxBar;
@@ -43,11 +44,7 @@ class PlayState extends State {
     public var combo:Int = 0;
 
     public var playbackRate:Float = 1;
-
     public var paused:Bool = false;
-	public var pauseBG:FlxSprite;
-	public var pauseTextBG:FlxSprite;
-	public var pauseText:FlxText;
 
     public function new(?song:String) {
         super();
@@ -80,9 +77,8 @@ class PlayState extends State {
     }
 
     inline function initHUD() {
-        inline function makeText(nX:Float,nY:Float,label:String, size:Int, ?bold:Bool = false, ?align:FlxTextAlign):FlxText {
-			var obj:FlxText = new FlxText(nX, nY, -1, label);
-			obj.setFormat(Assets.font("extenro"+(bold?"-bold":"")), size, FlxColor.WHITE, align, OUTLINE, FlxColor.BLACK);
+        inline function makeText(nX:Float,nY:Float,label:String, size:Int, ?bold:Bool = false, ?align:FlxTextAlign):Text {
+			var obj:Text = new Text(nX, nY, label, size, align, bold);
 			obj.cameras = [hudCamera];
 			obj.active = false;
 			return obj;
@@ -115,25 +111,6 @@ class PlayState extends State {
         timing.y = FlxG.height - 25;
         timing.cameras = [hudCamera];
         add(timing);
-
-		pauseBG = new FlxSprite(0,0).makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
-        pauseBG.alpha = 0.0;
-		pauseBG.cameras = [hudCamera];
-        add(pauseBG);
-
-		pauseText = makeText(0,0,"Paused", 32, true, CENTER);
-		pauseText.screenCenter();
-		pauseText.alpha = 0.0;
-		pauseText.cameras = [hudCamera];
-        
-		pauseTextBG = new FlxSprite(0, 0).makeGraphic(Std.int(pauseText.width + 16), Std.int(pauseText.height + 16), FlxColor.BLACK);
-		pauseTextBG.alpha = 0.0;
-		pauseTextBG.cameras = [hudCamera];
-		pauseTextBG.screenCenter();
-
-        add(pauseTextBG);
-        add(pauseText);
-
     }
 
     function loadSong(_song:String) {
@@ -155,48 +132,39 @@ class PlayState extends State {
 			started = true;
         }
 
-		if (FlxG.keys.justPressed.ENTER && started)
-        {
-            paused = !paused;
-			stage.paused = paused;
+		if ((FlxG.keys.justPressed.ESCAPE || FlxG.keys.justPressed.BACKSPACE) && started)
+            pauseGame();
 
-            var fadeSpd:Float = 0.5;
+        camFollow.x = FlxMath.lerp(player.getMidpoint().x, camFollow.x, 1 - (elapsed * 12));
+        camFollow.y = FlxMath.lerp(player.getMidpoint().y, camFollow.y, 1 - (elapsed * 12));
 
-			var targABG:Float = 0.0;
-			var targATXT:Float = 0.0;
-			if (paused)
-				targABG = 0.5;
-			if (paused)
-				targATXT = 1.0;
-			if (paused)
-                FlxG.sound.music.pause();
-            else
-                FlxG.sound.music.play();
+        timeBar.percent = (Conductor.instance.time / FlxG.sound.music.length) * 100;
+        timeTextLeft.text = Utils.formatMS(Conductor.instance.time);
+        timeTextRight.text = Utils.formatMS(FlxG.sound.music.length);
+        timeTextRight.x = FlxG.width - (timeTextRight.width + 10);
 
-			FlxTween.tween(pauseBG, {alpha: targABG}, fadeSpd);
-			FlxTween.tween(pauseText, {alpha: targATXT}, fadeSpd);
-			FlxTween.tween(pauseTextBG, {alpha: targATXT}, fadeSpd);
-        }
-
-		if (!paused) {
-			camFollow.x = FlxMath.lerp(player.getMidpoint().x, camFollow.x, 1 - (elapsed * 12));
-			camFollow.y = FlxMath.lerp(player.getMidpoint().y, camFollow.y, 1 - (elapsed * 12));
-
-			timeBar.percent = (Conductor.instance.time / FlxG.sound.music.length) * 100;
-			timeTextLeft.text = Utils.formatMS(Conductor.instance.time);
-			timeTextRight.text = Utils.formatMS(FlxG.sound.music.length);
-			timeTextRight.x = FlxG.width - (timeTextRight.width + 10);
-
-			playerText.updateHitbox();
-			playerText.setPosition(10, FlxG.height - (playerText.height + 10));
-		} else {
-            if (FlxG.keys.justReleased.ESCAPE)
-            {
-				Utils.switchState(new MenuState(), "Leaving Gameplay");
-            }
-        }
+        playerText.updateHitbox();
+        playerText.setPosition(10, FlxG.height - (playerText.height + 10));
 
         super.update(elapsed);
+    }
+
+    override function closeSubState() {
+        super.closeSubState();
+        unpauseGame();
+    }
+
+    public function pauseGame() {
+        if (paused) return;
+        paused = stage.paused = true;
+        FlxG.sound.music.pause();
+        openSubState(new PauseSubstate(this));
+    }
+
+    public function unpauseGame() {
+        if (!paused) return;
+        paused = stage.paused = false;
+        FlxG.sound.music.play();
     }
 
     public function onTileHit(tile:Tile) {

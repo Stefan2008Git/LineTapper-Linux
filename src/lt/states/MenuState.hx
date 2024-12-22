@@ -88,10 +88,8 @@ class MenuState extends State {
 			}
 		});
 
-		var versionText:FlxText = new FlxText(0,0,0,"v0.0.0", 16);
-		versionText.text = 'v${Application.current.meta.get('version')}';
-		versionText.setFormat(Assets.font("extenro-bold"), 16, FlxColor.WHITE, CENTER);
-		versionText.setPosition(8, FlxG.height - versionText.height - 8);
+		var versionText:Text = new Text(0,0,'v${Application.current.meta.get('version')}', 14);
+		versionText.setPosition(10, FlxG.height - versionText.height - 10);
 		versionText.alpha = 0.0;
 		add(versionText);
 

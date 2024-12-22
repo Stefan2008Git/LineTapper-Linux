@@ -84,6 +84,8 @@ class GameplayStage extends FlxSpriteGroup {
     public var onTileMiss:TileSignal;
     public var parent:PlayState;
     public var editing:Bool = false;
+
+    public var paused:Bool = false;
     public function new(parent:PlayState){
         super();
         this.parent = parent;
@@ -112,12 +114,13 @@ class GameplayStage extends FlxSpriteGroup {
     }
 
     var _desyncCount:Int = 0;
-	public var paused:Bool = false;
     override function update(elapsed:Float) {
         if (!editing) {
-			if (!paused){if (!started) 
+            if (!started) 
                 return super.update(elapsed);
-    
+            if (paused) 
+                return super.update(elapsed);
+            
             conduct.time += elapsed*1000*parent.playbackRate;
             if (Math.abs(conduct.time - (FlxG.sound.music.time)) > 50) {
                 conduct.time = FlxG.sound.music.time;
@@ -125,7 +128,7 @@ class GameplayStage extends FlxSpriteGroup {
             }
             _updateGameplay(elapsed);
             _updateTiles(elapsed);
-            _updatePlayer(elapsed);   } 
+            _updatePlayer(elapsed);   
         } else {
             player.editing = editing;
             tiles.forEachAlive((tile:Tile) -> {
