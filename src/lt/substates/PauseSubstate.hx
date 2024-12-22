@@ -5,7 +5,7 @@ import flixel.FlxSubState;
 import lt.states.MenuState;
 
 class PauseSubstate extends FlxSubState {
-    public static inline var FADE_IN_DURATION:Float = 0.2;
+    public static inline var FADE_DURATION:Float = 0.2;
 
     var pauseBG:Sprite;
     var pauseText:Text;
