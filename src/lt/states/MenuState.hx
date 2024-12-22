@@ -1,5 +1,6 @@
 package lt.states;
 
+import lime.app.Application;
 import lt.substates.SettingsSubstate;
 import flixel.util.FlxTimer;
 import flixel.graphics.FlxGraphic;
@@ -42,6 +43,7 @@ class MenuState extends State {
 	} 
 	var canInteract:Bool = false;
 	var _scaleDiff:Float = 0;
+
 	override function create() {
 		_scaleDiff = 1 - IntroState._scaleDec;
 
@@ -85,6 +87,16 @@ class MenuState extends State {
 				startMenu();
 			}
 		});
+
+		var versionText:FlxText = new FlxText(0,0,0,"v0.0.0", 16);
+		versionText.text = 'v${Application.current.meta.get('version')}';
+		versionText.setFormat(Assets.font("extenro-bold"), 16, FlxColor.WHITE, CENTER);
+		versionText.setPosition(8, FlxG.height - versionText.height - 8);
+		versionText.alpha = 0.0;
+		add(versionText);
+
+		FlxTween.tween(versionText, {alpha: 1.0}, 1.0);
+
 		super.create();
 	}
 
