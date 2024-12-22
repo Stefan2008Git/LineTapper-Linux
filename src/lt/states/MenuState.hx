@@ -1,5 +1,6 @@
 package lt.states;
 
+import lt.macros.Github;
 import lime.app.Application;
 import lt.substates.SettingsSubstate;
 import flixel.util.FlxTimer;
@@ -87,8 +88,11 @@ class MenuState extends State {
 				startMenu();
 			}
 		});
+		
+		var localChanges:Bool = Github.getGitHasLocalChanges();
+		var debugTXT:String = ' (DEBUG)\n${Github.getGitBranch()}/${Github.getGitCommitHash()}${localChanges ? ' (!UNCOMMIT CHANGES!)' : ''}';
 
-		var versionText:Text = new Text(0,0,'v${Application.current.meta.get('version')}', 14);
+		var versionText:Text = new Text(0,0,'v${Application.current.meta.get('version') #if debug + debugTXT #end}', 14);
 		versionText.setPosition(10, FlxG.height - versionText.height - 10);
 		versionText.alpha = 0.0;
 		add(versionText);
