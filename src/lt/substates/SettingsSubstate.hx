@@ -1,5 +1,6 @@
 package lt.substates;
 
+import lt.objects.ui.CategoryGroup;
 import lt.objects.ui.CategoryGroup.CategoryType;
 import lt.objects.ui.InputBox;
 import flixel.FlxSubState;
@@ -85,7 +86,7 @@ class SettingsPanel extends Sprite {
 
     public var categories:Array<SettingsCategory> = [];
     public var objects:Array<Dynamic> = [];
-    public var settings:Array<Dynamic> = [];
+    public var settings:Array<CategoryGroup> = [];
     public var scrollY:Float = 0;
     public function new():Void {
         super();
@@ -118,12 +119,24 @@ class SettingsPanel extends Sprite {
             makeCategoryChild("Antialiasing", "Whether to use antialiasing for sprites (smoother visuals)", "antialiasing", CHECKBOX)
         ]);
         addCategory("Gameplay", [
-            makeCategoryChild("Tile Offset", "Defines offset value used in-game (Tile time offset)", "offset", CHECKBOX)
+            makeCategoryChild("Tile Offset", "Defines offset value used in-game (Tile time offset)", "offset", SCROLLBAR)
         ]);
 
         // Then generate the UI //
         for (category in categories) {
-            var wawa;
+            var wawa:CategoryGroup = new CategoryGroup(0,0, category.name);
+            for (child in category.child) {
+                switch (child.type) {
+                    case CHECKBOX:
+                        wawa.addCheckBox(child.name, Reflect.getProperty(Preferences.data,child.field),(val:Bool)->{
+                            Reflect.setProperty(Preferences.data, child.field, val);
+                        });
+                    default:
+                        // do nothing
+                }
+            }
+            
+            settings.push(wawa);
         }
     }
 
@@ -147,6 +160,12 @@ class SettingsPanel extends Sprite {
 
     override function update(elapsed:Float) {
         searchBar.update(elapsed);
+        if (FlxG.mouse.wheel != 0) {
+            scrollY += 5 * FlxG.mouse.wheel;
+        }
+        for (obj in settings) {
+            obj.update(elapsed);
+        }
         super.update(elapsed);
     }
 
@@ -167,14 +186,18 @@ class SettingsPanel extends Sprite {
         objectCenterX(divider);
         divider.y = bgCover.y + bgCover.height;
 
-        for (obj in objects) {
-            obj.draw();
-        }
-
         var lastPos:Float = 0;
         var lastHeight:Float = 0;
         for (obj in settings) {
-            obj.y = divider.y + 40 + scrollY + lastPos + 
+            obj.exists = true;
+            obj.setPosition(x + 40, divider.y + 40 + scrollY + lastPos + lastHeight + 10);
+            obj.draw();
+
+            lastPos = obj.y - (divider.y + 40 + scrollY);
+            lastHeight = obj.height;
+        }
+
+        for (obj in objects) {
             obj.draw();
         }
     }
