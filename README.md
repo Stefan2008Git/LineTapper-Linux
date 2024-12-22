@@ -9,8 +9,10 @@
   <img src="https://img.shields.io/github/contributors/corecathx/LineTapper?style=flat-square" alt="GitHub Contributors" />
 </p>
 
-<p align="center" style="font-weight:500;">
+<p align="center">
+  <b>
     A rhythm game made by CoreCat using <a href='https://haxeflixel.com/'>HaxeFlixel</a>.
+  </b>
 </p>
 
 ## 🛠 Building Guide
