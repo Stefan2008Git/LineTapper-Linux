@@ -10,15 +10,17 @@ class State extends FlxState {
     var _transIn:Bool = false;
     var _transOut:Bool = false;
     var _transText:String = "";
+
     public function new(?transInEnabled:Bool = true, ?transOutEnabled:Bool = true) {
         super();
         _transIn = transInEnabled;
         _transOut = transOutEnabled;
-    }
+	}
 
     override function create() {
         super.create();
 
+		Utils.SCENE_TRANSITIONING = false;
         //_defaultCamera = new FlxCamera();
         //FlxG.cameras.reset(_defaultCamera);
         initTransIn();
@@ -43,7 +45,7 @@ class State extends FlxState {
 
         FlxTween.tween(_tr_bg, {x: -(_tr_bg.width)}, 1, {ease:FlxEase.expoInOut});
         FlxTween.tween(_tr_text, {x: -(FlxG.width+((FlxG.width-_tr_text.width)*0.5))}, 1, {ease:FlxEase.expoInOut});
-    }
+	}
 
     /**
      * Called when switching lt.states.
