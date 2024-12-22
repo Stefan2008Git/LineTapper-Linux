@@ -17,7 +17,7 @@ class CreditsState extends State
 
             credits = [
                 'LT Team',
-                'Core5570R - Programming'
+                'CoreCat - Programming'
             ];
         }
 
