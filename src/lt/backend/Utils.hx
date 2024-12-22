@@ -108,4 +108,9 @@ class Utils {
     
         return (_quant < _colorList.length) ? _colorList[_quant] : 0xFFFFFFFF;
     }
+
+    public static function normalize(value:Float, min:Float, max:Float){
+        var val:Float = (value - min) / (max - min);
+        return FlxMath.bound(val, 0, 1);
+    }
 }

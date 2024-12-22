@@ -24,6 +24,7 @@ class Preferences {
      * Loads your preferences, if it doesn't exists, it'll create a new one.
      */
     public static function init():Void {
+        trace(FileSystem.exists(PATH) ? "Found preferences file." : "No preferences file found.");
         if (FileSystem.exists(PATH)) {
             load();
         } else {

@@ -50,4 +50,10 @@ class CategoryGroup extends FlxSpriteGroup {
             n.onChanged = callback;
         child.add(n);
     }
+    public function addScrollBar(name:String, suffix:String = "", value:Float = 0.5, min:Float = 0, max:Float = 1, ?callback:Float -> Void) {
+        var n:Scrollbar = new Scrollbar(0,0,name,suffix,300,value, min,max);
+        if (callback != null)
+            n.onChanged = callback;
+        child.add(n);
+    }
 }

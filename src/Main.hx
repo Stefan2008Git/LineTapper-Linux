@@ -17,8 +17,6 @@ class Main extends Sprite
 		Preferences.init();
 		NativeUtil.setDPIAware();
 
-		lime.app.Application.current.window.title = "LineTapper - CoreCat's Build";
-
 		addChild(new FlxGame(0, 0, STARTING_STATE, 120,120,true,false));
 		FlxG.fixedTimestep = FlxG.autoPause = false;
 

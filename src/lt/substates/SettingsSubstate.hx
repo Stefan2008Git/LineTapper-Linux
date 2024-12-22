@@ -65,7 +65,8 @@ typedef SettingsChild = {
     desc:String,
     type:CategoryType,
     min:Float, // Used by "Scroll Bar" type.
-    max:Float  // Used by "Scroll Bar" type.
+    max:Float,  // Used by "Scroll Bar" type.
+    suffix:String
 }
 typedef SettingsCategory = {
     name:String,
@@ -81,13 +82,16 @@ class SettingsPanel extends Sprite {
 
     var messages:Array<String> = [
         "Adjust these to your preferences.",
-        "Let me guess, offset?"
+        "Let me guess, offset?",
+        "Looking for something?",
+        ""
     ];
 
     public var categories:Array<SettingsCategory> = [];
     public var objects:Array<Dynamic> = [];
     public var settings:Array<CategoryGroup> = [];
     public var scrollY:Float = 0;
+    private var _scrollY:Float = 0;
     public function new():Void {
         super();
         loadGraphic(Assets.image("ui/settings/panel"));
@@ -131,7 +135,10 @@ class SettingsPanel extends Sprite {
                         wawa.addCheckBox(child.name, Reflect.getProperty(Preferences.data,child.field),(val:Bool)->{
                             Reflect.setProperty(Preferences.data, child.field, val);
                         });
-                    default:
+                    case SCROLLBAR:
+                        wawa.addScrollBar(child.name, "ms", Reflect.getProperty(Preferences.data,child.field), -600, 600,(val:Float)->{
+                            Reflect.setProperty(Preferences.data, child.field, val);
+                        });
                         // do nothing
                 }
             }
@@ -147,22 +154,24 @@ class SettingsPanel extends Sprite {
         });
     }
 
-    function makeCategoryChild(name:String, desc:String, field:String, type:CategoryType, ?min:Float = 0, ?max:Float = 1):SettingsChild {
+    function makeCategoryChild(name:String, desc:String, field:String, type:CategoryType, ?min:Float = 0, ?max:Float = 1, ?suffix:String = ""):SettingsChild {
         return {
             name: name,
             desc: desc,
             field: field,
             type: type,
             min: min,
-            max: max
+            max: max,
+            suffix: suffix
         }
     }
 
     override function update(elapsed:Float) {
         searchBar.update(elapsed);
         if (FlxG.mouse.wheel != 0) {
-            scrollY += 5 * FlxG.mouse.wheel;
+            scrollY += 20 * FlxG.mouse.wheel;
         }
+        _scrollY = FlxMath.lerp(_scrollY, scrollY, 12*elapsed);
         for (obj in settings) {
             obj.update(elapsed);
         }
@@ -190,10 +199,10 @@ class SettingsPanel extends Sprite {
         var lastHeight:Float = 0;
         for (obj in settings) {
             obj.exists = true;
-            obj.setPosition(x + 40, divider.y + 40 + scrollY + lastPos + lastHeight + 10);
+            obj.setPosition(x + 40, divider.y + 40 + _scrollY + lastPos + lastHeight + 10);
             obj.draw();
 
-            lastPos = obj.y - (divider.y + 40 + scrollY);
+            lastPos = obj.y - (divider.y + 40 + _scrollY);
             lastHeight = obj.height;
         }
 
