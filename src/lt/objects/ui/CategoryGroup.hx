@@ -35,7 +35,7 @@ class CategoryGroup extends FlxSpriteGroup {
         childIndicator = new FlxSprite(indicator.x + indicator.width*0.5, indicator.y + indicator.height + 10).makeGraphic(1,1,0xFFFFFFFF);
         add(childIndicator);
         
-        child = new FlxSpriteGroup(displayText.x, displayText.y + displayText.height + 10);
+        child = new FlxSpriteGroup(displayText.x, displayText.y + displayText.height);
         add(child);
     }
 
