@@ -90,9 +90,10 @@ class MenuState extends State {
 		});
 		
 		var localChanges:Bool = Github.getGitHasLocalChanges();
-		var debugTXT:String = ' (DEBUG)\n${Github.getGitBranch()}/${Github.getGitCommitHash()}${localChanges ? ' (!UNCOMMIT CHANGES!)' : ''}';
+		var debugTXT:String = ' (DEBUG)\n${Github.getGitBranch()}/${Github.getGitCommitHash()}${localChanges ? ' (Modified)' : ''}';
 
 		var versionText:Text = new Text(0,0,'v${Application.current.meta.get('version') #if debug + debugTXT #end}', 14);
+		versionText.setFont("musticapro");
 		versionText.setPosition(10, FlxG.height - versionText.height - 10);
 		versionText.alpha = 0.0;
 		add(versionText);
