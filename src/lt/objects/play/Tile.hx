@@ -117,6 +117,16 @@ class Tile extends Sprite {
         }
     }
 
+    public function resetProp() {
+        beenHit = false;
+        missed = false;
+        angle = 0;
+        alpha = 1;
+        time = time;
+        setGraphicSize(Player.BOX_SIZE, Player.BOX_SIZE);
+		updateHitbox();
+    }
+
     var _lastGraphic:String = "";
     public function setGraphic(path:String) {
         if (_lastGraphic == path) return;

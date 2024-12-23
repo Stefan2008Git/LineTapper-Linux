@@ -25,9 +25,6 @@ class SettingsSubstate extends FlxSubState {
     }
 
     override function update(elapsed:Float) {
-        if (panel.searchBar.hasFocus && (!FlxG.mouse.overlaps(panel) && FlxG.mouse.justPressed)) {
-            panel.searchBar.hasFocus = false;
-        }
         if (FlxG.keys.justPressed.ESCAPE || (!FlxG.mouse.overlaps(panel) && FlxG.mouse.justPressed) && !panel.searchBar.hasFocus) {
             exit();
         }

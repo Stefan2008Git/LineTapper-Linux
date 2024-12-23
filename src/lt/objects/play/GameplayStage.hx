@@ -86,6 +86,10 @@ class GameplayStage extends FlxSpriteGroup {
     public var editing:Bool = false;
 
     public var paused:Bool = false;
+    var _playbackRate(get,never):Float;
+    function get__playbackRate():Float {
+        return (parent == null ? 1 : parent.playbackRate);
+    }
     public function new(parent:PlayState){
         super();
         this.parent = parent;
@@ -111,34 +115,53 @@ class GameplayStage extends FlxSpriteGroup {
     public function start() {
         // add more stuff here soon
         started = true;
+        if (editing) {
+            tiles.forEachAlive((tile:Tile) -> {
+                tile.alpha = 0;
+            });
+        }
     }
+
 
     var _desyncCount:Int = 0;
     override function update(elapsed:Float) {
         if (!editing) {
-            if (!started) 
+            if (!started || paused) {
                 return super.update(elapsed);
-            if (paused) 
-                return super.update(elapsed);
-            
-            conduct.time += elapsed*1000*parent.playbackRate;
-            if (Math.abs(conduct.time - (FlxG.sound.music.time)) > 50) {
-                conduct.time = FlxG.sound.music.time;
-                FlxG.watch.addQuick("Desync Count", ++_desyncCount);
             }
-            _updateGameplay(elapsed);
-            _updateTiles(elapsed);
-            _updatePlayer(elapsed);   
         } else {
-            player.editing = editing;
-            tiles.forEachAlive((tile:Tile) -> {
-                tile.active = tile.editing = editing;
-            });
+            if (!started) {
+                player.editing = editing;
+                tiles.forEachAlive((tile:Tile) -> {
+                    tile.active = tile.editing = editing;
+                });
+                return super.update(elapsed);
+            }
         }
-
+    
+        // Handle conduct timing and desync check
+        conduct.time += elapsed * 1000 * _playbackRate;
+        if (FlxG.sound.music != null && FlxG.sound.music.playing && Math.abs(conduct.time - FlxG.sound.music.time) > 50) {
+            conduct.time = FlxG.sound.music.time;
+            FlxG.watch.addQuick("Desync Count", ++_desyncCount);
+        }
+    
+        _updateGameplay(elapsed);
+        _updateTiles(elapsed);
+        _updatePlayer(elapsed);
+    
         super.update(elapsed);
     }
-
+    
+    public function stop() {
+        tiles.forEachAlive((tile:Tile) -> {
+            tile.active = true;
+            tile.visible = true;
+            tile.resetProp();
+        });
+        updateTileDirections();
+        started = false;
+    }
     private function _updateGameplay(elapsed:Float) {
         tiles.forEachAlive((tile:Tile) -> {
             if (tile.missed)
@@ -165,6 +188,7 @@ class GameplayStage extends FlxSpriteGroup {
 
     private function _updateTiles(elapsed:Float) {
         tiles.forEachAlive((tile:Tile) -> {
+            tile.editing = (editing && !started);
             tile.active = tile.canUpdate; // Hi
             if (!tile.canUpdate && conduct.time > tile.time) {
                 removeTile(tile);
@@ -173,59 +197,65 @@ class GameplayStage extends FlxSpriteGroup {
     }
 
     private function _updatePlayer(elapsed:Float) {
-        var scaleRn:Float = (FlxEase.expoOut((conduct.time % conduct.beat_ms) / conduct.beat_ms)*0.2);
-        player.scale.set(1+(0.2-scaleRn), 1+(0.2-scaleRn));
+        var scaleRn:Float = FlxEase.expoOut((conduct.time % conduct.beat_ms) / conduct.beat_ms) * 0.2;
+        player.scale.set(1 + (0.2 - scaleRn), 1 + (0.2 - scaleRn));
+    
         var nextTile:Tile = tiles.getFirstNextTile(conduct.time);
         var lastTile:Tile = tiles.getFirstLastTile(conduct.time);
+    
         FlxG.watch.addQuick("hmm", nextTile + " // " + lastTile);
-		if (nextTile != null && lastTile != null) {
-            if (player.direction != lastTile.direction) 
-                player.direction = lastTile.direction;
-
-            FlxG.watch.addQuick("Method", "NEW");
-
-			var targetTime:Float = nextTile.time;
-			var lastTime:Float = lastTile.time;
-			var curTime:Float = conduct.time;
-		
-			if (targetTime != lastTime) {
-				var progress:Float = (curTime - lastTime) / (targetTime - lastTime);
-				player.x = lastTile.x + (nextTile.x - lastTile.x) * progress;
-				player.y = lastTile.y + (nextTile.y - lastTile.y) * progress;
-			}
-		} else { // Use legacy method of movement
+    
+        if (nextTile != null) {
+            if (lastTile != null) {
+                if (player.direction != lastTile.direction) {
+                    player.direction = lastTile.direction;
+                }
+    
+                FlxG.watch.addQuick("Method", "NEW");
+    
+                var targetTime:Float = nextTile.time;
+                var lastTime:Float = lastTile.time;
+                var curTime:Float = conduct.time;
+    
+                if (targetTime != lastTime) {
+                    var progress:Float = FlxMath.bound((curTime - lastTime) / (targetTime - lastTime), 0, 1);
+                    player.x = FlxMath.lerp(lastTile.x, nextTile.x, progress);
+                    player.y = FlxMath.lerp(lastTile.y, nextTile.y, progress);
+                }
+            } else {
+                FlxG.watch.addQuick("Method", "FAILSAFE");
+                var progress:Float = FlxMath.bound(conduct.time / nextTile.time, 0, 1);
+                player.x = FlxMath.lerp(0, nextTile.x, progress);
+                player.y = FlxMath.lerp(0, nextTile.y, progress);
+            }
+        } else {
             FlxG.watch.addQuick("Method", "LEGACY");
-			var addX:Float = 0;
-			var addY:Float = 0;
-	
-			elapsed *= 1000*parent.playbackRate;
-	
-            var boxSize:Float = Player.BOX_SIZE;
-			var moveVel:Float = ((boxSize / conduct.step_ms)) * elapsed;
-	
-			switch (player.direction) {
-				case Direction.LEFT:
-					addX -= moveVel;
-				case Direction.DOWN:
-					addY += moveVel;
-				case Direction.UP:
-					addY -= moveVel;
-				case Direction.RIGHT:
-					addX += moveVel;
+    
+            var addX:Float = 0;
+            var addY:Float = 0;
+    
+            elapsed *= 1000 * _playbackRate;
+            var moveVel: Float = (Player.BOX_SIZE / conduct.step_ms) * elapsed;
+    
+            switch (player.direction) {
+                case Direction.LEFT:
+                    addX -= moveVel;
+                case Direction.DOWN:
+                    addY += moveVel;
+                case Direction.UP:
+                    addY -= moveVel;
+                case Direction.RIGHT:
+                    addX += moveVel;
                 default:
-                    // dont
-			}
-	
-			player.x += addX;
-			player.y += addY;
-	
-			/*if (player.direction == Direction.LEFT || player.direction == Direction.RIGHT) {
-				player.y = Math.round(player.y / boxSize) * boxSize;
-			} else if (player.direction == Direction.UP || player.direction == Direction.DOWN) {
-				player.x = Math.round(player.x / boxSize) * boxSize;
-			}*/
-		}
+                    // No
+            }
+    
+            player.x += addX;
+            player.y += addY;
+        }
     }
+    
+    
 
     /**
      * Generates the tile objects based of LineMap.
@@ -272,10 +302,16 @@ class GameplayStage extends FlxSpriteGroup {
     }
 
     public function removeTile(tile:Tile) {
-        tile.kill();
-        tiles.remove(tile, true);
-        tile.destroy();
+        if (!started) {
+            tile.kill();
+            tiles.remove(tile, true);
+            tile.destroy();
+        } else {
+            tile.active = false;
+            tile.visible = false;
+        }
     }
+    
 
     public function updateTileDirections() {
         if (!editing) return;

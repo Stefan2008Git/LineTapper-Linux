@@ -81,7 +81,7 @@ class Utils {
 		return shit;
 	}
   
-  /**
+  	/**
 	 * Converts bytes int to formatted sizes. (ex: 10 MB, 100 GB, 1000 TB, etc)
 	 * @param bytes		Bytes number that will be converted
 	 * @return String	Formatted size of the bytes
@@ -93,7 +93,7 @@ class Utils {
         var size_name:Array<String> = ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
         var digit:Int = Std.int(Math.log(bytes) / Math.log(1024));
         return FlxMath.roundDecimal(bytes / Math.pow(1024, digit), 2) + " " + size_name[digit];
-  }
+  	}
 
 	public static inline function switchState(nextState:NextState, ?transText:String = ""):Void {
 		if (!SCENE_TRANSITIONING) {
@@ -123,13 +123,19 @@ class Utils {
 		}
 	}
 
-	public static inline function getTileColor(time:Float, subtractOffset:Bool = false) {
-		var _quant:Int = Std.int((((time - (subtractOffset ? 0 : Conductor.instance?.offset)) / Conductor.instance.step_ms) + 1) % 4);
-		var _colorList:Array<FlxColor> = [0xFFFF8800, 0xFFFBFF00, 0xFF00EEFF, 0xFFFF00FF];
-
-		return (_quant < _colorList.length) ? _colorList[_quant] : 0xFFFFFFFF;
+	public static inline function getTileColor(time:Float, subtractOffset:Bool = false):FlxColor {
+		var offsetTime = time - (subtractOffset ? 0 : Conductor.instance?.offset);
+		var stepIndex:Int = Std.int(offsetTime / Conductor.instance.step_ms);
+		var beatIndex:Int = Std.int(stepIndex / 4); // 4 steps per beat
+		var quant:Int = stepIndex % 4; // Step within the beat
+	
+		var colorList:Array<FlxColor> = [0xFFFF8800, 0xFFFBFF00, 0xFF00EEFF, 0xFFFF00FF];
+	
+		return (quant >= 0 && quant < colorList.length) ? colorList[quant] : 0xFFFFFFFF;
 	}
-      public static function normalize(value:Float, min:Float, max:Float){
+	
+
+	public static function normalize(value:Float, min:Float, max:Float){
         var val:Float = (value - min) / (max - min);
         return FlxMath.bound(val, 0, 1);
     }
