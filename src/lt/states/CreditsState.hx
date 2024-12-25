@@ -1,5 +1,6 @@
 package lt.states;
 
+import sys.FileSystem;
 import flixel.util.FlxGradient;
 import flixel.group.FlxGroup.FlxTypedGroup;
 
@@ -10,10 +11,15 @@ class CreditsState extends State
     function get_creditsFile():Array<String> {
 		var credits:Array<String> = [];
 
+		var path = '${Assets._DATA_PATH.replace('./', '')}/credits${LanguageManager.LANGUAGE.toLowerCase() != 'english' ? '-${LanguageManager.LANGUAGE}' : ''}.txt';
+
+		if (!FileSystem.exists(path))
+			path = '${Assets._DATA_PATH.replace('./', '')}/credits.txt';
+
         try{
-			credits = openfl.Assets.getText('${Assets._DATA_PATH.replace('./', '')}/credits${LanguageManager.LANGUAGE.toLowerCase() != 'english' ? '-${LanguageManager.LANGUAGE}' : ''}.txt').split('\n');
+			credits = openfl.Assets.getText(path).split('\n');
         } catch(e) {
-            trace(e.message);
+            // trace(e.message);
 
             credits = [
                 'LT Team',
