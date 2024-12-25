@@ -51,35 +51,38 @@ class PhraseManager
         var json:PhrasesJson = Language.readLang(LanguageManager.LANGUAGE).phrases;
         var fallback:Dynamic = (fb != null ? fb : phrase);
 
-        try {switch(phrase.toLowerCase().replace(' ', '_'))
-		{
-			case 'beats_per_minute': return json.beats_per_minute;
-			case 'credits': return json.credits;
-			case 'edit': return json.edit;
-			case 'gameplay': return json.gameplay;
-			case 'level_editor': return json.level_editor;
-			case 'linetapper': return json.linetapper;
-			case 'main_menu': return json.main_menu;
-			case 'paused': return json.paused;
-			case 'play': return json.play;
-			case 'search_settings': return json.search_settings;
-			case 'settings': return json.settings;
-			case 'settings_antialiasing': return json.settings_antialiasing;
-			case 'settings_audio': return json.settings_audio;
-			case 'settings_gameplay': return json.settings_gameplay;
-			case 'settings_graphics': return json.settings_graphics;
-			case 'settings_master_volume': return json.settings_master_volume;
-			case 'settings_messages': return json.settings_messages;
-			case 'settings_music_volume': return json.settings_music_volume;
-			case 'settings_sfx_volume': return json.settings_sfx_volume;
-			case 'settings_tile_offset': return json.settings_tile_offset;
-			case 'song_select': return json.song_select;
-			case 'start_typing_your_songs_name': return json.start_typing_your_songs_name;
-			case 'loading': return json.loading;
+        try {
 
-            default:
-                trace('[PHRASE MANAGER] Unknown phrase: "$phrase"');
-        }}catch(e) {
+			switch(Std.string(phrase).toLowerCase().replace(' ', '_'))
+			{
+				case 'beats_per_minute': return json.beats_per_minute;
+				case 'credits': return json.credits;
+				case 'edit': return json.edit;
+				case 'gameplay': return json.gameplay;
+				case 'level_editor': return json.level_editor;
+				case 'linetapper': return json.linetapper;
+				case 'main_menu': return json.main_menu;
+				case 'paused': return json.paused;
+				case 'play': return json.play;
+				case 'search_settings': return json.search_settings;
+				case 'settings': return json.settings;
+				case 'settings_antialiasing': return json.settings_antialiasing;
+				case 'settings_audio': return json.settings_audio;
+				case 'settings_gameplay': return json.settings_gameplay;
+				case 'settings_graphics': return json.settings_graphics;
+				case 'settings_master_volume': return json.settings_master_volume;
+				case 'settings_messages': return json.settings_messages;
+				case 'settings_music_volume': return json.settings_music_volume;
+				case 'settings_sfx_volume': return json.settings_sfx_volume;
+				case 'settings_tile_offset': return json.settings_tile_offset;
+				case 'song_select': return json.song_select;
+				case 'start_typing_your_songs_name': return json.start_typing_your_songs_name;
+				case 'loading': return json.loading;
+
+				default:
+					trace('[PHRASE MANAGER] Unknown phrase: "$phrase"');
+			}
+		} catch(e) {
             if (!PHRASES_REQUIRING_FALLBACK.contains(phrase)){
 				trace('[PHRASE MANAGER] Phrase "$phrase" required fallback');
 				PHRASES_REQUIRING_FALLBACK.push(phrase);

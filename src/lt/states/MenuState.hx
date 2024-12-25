@@ -161,7 +161,7 @@ class MenuState extends State {
 
 		if (!confirmed && subState == null) {
 			if (FlxG.keys.justPressed.ENTER) {
-				if (options[curSelected][0] != "settings") {
+				if (options[curSelected][0] != PhraseManager.getPhrase("settings").toLowerCase()) {
 					confirmed = true;
 					FlxG.sound.play(Assets.sound("menu/select"));
 					for (obj in menuGroup.members) {

@@ -2,7 +2,5 @@ package lt.translations;
 
 class LanguageManager
 {
-
-    public static var LANGUAGE:String = 'english';
-    
+    public static var LANGUAGE:String = 'indonesia';   
 }

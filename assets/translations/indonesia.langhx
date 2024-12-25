@@ -1,0 +1,36 @@
+{
+	"name": "Indonesia",
+	"asset_suffix": "",
+	"lang_ver": 1,
+	"phrases": {
+		"linetapper": "LINETAPPER",
+		"main_menu": "Menu Utama",
+		"gameplay": "Permainan",
+		"leaving_gameplay": "Keluar dari Permainan",
+		"song_select": "Pilih Lagu",
+		"level_editor": "Editor Level",
+		"credits": "Kredit",
+		"beats_per_minute": "Ketukan Per Menit",
+		"start_typing_your_songs_name": "MULAI KETIKKAN NAMA LAGU ANDA",
+		"settings_messages": [
+			"Sesuaikan ini dengan preferensi Anda.",
+			"Biar kutebak, offset?",
+			"Mencari sesuatu?",
+			""
+		],
+		"search_settings": "Cari pengaturan...",
+		"settings": "Pengaturan",
+		"settings_graphics": "Grafik",
+		"settings_antialiasing": "Antialiasing",
+		"settings_gameplay": "Permainan",
+		"settings_tile_offset": "Offset Ubin",
+		"settings_audio": "Audio",
+		"settings_master_volume": "Volume Utama",
+		"settings_music_volume": "Volume Musik",
+		"settings_sfx_volume": "Volume SFX",
+		"paused": "DIJEDA",
+		"play": "mainkan",
+		"edit": "edit",
+		"loading": "MEMUAT..."
+	}
+}
