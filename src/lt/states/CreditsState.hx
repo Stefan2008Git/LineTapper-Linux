@@ -11,7 +11,7 @@ class CreditsState extends State
 		var credits:Array<String> = [];
 
         try{
-			credits = openfl.Assets.getText('${Assets._DATA_PATH.replace('./', '')}/credits.txt').split('\n');
+			credits = openfl.Assets.getText('${Assets._DATA_PATH.replace('./', '')}/credits${LanguageManager.LANGUAGE.toLowerCase() != 'english' ? '-${LanguageManager.LANGUAGE}' : ''}.txt').split('\n');
         } catch(e) {
             trace(e.message);
 
@@ -54,7 +54,7 @@ class CreditsState extends State
         super.update(elapsed);
 
 		if (FlxG.keys.justPressed.ESCAPE) {
-			Utils.switchState(new MenuState(), "Main Menu");
+			Utils.switchState(new MenuState(), PhraseManager.getPhrase("Main Menu"));
 		}
 
 		for (item in textGrp) {

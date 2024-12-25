@@ -42,7 +42,7 @@ class IntroState extends FlxState {
         add(tileBox);
 
         // Text underneath it
-        ltText = new FlxText(0,0,-1,"LINETAPPER",20);
+        ltText = new FlxText(0,0,-1,PhraseManager.getPhrase("LINETAPPER"),20);
 		ltText.setFormat(Assets.font("extenro-bold"), 18, FlxColor.WHITE, CENTER, OUTLINE, FlxColor.BLACK);
 		ltText.screenCenter(X);
         ltText.y = playerBox.y + playerBox.height + 20;

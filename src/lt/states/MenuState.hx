@@ -40,9 +40,9 @@ class MenuState extends State {
 	function get_options():Array<Dynamic>{
 		return [
 			["settings", () -> openSubState(new SettingsSubstate())],
-			["play", () -> Utils.switchState(new MenuDebugState(), "Song Select")],
-			["edit", () -> Utils.switchState(new LevelEditorState(), "Level Editor")],
-			["credits", () -> Utils.switchState(new CreditsState(), "Credits")],
+			["play", () -> Utils.switchState(new MenuDebugState(), PhraseManager.getPhrase("Song Select"))],
+			["edit", () -> Utils.switchState(new LevelEditorState(), PhraseManager.getPhrase("Level Editor"))],
+			["credits", () -> Utils.switchState(new CreditsState(), PhraseManager.getPhrase("Credits"))],
 		];	
 	} 
 	var canInteract:Bool = false;

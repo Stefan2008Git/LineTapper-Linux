@@ -24,7 +24,7 @@ class MenuDebugState extends State {
         return song = val;
     }
     override function create() {
-        topText = new FlxText(20, 180, -1, "START TYPING YOUR SONG'S NAME", 20);
+        topText = new FlxText(20, 180, -1, PhraseManager.getPhrase("START TYPING YOUR SONG'S NAME"), 20);
 		topText.setFormat(Assets.font("extenro-extrabold"), 22, FlxColor.WHITE, CENTER, OUTLINE, FlxColor.BLACK);
 		topText.screenCenter(X);
         add(topText);
@@ -59,7 +59,7 @@ class MenuDebugState extends State {
         if (FlxG.keys.justPressed.ENTER) {
             lastInvalidSong = song;
             if (song.length > 0 && FileSystem.exists('${Assets._MAP_PATH}/$song')) {
-                Utils.switchState(new PlayState(song.trim()), "Gameplay");
+                Utils.switchState(new PlayState(song.trim()), PhraseManager.getPhrase("Gameplay"));
                 FlxG.sound.play(Assets.sound("menu/press"));
             } else {
                 FlxFlicker.flicker(inputText, 1, 0.02, true);
