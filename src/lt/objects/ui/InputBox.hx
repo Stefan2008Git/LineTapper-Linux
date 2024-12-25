@@ -9,7 +9,7 @@ class InputBox extends FlxInputText {
         super(nX, nY, Std.int(nWidth),nText, nSize, 0xFFFFFFFF, 0xFF101010);
         fieldBorderColor = 0xFF303030;
         selectionColor = 0xFF757575;
-        flixel.ui.addons.
+        // flixel.ui.addons.
         font = Assets.font("musticapro");
 
         placeholder = new Text(nX,nY, "", nSize);
