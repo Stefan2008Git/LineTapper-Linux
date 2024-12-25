@@ -35,6 +35,9 @@ typedef PhrasesJson = {
 	var ?settings_sfx_volume:String;
     // pause menu
 	var ?paused:String;
+	// main menu
+	var ?play:String;
+	var ?edit:String;
 }
 
 class PhraseManager
@@ -49,10 +52,13 @@ class PhraseManager
 		{
 			case 'beats_per_minute': return json.beats_per_minute;
 			case 'credits': return json.credits;
+			case 'edit': return json.edit;
 			case 'gameplay': return json.gameplay;
 			case 'level_editor': return json.level_editor;
 			case 'linetapper': return json.linetapper;
 			case 'mainmenu': return json.mainmenu;
+			case 'paused': return json.paused;
+			case 'play': return json.play;
 			case 'search_settings': return json.search_settings;
 			case 'settings': return json.settings;
 			case 'settings_antialiasing': return json.settings_antialiasing;

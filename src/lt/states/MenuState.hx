@@ -39,10 +39,10 @@ class MenuState extends State {
 	var MENUGROUP_MEMBER_DISTANCE(default, null):Float = 150;
 	function get_options():Array<Dynamic>{
 		return [
-			["settings", () -> openSubState(new SettingsSubstate())],
-			["play", () -> Utils.switchState(new MenuDebugState(), PhraseManager.getPhrase("Song Select"))],
-			["edit", () -> Utils.switchState(new LevelEditorState(), PhraseManager.getPhrase("Level Editor"))],
-			["credits", () -> Utils.switchState(new CreditsState(), PhraseManager.getPhrase("Credits"))],
+			[PhraseManager.getPhrase("settings"), () -> openSubState(new SettingsSubstate())],
+			[PhraseManager.getPhrase("play"), () -> Utils.switchState(new MenuDebugState(), PhraseManager.getPhrase("Song Select"))],
+			[PhraseManager.getPhrase("edit"), () -> Utils.switchState(new LevelEditorState(), PhraseManager.getPhrase("Level Editor"))],
+			[PhraseManager.getPhrase("credits"), () -> Utils.switchState(new CreditsState(), PhraseManager.getPhrase("Credits"))],
 		];	
 	} 
 	var canInteract:Bool = false;
