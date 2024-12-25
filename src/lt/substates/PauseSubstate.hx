@@ -19,7 +19,7 @@ class PauseSubstate extends FlxSubState {
         pauseBG.alpha = 0.0;
         add(pauseBG);
 
-		pauseText = new Text(0,0,"PAUSED", 24, CENTER, true);
+		pauseText = new Text(0,0, PhraseManager.getPhrase("PAUSED"), 24, CENTER, true);
 		pauseText.screenCenter();
 		pauseText.alpha = 0.0;
 
@@ -39,7 +39,7 @@ class PauseSubstate extends FlxSubState {
 
     override function update(elapsed:Float) {
         if (FlxG.keys.justReleased.ESCAPE) {
-            Utils.switchState(new MenuState(), "Leaving Gameplay");
+            Utils.switchState(new MenuState(), PhraseManager.getPhrase("Leaving Gameplay"));
         } else if (FlxG.keys.justPressed.ANY) {
             FlxTween.tween(pauseBG, {alpha: 0}, FADE_DURATION, {ease: FlxEase.expoOut});
             FlxTween.tween(pauseText, {alpha: 0}, FADE_DURATION, {ease: FlxEase.expoOut});
