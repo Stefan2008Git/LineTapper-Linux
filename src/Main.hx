@@ -16,13 +16,21 @@ class Main extends Sprite
 	public function new()
 	{
 		super();
+
+		init();
+		addChild(new FlxGame(0, 0, STARTING_STATE, 120,120,true,false));
+		FlxG.fixedTimestep = FlxG.autoPause = false;
+		postInit();
+	}
+
+	function init() {
 		_conductor = new Conductor();
 		Preferences.init();
 		NativeUtil.setDPIAware();
+		PhraseManager.init();
+	}
 
-		addChild(new FlxGame(0, 0, STARTING_STATE, 120,120,true,false));
-		FlxG.fixedTimestep = FlxG.autoPause = false;
-
+	function postInit() {
 		overlay = new InfoOverlay(20,20,0xFFFFFF);
 		addChild(overlay);
 

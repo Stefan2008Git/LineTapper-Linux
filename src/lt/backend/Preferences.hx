@@ -13,11 +13,12 @@ class PrefData {
     public var antialiasing:Bool = true;
     /** Defines offset value used in-game (Tile time offset) **/
     public var offset:Float = 120;
-    /** Whether to use less Graphical Effects **/
-    public var masterVolume:Float = 1;
 
-    public var musicVolume:Float = 1;
-    public var sfxVolume:Float = 1;
+    public var masterVolume:Float = 100;
+    public var musicVolume:Float = 100;
+    public var sfxVolume:Float = 100;
+
+    public var language:String = "english";
 }
 
 class Preferences {

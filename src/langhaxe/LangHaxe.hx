@@ -46,15 +46,26 @@ class PhraseManager
 {
 	public static var PHRASES_REQUIRING_FALLBACK:Array<String> = [];
 
+	public static var languageList:LangHaxe = null;
+	public static function init() {
+		// Avoid loading the language file everytime getPhrase is called.
+		try {
+			languageList = Language.readLang(LanguageManager.LANGUAGE);
+		} catch(e) {
+			trace("Failed loading language: " + LanguageManager.LANGUAGE + " // " + e.message);
+			languageList = Language.readLang("english"); // Use english.
+			return;
+		}
+		trace("Language \""+LanguageManager.LANGUAGE+"\" loaded.");
+	}
+
     public static function getPhrase(phrase:Dynamic, ?fb:Dynamic = null):Dynamic
     {
-        var json:PhrasesJson = Language.readLang(LanguageManager.LANGUAGE).phrases;
+        var json:PhrasesJson = languageList.phrases;
         var fallback:Dynamic = (fb != null ? fb : phrase);
 
         try {
-
-			switch(Std.string(phrase).toLowerCase().replace(' ', '_'))
-			{
+			switch(Std.string(phrase).toLowerCase().replace(' ', '_')) {
 				case 'beats_per_minute': return json.beats_per_minute;
 				case 'credits': return json.credits;
 				case 'edit': return json.edit;
