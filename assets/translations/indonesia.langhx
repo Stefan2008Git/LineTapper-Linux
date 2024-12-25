@@ -1,5 +1,6 @@
 {
 	"name": "Indonesia",
+	"asset_suffix": "id",
 	"lang_ver": 1,
 	"phrases": {
 	  "linetapper": "LINETAPPER",
