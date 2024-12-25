@@ -85,8 +85,13 @@ class Assets
 	{
 		var path:String = '$_IMAGE_PATH/$file';
 
-		if (FileSystem.exists(path+'-'+PhraseManager.languageList.asset_suffix))
+		if (FileSystem.exists(path+'-'+PhraseManager.languageList.asset_suffix + '.png'))
+		{
 			path += '-'+PhraseManager.languageList.asset_suffix;
+		} else {
+			// Debugging purposes only
+			// trace('Failed to load '+path+'-'+PhraseManager.languageList.asset_suffix);
+		}
 
 		path += '.png';
 
@@ -125,16 +130,11 @@ class Assets
 
 		var soundPath:String = '$path/audio';
 
-		if (FileSystem.exists(soundPath+'-'+PhraseManager.languageList.asset_suffix))
-			soundPath += '-'+PhraseManager.languageList.asset_suffix;
-
-		soundPath += '.ogg';
-
 		var mapPath:String = '$path/map.json';
 
 		var lyricsPath:String = '$path/lyrics';
 
-		if (FileSystem.exists(lyricsPath+'-'+PhraseManager.languageList.asset_suffix))
+		if (FileSystem.exists(lyricsPath+'-'+PhraseManager.languageList.asset_suffix + '.txt'))
 			lyricsPath += '-'+PhraseManager.languageList.asset_suffix;
 
 		lyricsPath += '.txt';
@@ -171,7 +171,7 @@ class Assets
 	 */
 	public static function _sound_file(path:String):Sound
 	{
-		if (FileSystem.exists(path+'-'+PhraseManager.languageList.asset_suffix))
+		if (FileSystem.exists(path+'-'+PhraseManager.languageList.asset_suffix + '.ogg'))
 			path += '-'+PhraseManager.languageList.asset_suffix;
 
 		path += '.ogg';
