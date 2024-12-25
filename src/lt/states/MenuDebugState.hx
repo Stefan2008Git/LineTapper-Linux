@@ -24,7 +24,7 @@ class MenuDebugState extends State {
         return song = val;
     }
     override function create() {
-        topText = new FlxText(20, 180, -1, PhraseManager.getPhrase("START TYPING YOUR SONG'S NAME"), 20);
+        topText = new FlxText(20, 180, -1, PhraseManager.getPhrase("START TYPING YOUR SONGS NAME","START TYPING YOUR SONG'S NAME"), 20);
 		topText.setFormat(Assets.font("extenro-extrabold"), 22, FlxColor.WHITE, CENTER, OUTLINE, FlxColor.BLACK);
 		topText.screenCenter(X);
         add(topText);

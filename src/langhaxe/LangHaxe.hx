@@ -11,7 +11,7 @@ typedef PhrasesJson = {
 	// the game name.
 	var ?linetapper:String;
     // transitions
-	var ?mainmenu:String;
+	var ?main_menu:String;
 	var ?gameplay:String;
 	var ?leaving_gameplay:String;
 	var ?song_select:String;
@@ -38,10 +38,13 @@ typedef PhrasesJson = {
 	// main menu
 	var ?play:String;
 	var ?edit:String;
+	// intro
+	var loading:String;
 }
 
 class PhraseManager
 {
+	public static var PHRASES_REQUIRING_FALLBACK:Array<String> = [];
 
     public static function getPhrase(phrase:Dynamic, ?fb:Dynamic = null):Dynamic
     {
@@ -56,7 +59,7 @@ class PhraseManager
 			case 'gameplay': return json.gameplay;
 			case 'level_editor': return json.level_editor;
 			case 'linetapper': return json.linetapper;
-			case 'mainmenu': return json.mainmenu;
+			case 'main_menu': return json.main_menu;
 			case 'paused': return json.paused;
 			case 'play': return json.play;
 			case 'search_settings': return json.search_settings;
@@ -72,11 +75,15 @@ class PhraseManager
 			case 'settings_tile_offset': return json.settings_tile_offset;
 			case 'song_select': return json.song_select;
 			case 'start_typing_your_songs_name': return json.start_typing_your_songs_name;
+			case 'loading': return json.loading;
 
             default:
                 trace('[PHRASE MANAGER] Unknown phrase: "$phrase"');
         }}catch(e) {
-            trace('[PHRASE MANAGER] Phrase "$phrase" required fallback');
+            if (!PHRASES_REQUIRING_FALLBACK.contains(phrase)){
+				trace('[PHRASE MANAGER] Phrase "$phrase" required fallback');
+				PHRASES_REQUIRING_FALLBACK.push(phrase);
+			}
             return fallback;
         }
 
