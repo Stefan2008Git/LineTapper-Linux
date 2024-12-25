@@ -37,10 +37,12 @@ typedef PhrasesJson = {
 class PhraseManager
 {
 
-    public static function getPhrase(phrase:String, json:PhrasesJson):Dynamic
+    public static function getPhrase(phrase:Dynamic, ?fb:Dynamic = null):Dynamic
     {
+        var json:PhrasesJson = Language.readLang(LanguageManager.LANGUAGE).phrases;
+        var fallback:Dynamic = (fb != null ? fb : phrase);
 
-        switch(phrase.toLowerCase().replace(' ', '_'))
+        try {switch(phrase.toLowerCase().replace(' ', '_'))
 		{
 			case 'beats_per_minute': return json.beats_per_minute;
 			case 'credits': return json.credits;
@@ -63,9 +65,13 @@ class PhraseManager
 			case 'start_typing_your_songs_name': return json.start_typing_your_songs_name;
 
             default:
-                trace('[PHRASE MANAGER] Unknown phrase: $phrase');
-                return phrase;
+                trace('[PHRASE MANAGER] Unknown phrase: "$phrase"');
+        }}catch(e) {
+            trace('[PHRASE MANAGER] Phrase "$phrase" required fallback');
+            return fallback;
         }
+
+        return fallback;
         
     }
     

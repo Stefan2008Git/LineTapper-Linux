@@ -58,6 +58,7 @@ class SettingsSubstate extends FlxSubState {
 
 typedef SettingsChild = {
     name:String,
+    langname:String,
     field:String,
     desc:String,
     type:CategoryType,
@@ -68,6 +69,7 @@ typedef SettingsChild = {
 }
 typedef SettingsCategory = {
     name:String,
+    langname:String,
     child:Array<SettingsChild>
 }
 class SettingsPanel extends Sprite {
@@ -94,10 +96,12 @@ class SettingsPanel extends Sprite {
         super();
         loadGraphic(Assets.image("ui/settings/panel"));
 
+        messages = PhraseManager.getPhrase('settings_messages', messages);
+
         bgCover = new Sprite().makeGraphic(Std.int(width-80), 150, 0xFF000000);
         objects.push(bgCover);
 
-        title = new Text(0,0, "SETTINGS", 20, CENTER, true);
+        title = new Text(0,0, PhraseManager.getPhrase('settings'), 20, CENTER, true);
         objects.push(title);
 
         randomText = new Text(0,0, FlxG.random.getObject(messages), 13, CENTER);
@@ -106,7 +110,7 @@ class SettingsPanel extends Sprite {
         objects.push(randomText);
 
         searchBar = new InputBox(0,0, width-80);
-        searchBar.placeholder.text = "Search settings...";
+        searchBar.placeholder.text = PhraseManager.getPhrase('search_settings');
         objects.push(searchBar);
 
         divider = new Sprite().makeGraphic(Std.int(width-80), 1, 0xFF303030);
@@ -117,32 +121,32 @@ class SettingsPanel extends Sprite {
     
     function generateSettings() {
         // Add the category and it's child //
-        addCategory("Graphics", [
-            makeCategoryChild("Antialiasing", "Whether to use antialiasing for sprites (smoother visuals)", "antialiasing", CHECKBOX)
+        addCategory("Graphics", PhraseManager.getPhrase('settings_graphics'), [
+            makeCategoryChild("Antialiasing", PhraseManager.getPhrase('settings_antialiasing'), "Whether to use antialiasing for sprites (smoother visuals)", "antialiasing", CHECKBOX)
         ]);
-        addCategory("Gameplay", [
-            makeCategoryChild("Tile Offset", "Defines offset value used in-game (Tile time offset)", "offset", SCROLLBAR, -600, 600, "ms")
+        addCategory("Gameplay", PhraseManager.getPhrase('settings_gameplay'), [
+            makeCategoryChild("Tile Offset", PhraseManager.getPhrase('settings_tile_offset'), "Defines offset value used in-game (Tile time offset)", "offset", SCROLLBAR, -600, 600, "ms")
         ]);
-        addCategory("Audio", [
-            makeCategoryChild("Master Volume", "Adjust how loud the game's audio.", "masterVolume", SCROLLBAR, 0, 100, "%", (val:Dynamic) -> {
+        addCategory("Audio", PhraseManager.getPhrase('settings_audio'), [
+            makeCategoryChild("Master Volume", PhraseManager.getPhrase('settings_master_volume'), "Adjust how loud the game's audio.", "masterVolume", SCROLLBAR, 0, 100, "%", (val:Dynamic) -> {
                 FlxG.sound.volume = val/100;
             }),
-            makeCategoryChild("Music Volume", "Adjust how loud are musics supposed to be.", "musicVolume", SCROLLBAR, 0, 100, "%"),
-            makeCategoryChild("SFX Volume", "Adjust how loud are sound effects supposed to be.", "sfxVolume", SCROLLBAR, 0, 100, "%"),
+            makeCategoryChild("Music Volume", PhraseManager.getPhrase('settings_music_volume'), "Adjust how loud are musics supposed to be.", "musicVolume", SCROLLBAR, 0, 100, "%"),
+            makeCategoryChild("SFX Volume", PhraseManager.getPhrase('settings_sfx_volume'), "Adjust how loud are sound effects supposed to be.", "sfxVolume", SCROLLBAR, 0, 100, "%"),
         ]);
 
         // Then generate the UI //
         for (category in categories) {
-            var wawa:CategoryGroup = new CategoryGroup(0,0, category.name);
+            var wawa:CategoryGroup = new CategoryGroup(0,0, category.langname);
             for (child in category.child) {
                 switch (child.type) {
                     case CHECKBOX:
-                        wawa.addCheckBox(child.name, Reflect.getProperty(Preferences.data,child.field),(val:Bool)->{
+                        wawa.addCheckBox(child.langname, Reflect.getProperty(Preferences.data,child.field),(val:Bool)->{
                             Reflect.setProperty(Preferences.data, child.field, val);
                             child.onChange(val);
                         });
                     case SCROLLBAR:
-                        wawa.addScrollBar(child.name, child.suffix, Reflect.getProperty(Preferences.data,child.field), child.min, child.max,(val:Float)->{
+                        wawa.addScrollBar(child.langname, child.suffix, Reflect.getProperty(Preferences.data,child.field), child.min, child.max,(val:Float)->{
                             Reflect.setProperty(Preferences.data, child.field, val);
                             child.onChange(val);
                         });
@@ -154,16 +158,18 @@ class SettingsPanel extends Sprite {
         }
     }
 
-    function addCategory(name:String, child:Array<SettingsChild>) {
+    function addCategory(name:String, langname:String, child:Array<SettingsChild>) {
         categories.push({
             name: name,
+            langname: langname,
             child: child
         });
     }
 
-    function makeCategoryChild(name:String, desc:String, field:String, type:CategoryType, ?min:Float = 0, ?max:Float = 1, ?suffix:String = "", ?onChange:Dynamic -> Void):SettingsChild {
+    function makeCategoryChild(name:String, langname:String, desc:String, field:String, type:CategoryType, ?min:Float = 0, ?max:Float = 1, ?suffix:String = "", ?onChange:Dynamic -> Void):SettingsChild {
         return {
             name: name,
+            langname: langname,
             desc: desc,
             field: field,
             type: type,

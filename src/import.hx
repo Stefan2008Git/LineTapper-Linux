@@ -12,6 +12,8 @@ import flixel.util.FlxTimer;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 
+import langhaxe.LangHaxe.PhraseManager;
+
 import lt.backend.Assets;
 import lt.backend.Utils;
 import lt.backend.State;
@@ -20,6 +22,8 @@ import lt.backend.Preferences;
 
 import lt.objects.Sprite;
 import lt.objects.Text;
+
+import lt.translations.LanguageManager;
 
 using StringTools;
 #end
