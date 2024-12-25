@@ -42,7 +42,7 @@ class IntroState extends FlxState {
         add(tileBox);
 
         // Text underneath it
-        ltText = new FlxText(0,0,-1,"LINETAPPER",20);
+        ltText = new FlxText(0,0,-1,PhraseManager.getPhrase("LINETAPPER").toUpperCase(),20);
 		ltText.setFormat(Assets.font("extenro-bold"), 18, FlxColor.WHITE, CENTER, OUTLINE, FlxColor.BLACK);
 		ltText.screenCenter(X);
         ltText.y = playerBox.y + playerBox.height + 20;
@@ -72,7 +72,7 @@ class IntroState extends FlxState {
                         var xTarget:Float = (FlxG.width - playerBox.width) * 0.5;
                         _textFlicker = true;
                         FlxTween.tween(ltText, {y: ltText.y+_tweenXOffset}, 0.5, {ease:FlxEase.expoOut, onComplete:(_)->{
-                            ltText.text = "LOADING...";
+                            ltText.text = PhraseManager.getPhrase('loading', "LOADING...").toUpperCase();
                             ltText.screenCenter(X);
                             ltText.x += 10;
                             ltText.alpha = 0;

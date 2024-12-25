@@ -68,7 +68,7 @@ class LevelEditorState extends State {
 
     function initHUD() {
         var bpm:InputBox = new InputBox(10,FlxG.height - 50,200,"120");
-        bpm.label.text = "Beats Per Minute";
+        bpm.label.text = PhraseManager.getPhrase("Beats Per Minute");
         bpm.filterMode = CHARS("0123456789.");
         bpm.cameras = [hudCamera];
         bpm.onTextChange.add((t, c)->{
