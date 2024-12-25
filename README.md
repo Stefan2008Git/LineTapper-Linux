@@ -23,13 +23,20 @@
 1. [Install Haxe](https://haxe.org/download/) (recommended to use the latest version of Haxe).
 2. [Install HaxeFlixel](https://haxeflixel.com/documentation/install-haxeflixel/).
 
-
 ### Compiling
 Simply run `lime test <target>` where `<target>` is your compiling target.
 
 ## ℹ Information
-This is a project I started making in June 17th 2024, It's inspired by this weird thing while I'm playing Roblox lol.
+This is a project I started making on June 17th, 2024. It's inspired by this weird thing while I'm playing Roblox lol.
 
 ![Hmm idea](resource/where-i-got-the-idea-from.gif)
 
-While I was doing this, something comes up on my mind "hey what if the player were a box and the player should turn after pressed a tile" and here we are.
+While I was doing this, something came to my mind: "Hey, what if the player were a box and had to turn after pressing a tile?" And here we are.
+
+## 🎮 Credits
+<!-- I dunno what to write here. -->
+| Icon                | Name       | Role                  |
+|---------------------|------------|-----------------------|
+| [<img src="https://github.com/corecathx.png" width="50" alt="CoreCat">](https://github.com/corecathx) | [CoreCat](https://github.com/corecathx) | Main Developer / Creator  |
+| [<img src="https://github.com/ZSolarDev.png" width="50" alt="ZSolarDev">](https://github.com/ZSolarDev) | [ZSolarDev](https://github.com/ZSolarDev) | Contributor       |
+| [<img src="https://github.com/sphis-Sinco.png" width="50" alt="Sinco">](https://github.com/sphis-Sinco) | [Sinco](https://github.com/sphis-Sinco) | Contributor          |

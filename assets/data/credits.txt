@@ -1,6 +1,6 @@
 - LT Team -
-CoreCat - Programming
+CoreCat - Main Developer / Creator
 
 - Github Contributers -
-ZSolarDev - Programming, Designer... Technically
+ZSolarDev - Programming, Game Designer
 Sphis_Sinco - Programming
