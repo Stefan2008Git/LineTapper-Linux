@@ -13,6 +13,7 @@ typedef PhrasesJson = {
     // transitions
 	var ?mainmenu:String;
 	var ?gameplay:String;
+	var ?leaving_gameplay:String;
 	var ?song_select:String;
 	var ?level_editor:String;
 	var ?credits:String;
@@ -32,6 +33,8 @@ typedef PhrasesJson = {
 	var ?settings_master_volume:String;
 	var ?settings_music_volume:String;
 	var ?settings_sfx_volume:String;
+    // pause menu
+	var ?paused:String;
 }
 
 class PhraseManager
