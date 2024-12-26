@@ -3,7 +3,6 @@ package lt.substates;
 import lt.objects.ui.CategoryGroup;
 import lt.objects.ui.CategoryGroup.CategoryType;
 import lt.objects.ui.InputBox;
-import flixel.FlxSubState;
 
 class SettingsSubstate extends FlxSubState {
     var bg:Sprite;
@@ -122,7 +121,9 @@ class SettingsPanel extends Sprite {
     function generateSettings() {
         // Add the category and it's child //
         addCategory("Graphics", 'settings_graphics', [
-            makeCategoryChild("Antialiasing", 'settings_antialiasing', "Whether to use antialiasing for sprites (smoother visuals)", "antialiasing", CHECKBOX)
+            makeCategoryChild("Antialiasing", 'settings_antialiasing', "Whether to use antialiasing for sprites (smoother visuals)", "antialiasing", CHECKBOX, 0,0,"",(data:Dynamic)->{
+                FlxSprite.defaultAntialiasing = data;
+            })
         ]);
         addCategory("Gameplay", 'settings_gameplay', [
             makeCategoryChild("Tile Offset", 'settings_tile_offset', "Defines offset value used in-game (Tile time offset)", "offset", SCROLLBAR, -600, 600, "ms")

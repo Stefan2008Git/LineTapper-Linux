@@ -1,5 +1,6 @@
 package lt.states;
 
+import lt.objects.ui.Dialog;
 import lt.backend.Game;
 import lt.macros.Github;
 import lime.app.Application;

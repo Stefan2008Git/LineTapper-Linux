@@ -1,7 +1,6 @@
 package lt.substates;
 
 import lt.states.PlayState;
-import flixel.FlxSubState;
 import lt.states.MenuState;
 
 class PauseSubstate extends FlxSubState {

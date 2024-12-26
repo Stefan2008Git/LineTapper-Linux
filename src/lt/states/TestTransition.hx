@@ -1,5 +1,6 @@
 package lt.states;
 
+import lt.objects.ui.Dialog;
 import lt.objects.play.Tile;
 import flixel.addons.transition.FlxTransitionSprite;
 import flixel.addons.display.FlxGridOverlay;
@@ -27,6 +28,9 @@ class TestTransition extends State {
     var ue:Bool = false;
     override function update(elapsed:Float) {
         super.update(elapsed);
+
+        if (FlxG.keys.justPressed.G)
+            Dialog.show("Information", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.");
 
         var moveSpeed:Float = elapsed*1000;
         if (FlxG.keys.pressed.A || FlxG.keys.pressed.D) 
