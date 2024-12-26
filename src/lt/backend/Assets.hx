@@ -83,7 +83,17 @@ class Assets
 	 */
 	public static function image(file:String):FlxGraphic
 	{
-		var path:String = '$_IMAGE_PATH/$file.png';
+		var path:String = '$_IMAGE_PATH/$file';
+
+		if (FileSystem.exists(path+'-'+PhraseManager.languageList.asset_suffix + '.png'))
+		{
+			path += '-'+PhraseManager.languageList.asset_suffix;
+		} else {
+			// Debugging purposes only
+			// trace('Failed to load '+path+'-'+PhraseManager.languageList.asset_suffix);
+		}
+
+		path += '.png';
 
 		if (!FileSystem.exists(path))
 			return null;
@@ -118,9 +128,16 @@ class Assets
 		if (!FileSystem.exists(path))
 			return null;
 
-		var soundPath:String = '$path/audio.ogg';
+		var soundPath:String = '$path/audio';
+
 		var mapPath:String = '$path/map.json';
-		var lyricsPath:String = '$path/lyrics.txt';
+
+		var lyricsPath:String = '$path/lyrics';
+
+		if (FileSystem.exists(lyricsPath+'-'+PhraseManager.languageList.asset_suffix + '.txt'))
+			lyricsPath += '-'+PhraseManager.languageList.asset_suffix;
+
+		lyricsPath += '.txt';
 
 		var mAsset:MapAsset = {
 			audio: null,
@@ -145,7 +162,7 @@ class Assets
 	 * @return Sound
 	 */
 	inline public static function sound(name:String):Sound
-		return _sound_file('$_SOUND_PATH/$name.ogg');
+		return _sound_file('$_SOUND_PATH/$name');
 
 	/**
 	 * [INTERNAL] Loads a sound file
@@ -154,6 +171,11 @@ class Assets
 	 */
 	public static function _sound_file(path:String):Sound
 	{
+		if (FileSystem.exists(path+'-'+PhraseManager.languageList.asset_suffix + '.ogg'))
+			path += '-'+PhraseManager.languageList.asset_suffix;
+
+		path += '.ogg';
+
 		if (!FileSystem.exists(path))
 			return null;
 

@@ -18,7 +18,7 @@ class PrefData {
     public var musicVolume:Float = 100;
     public var sfxVolume:Float = 100;
 
-    public var language:String = "english";
+    public var language:String = "indonesia";
 }
 
 class Preferences {
