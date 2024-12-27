@@ -24,7 +24,7 @@ import lt.backend.Preferences;
 import lt.objects.Sprite;
 import lt.objects.Text;
 
-import lt.translations.LanguageManager;
+import langhaxe.LanguageManager;
 
 using StringTools;
 #end
