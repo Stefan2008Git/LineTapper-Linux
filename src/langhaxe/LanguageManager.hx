@@ -1,4 +1,4 @@
-package lt.translations;
+package langhaxe;
 
 class LanguageManager {
     public static var LANGUAGE(get, never):String;   

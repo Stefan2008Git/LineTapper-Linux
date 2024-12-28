@@ -48,7 +48,7 @@
 	<haxelib name="flixel-addons" />
 
 	<!-- Translations -->
-	<haxelib name="langhaxe" version="0.0.3"/>
+	<haxelib name="langhaxe" version="0.0.5"/>
 
 	<!-- ______________________________ Haxedefines _____________________________ -->
 
