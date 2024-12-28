@@ -1,0 +1,10 @@
+stuff
+H -> High priority.
+M -> Medium priority.
+L -> Low priority.
+- [H] finish level editor (ui, saving system, etc)
+- [H] finish hold release tile mechanic
+- [H] implement song selection screen
+- [M] add more settings.
+- [M] implement gameover screen (maybe the player should just explode?)
+- [M] implement dropdown ui concept

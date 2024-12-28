@@ -104,6 +104,10 @@ class MenuState extends State {
 
 		FlxTween.tween(versionText, {alpha: 1.0}, 1.0);
 
+		FlxTimer.wait(2, ()->{
+			Dialog.show(PhraseManager.getPhrase("greet_title", "Hey there!"), PhraseManager.getPhrase("greet_title", "Welcome to LineTapper! This game is still in development and most of it are not final, so expect bugs and errors at some point of this game. Though if you ever encountered in one, don't hesitate to report them to LineTapper GitHub Repository!"));
+		});
+
 		super.create();
 	}
 

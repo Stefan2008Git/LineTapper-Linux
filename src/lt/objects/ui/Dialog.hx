@@ -1,5 +1,6 @@
 package lt.objects.ui;
 
+import flixel.group.FlxSpriteGroup;
 import flixel.FlxBasic;
 import flixel.addons.display.FlxTiledSprite;
 import flixel.addons.effects.chainable.FlxOutlineEffect;
@@ -16,7 +17,7 @@ class Dialog extends FlxSubState {
     /**
      * Shows new dialog box.
      */
-    public static function show(_title:String, body:String, ?buttons:Array<DialogButton>) {
+    public static function show(_title:String = "", body:String = "", ?buttons:Array<DialogButton>) {
         if (FlxG.state == null) {
             trace("Could not open new dialog, FlxG.state is null.");
             return;
@@ -24,20 +25,21 @@ class Dialog extends FlxSubState {
         try {
             FlxG.state.openSubState(new Dialog(_title, body, buttons));
         } catch(e) {
-            trace("Caught error while opening dialog: " + e.message);
+            trace("Caught error while opening dialog: " + e.message + "//" +e.stack);
         }
     }
 
     var bg:Sprite;
-    var bgDialog:Sprite;
-    var dialog:Sprite;
+    var dialog:FlxSprite;
     var text:Text;
     var title:Text;
+
+    var dialogGroup:FlxSpriteGroup;
     var topEffect:FlxTiledSprite;
     var btmEffect:FlxTiledSprite;
     var hasButtons:Bool = false;
     
-    var initialSpeedUp:Float = 100;
+    var initialSpeedUp:Float = 200;
     public function new(_title:String, body:String, ?buttons:Array<DialogButton>) {
         super();
         hasButtons = (buttons != null && buttons.length > 0);
@@ -46,20 +48,41 @@ class Dialog extends FlxSubState {
         bg.setScale(FlxG.width);
         bg.screenCenter();
         bg.alpha = 0;
-        addObject(bg);
+        bg.scrollFactor.set();
+        add(bg);
         FlxTween.tween(bg, {alpha: 0.5}, ENTER_DURATION, {ease: FlxEase.expoOut});
 
-        dialog = new Sprite().makeGraphic(1, 1, 0xFF000000);
-        addObject(dialog);
+        dialogGroup = new FlxSpriteGroup();
+        add(dialogGroup);
+
+        generateDialog(_title, body, buttons);
+
+        dialogGroup.screenCenter();
+        dialogGroup.alpha = 0;
+        dialogGroup.scale.set(0.7,0.7);
+        dialog.screenCenter();
+
+        FlxTween.tween(dialogGroup, {alpha: 1}, ENTER_DURATION, {ease: FlxEase.expoOut});
+        FlxTween.tween(dialogGroup.scale, {x: 1, y: 1}, ENTER_DURATION, {ease: FlxEase.expoOut});
+
+        cameras = [FlxG.cameras.list[FlxG.cameras.list.length-1]];
+    }
+
+    function generateDialog(_title:String, body:String, ?buttons:Array<DialogButton>) {
+        dialog = new FlxSprite().makeGraphic(1, 1, 0xFF000000);
+        dialog.scrollFactor.set();
+        dialogGroup.add(dialog);
 
         text = new Text(0, 0, body, 14);
         text.setFont("musticapro");
         if (text.width > MAX_SIZE.x) 
             text.fieldWidth = MAX_SIZE.x;
-        addObject(text);
+        text.scrollFactor.set();
+        dialogGroup.add(text);
 
         title = new Text(0, 0, _title.toUpperCase(), 16, CENTER, true);
-        addObject(title);
+        title.scrollFactor.set();
+        dialogGroup.add(title);
 
         var dialogWidth:Float = Math.max(MIN_SIZE.x, Math.min(MAX_SIZE.x, text.width + (MARGIN * 2)));
         var contentHeight:Float = title.height + 10 + text.height;
@@ -69,40 +92,42 @@ class Dialog extends FlxSubState {
 
         dialog.scale.set(dialogWidth, dialogHeight);
         dialog.updateHitbox();
-        dialog.screenCenter();
 
         title.setPosition(dialog.x + (dialog.width - title.width) * 0.5, dialog.y + MARGIN);
         text.setPosition(dialog.x + MARGIN, title.y + title.height + 10);
 
         topEffect = new FlxTiledSprite(Assets.image("ui/skew"), dialog.width,20,true,false);
-        addObject(topEffect);
+        topEffect.scrollFactor.set();
+        dialogGroup.add(topEffect);
 
         btmEffect = new FlxTiledSprite(Assets.image("ui/skew"), dialog.width,20,true,false);
-        addObject(btmEffect);
+        btmEffect.scrollFactor.set();
+        dialogGroup.add(btmEffect);
 
-        topEffect.setPosition(dialog.x, dialog.y - 20);
+        topEffect.setPosition(dialog.x, dialog.y - 15);
         btmEffect.setPosition(dialog.x, dialog.y + dialog.height);
-
-        cameras = [FlxG.cameras.list[FlxG.cameras.list.length-1]];
     }
 
-    function addObject(basic:Dynamic) {
-        basic.scrollFactor.set();
-        return super.add(basic);
-    }
-
+    var exiting:Bool = false;
     override function update(elapsed:Float) {
         initialSpeedUp = FlxMath.lerp(initialSpeedUp, 0, elapsed*2);
         var scrollVelocity:Float = (20+initialSpeedUp)*elapsed;
         topEffect.scrollX += scrollVelocity;
         btmEffect.scrollX -= scrollVelocity;
         if (!hasButtons) {
-            if (FlxG.keys.justPressed.ANY || FlxG.mouse.justPressed) {
-                close();
-            } 
+            if (!exiting && (FlxG.keys.justPressed.ANY || FlxG.mouse.justPressed))
+                exit();
         } else {
             // tba
         }
         super.update(elapsed);
+    }
+
+    function exit() {
+        FlxTween.tween(bg, {alpha: 0}, ENTER_DURATION, {ease: FlxEase.expoOut});
+        FlxTween.tween(dialogGroup, {alpha: 0}, ENTER_DURATION, {ease: FlxEase.expoOut});
+        FlxTween.tween(dialogGroup.scale, {x: 0.7, y: 0.7}, ENTER_DURATION, {ease: FlxEase.expoOut, onComplete: (_)->{
+            close();
+        }});
     }
 }

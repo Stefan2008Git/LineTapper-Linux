@@ -35,8 +35,8 @@ While I was doing this, something came to my mind: "Hey, what if the player were
 
 ## 🎮 Credits
 <!-- I dunno what to write here. -->
-| Icon                | Name       | Role                  |
+| Avatar                | Name       | Involvement                  |
 |---------------------|------------|-----------------------|
-| [<img src="https://github.com/corecathx.png" width="50" alt="CoreCat">](https://github.com/corecathx) | [CoreCat](https://github.com/corecathx) | Main Developer / Creator  |
-| [<img src="https://github.com/ZSolarDev.png" width="50" alt="ZSolarDev">](https://github.com/ZSolarDev) | [ZSolarDev](https://github.com/ZSolarDev) | Contributor       |
-| [<img src="https://github.com/sphis-Sinco.png" width="50" alt="Sinco">](https://github.com/sphis-Sinco) | [Sinco](https://github.com/sphis-Sinco) | Contributor          |
+| [<img src="https://github.com/corecathx.png" width="100" alt="CoreCat">](https://github.com/corecathx) | [CoreCat](https://github.com/corecathx) | Developer & Creator of LineTapper  |
+| [<img src="https://github.com/ZSolarDev.png" width="100" alt="ZSolarDev">](https://github.com/ZSolarDev) | [ZSolarDev](https://github.com/ZSolarDev) | Progamming & Game Designer       |
+| [<img src="https://github.com/sphis-Sinco.png" width="100" alt="Sinco">](https://github.com/sphis-Sinco) | [Sinco](https://github.com/sphis-Sinco) | Programming, Creator of LangHaxe, Bunch of features          |

@@ -40,6 +40,9 @@ typedef PhrasesJson = {
 	var ?edit:String;
 	// intro
 	var loading:String;
+	// greet
+	var greet_title:String;
+	var greet_body:String;
 }
 
 class PhraseManager

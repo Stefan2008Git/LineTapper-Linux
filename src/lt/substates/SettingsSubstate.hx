@@ -23,8 +23,9 @@ class SettingsSubstate extends FlxSubState {
         tweenX(panel, -panel.width, 0);
     }
 
+    var exiting:Bool = false;
     override function update(elapsed:Float) {
-        if (FlxG.keys.justPressed.ESCAPE || (!FlxG.mouse.overlaps(panel) && FlxG.mouse.justPressed) && !panel.searchBar.hasFocus) {
+        if (!exiting && (FlxG.keys.justPressed.ESCAPE || (!FlxG.mouse.overlaps(panel) && FlxG.mouse.justPressed) && !panel.searchBar.hasFocus)) {
             exit();
         }
         super.update(elapsed);
