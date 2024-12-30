@@ -60,7 +60,7 @@ class Dialog extends FlxSubState {
         dialogGroup.screenCenter();
         dialogGroup.alpha = 0;
         dialogGroup.scale.set(0.7,0.7);
-        dialog.screenCenter();
+        dialogGroup.antialiasing = Preferences.data.antialiasing;
 
         FlxTween.tween(dialogGroup, {alpha: 1}, ENTER_DURATION, {ease: FlxEase.expoOut});
         FlxTween.tween(dialogGroup.scale, {x: 1, y: 1}, ENTER_DURATION, {ease: FlxEase.expoOut});
@@ -69,20 +69,14 @@ class Dialog extends FlxSubState {
     }
 
     function generateDialog(_title:String, body:String, ?buttons:Array<DialogButton>) {
-        dialog = new FlxSprite().makeGraphic(1, 1, 0xFF000000);
-        dialog.scrollFactor.set();
-        dialogGroup.add(dialog);
-
         text = new Text(0, 0, body, 14);
         text.setFont("musticapro");
         if (text.width > MAX_SIZE.x) 
             text.fieldWidth = MAX_SIZE.x;
         text.scrollFactor.set();
-        dialogGroup.add(text);
-
+        
         title = new Text(0, 0, _title.toUpperCase(), 16, CENTER, true);
         title.scrollFactor.set();
-        dialogGroup.add(title);
 
         var dialogWidth:Float = Math.max(MIN_SIZE.x, Math.min(MAX_SIZE.x, text.width + (MARGIN * 2)));
         var contentHeight:Float = title.height + 10 + text.height;
@@ -90,8 +84,11 @@ class Dialog extends FlxSubState {
             ? Math.max(MIN_SIZE.y, Math.min(MAX_SIZE.y, contentHeight + (MARGIN * 2))) 
             : Math.max(MIN_SIZE.y, contentHeight + (MARGIN * 2));
 
-        dialog.scale.set(dialogWidth, dialogHeight);
-        dialog.updateHitbox();
+        dialog = new FlxSprite().makeGraphic(Std.int(dialogWidth), Std.int(dialogHeight), 0xFF000000);
+        dialog.scrollFactor.set();
+        dialogGroup.add(dialog);
+        dialogGroup.add(text);
+        dialogGroup.add(title);
 
         title.setPosition(dialog.x + (dialog.width - title.width) * 0.5, dialog.y + MARGIN);
         text.setPosition(dialog.x + MARGIN, title.y + title.height + 10);
@@ -107,7 +104,7 @@ class Dialog extends FlxSubState {
         topEffect.setPosition(dialog.x, dialog.y - 15);
         btmEffect.setPosition(dialog.x, dialog.y + dialog.height);
     }
-
+    
     var exiting:Bool = false;
     override function update(elapsed:Float) {
         initialSpeedUp = FlxMath.lerp(initialSpeedUp, 0, elapsed*2);
