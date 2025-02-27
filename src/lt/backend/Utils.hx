@@ -98,27 +98,26 @@ class Utils {
 	public static inline function switchState(nextState:NextState, ?transText:String = ""):Void {
 		if (!SCENE_TRANSITIONING) {
 			SCENE_TRANSITIONING = true;
-			final stateOnCall = FlxG.state;
 			@:privateAccess {
-				if (!nextState.isInstance() || FlxG.canSwitchTo(cast nextState)) {
+				final stateOnCall = FlxG.state;
+				try {
+					cast(FlxG.state, State)._transText = transText;
+				} catch (e) {
+					trace("Transition fail: Could not set transition text, maybe it's not extending State?");
+				}
+				FlxG.state.startOutro(function()
+				{
 					try {
-						cast(FlxG.state, State)._transText = transText;
+						cast(nextState, State)._transText = transText;
 					} catch (e) {
 						trace("Transition fail: Could not set transition text, maybe it's not extending State?");
 					}
-					FlxG.state.startOutro(function() {
-						try {
-							cast(nextState, State)._transText = transText;
-						} catch (e) {
-							trace("Transition fail: Could not set transition text, maybe it's not extending State?");
-						}
 
-						if (FlxG.state == stateOnCall)
-							FlxG.game._nextState = nextState;
-						else
-							FlxG.log.warn("`onOutroComplete` was called after the state was switched. This will be ignored");
-					});
-				}
+					if (FlxG.state == stateOnCall)
+						FlxG.game._nextState = nextState;
+					else
+						FlxG.log.warn("`onOutroComplete` was called after the state was switched. This will be ignored");
+				});
 			}
 		}
 	}

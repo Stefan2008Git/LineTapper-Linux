@@ -8,16 +8,33 @@ class Scrollbar extends Text {
     var valueIndicator:Text;
     var nWidth:Int = 0;
 
+    public var stepSize:Float = 10;
     public var onChanged:Float -> Void = (wa:Float)->{};
     public var value(default,set):Float = 0;
+    
+    var __lastValue(default,set):Float = 0;
     var __skipCall:Bool = false;
+
+
+
     function set_value(val:Float):Float {
         value = val;
-        if (!__skipCall) onChanged(value);
+        if (!__skipCall) {
+            __lastValue = val;
+            onChanged(value);
+        }
         return val;
     }
 
+    function set___lastValue(val:Float):Float {
+        if (__lastValue != val) {
+            Sound.playSfx(Assets.sound("menu/click"), 0.6);
+        }
+        return __lastValue = val;
+    }
+
     public var suffix:String = "";
+
     public function new(nX:Float, nY:Float, nText:String, suffix:String = "", nWidth:Float = 200, ?value:Float = 0.5, ?min:Float = 0, ?max:Float = 0) {
         super(nX,nY,nText,16);
         this.suffix = suffix;
@@ -58,7 +75,9 @@ class Scrollbar extends Text {
     
         if (moving) {
             var mouseX:Float = Math.max(bar.x, Math.min(FlxG.mouse.x, bar.x + bar.width));
-            value = bar.min + ((mouseX - bar.x) / bar.width) * (bar.max - bar.min);
+            var rawValue:Float = bar.min + ((mouseX - bar.x) / bar.width) * (bar.max - bar.min);
+            
+            value = Math.round(rawValue / stepSize) * stepSize;
             value = Math.max(bar.min, Math.min(value, bar.max));
         }
     

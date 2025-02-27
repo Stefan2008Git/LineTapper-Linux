@@ -20,6 +20,7 @@ import lt.backend.Utils;
 import lt.backend.State;
 import lt.backend.Conductor;
 import lt.backend.Preferences;
+import lt.backend.Sound;
 
 import lt.objects.Sprite;
 import lt.objects.Text;

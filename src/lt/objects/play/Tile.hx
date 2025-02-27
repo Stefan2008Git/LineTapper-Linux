@@ -42,9 +42,16 @@ class Tile extends Sprite {
         return !beenHit && time < (Conductor.instance.time - 166);
     }
 
+    public var canRelease(get, never):Bool;
+    inline function get_canRelease():Bool {
+        return time + length > Conductor.instance.time - (Conductor.instance.safe_zone_offset * 1.5)
+            && time + length < Conductor.instance.time + (Conductor.instance.safe_zone_offset * 0.5);
+    }
+
     public var beenHit:Bool = false;
     public var missed:Bool = false;
 
+    public var released:Bool = false;
     public var holdFinish:Bool = false;
     public var time(default, set):Float = 0;
     function set_time(val:Float):Float {

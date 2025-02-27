@@ -86,6 +86,7 @@ class GameplayStage extends FlxSpriteGroup {
     public var editing:Bool = false;
 
     public var paused:Bool = false;
+    public var autoplay:Bool = false;
     var _playbackRate(get,never):Float;
     function get__playbackRate():Float {
         return (parent == null ? 1 : parent.playbackRate);
@@ -162,28 +163,69 @@ class GameplayStage extends FlxSpriteGroup {
         updateTileDirections();
         started = false;
     }
+
     private function _updateGameplay(elapsed:Float) {
         tiles.forEachAlive((tile:Tile) -> {
             if (tile.missed)
                 return;
             if (tile.length > 0 && tile.beenHit && conduct.time > tile.time && conduct.time < tile.time + tile.length) {
-                if (FlxG.keys.pressed.ANY) {
+                if (!autoplay && FlxG.keys.pressed.ANY) {
                     player.startGlow(tile.color);
                 } else {
                     tile.beenHit = false;
                     tile.missed = true;
+                    _onTileMiss(tile);
                 }
             }
-
+    
+            if (tile.length > 0 && tile.beenHit && !tile.missed && !tile.released) {
+                if (tile.canRelease && FlxG.keys.justReleased.ANY) {
+                    tile.released = true;
+                }
+            }
+    
             if (tile.invalid) {
                 _onTileMiss(tile);
             }
         });
-        if (FlxG.keys.justPressed.ANY) {
-            var tile:Tile = tiles.getFirstHitable(player.direction);
-            if (tile != null)
-                _onTileHit(tile);
-        } 
+    
+        if (autoplay) {
+            tiles.forEachAlive((tile:Tile) -> {
+                if (tile.missed || tile.beenHit) return;
+    
+                if (tile.length == 0) {
+                    if (conduct.time >= tile.time) {
+                        _onTileHit(tile);
+                    }
+                } else { 
+                    if (conduct.time >= tile.time) {
+                        _onTileHit(tile);
+                    }
+
+                }
+                if (conduct.time >= tile.time + tile.length) {
+                    tile.released = true;
+                }
+            });
+        } else {
+            if (FlxG.keys.justPressed.ANY) {
+                var tile:Tile = tiles.getFirstHitable(player.direction);
+                if (tile != null)
+                    _onTileHit(tile);
+            } 
+        }
+    }
+    
+    private function _onReleaseTile(tile:Tile) {
+        if (autoplay) {
+            tile.released = true;
+        } else {
+            if (FlxG.keys.pressed.ANY) {
+                tile.beenHit = false;
+                tile.missed = true;
+                _onTileMiss(tile);
+            }
+        }
     }
 
     private function _updateTiles(elapsed:Float) {

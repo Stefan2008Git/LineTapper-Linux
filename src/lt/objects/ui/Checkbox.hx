@@ -1,5 +1,6 @@
 package lt.objects.ui;
 
+
 class Checkbox extends Text {
     var check:Sprite;
     var checkOutline:Sprite;
@@ -29,6 +30,7 @@ class Checkbox extends Text {
         super.draw();
         if (FlxG.mouse.overlaps(check) && FlxG.mouse.justPressed) {
             checked = !checked;
+            Sound.playSfx(Assets.sound("menu/click"), 0.6);
         }
         check.color = checked ? 0xFFFFFFFF : 0xFF000000;
         check.x = x + (width - check.width);

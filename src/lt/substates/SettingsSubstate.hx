@@ -133,10 +133,14 @@ class SettingsPanel extends Sprite {
             makeCategoryChild("Master Volume", 'settings_master_volume', "Adjust how loud the game's audio.", "masterVolume", SCROLLBAR, 0, 100, "%", (val:Dynamic) -> {
                 FlxG.sound.volume = val/100;
             }),
-            makeCategoryChild("Music Volume", 'settings_music_volume', "Adjust how loud are musics supposed to be.", "musicVolume", SCROLLBAR, 0, 100, "%"),
-            makeCategoryChild("SFX Volume", 'settings_sfx_volume', "Adjust how loud are sound effects supposed to be.", "sfxVolume", SCROLLBAR, 0, 100, "%"),
-        ]);
+            makeCategoryChild("Music Volume", 'settings_music_volume', "Adjust how loud are musics supposed to be.", "musicVolume", SCROLLBAR, 0, 100, "%", (val:Dynamic) -> {
+                Preferences.data.musicVolume = val/100;
 
+            }),
+            makeCategoryChild("SFX Volume", 'settings_sfx_volume', "Adjust how loud are sound effects supposed to be.", "sfxVolume", SCROLLBAR, 0, 100, "%", (val:Dynamic) -> {
+                Preferences.data.sfxVolume = val/100;
+            }),
+        ]);
         // Then generate the UI //
         for (category in categories) {
             var wawa:CategoryGroup = new CategoryGroup(0,0, category.langname);

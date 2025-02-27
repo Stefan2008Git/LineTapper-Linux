@@ -79,28 +79,32 @@ class FNFToLineMap
                 for (i in sec) maxNote++;	
 			}
 			var note:Int = 0;
+			var lastTime = 0.0;
+			var lastLength = 0.0;
 			for (e in anotherWeird.notes) {
 				var sec:Array<Dynamic> = e.sectionNotes;
 				for (i in sec) {
 					note++;
+					if (i[0] < lastTime + lastLength) {
+						trace("skipped");
+						continue;
+
+					}
 					var pNote:Float = note / maxNote;
 					var percentage = Math.floor(pNote * 100);
 	
-					// Construct the progress bar
 					var progressBar = "\x1b[36m┃";
 					for (j in 1...50) {
 						if (pNote * 50 >= j) progressBar += "█"; else progressBar += " ";
 					}
 					progressBar += "┃\x1b[0m";
 	
-					// Combine all output in one print statement
 					var output = "\x1b[0G\x1b[K\r[  \x1b[38;5;10mWorking\x1b[0m ] Note: " + note + " >> " + percentage + "% " + progressBar;
 					Sys.print(output);
 	
-					// Update less frequently
 					if (note % 10 == 0 || note == maxNote) {
 						Sys.print(output);
-						Sys.sleep(0.01); // Small delay to visualize progress
+						Sys.sleep(0.01);
 					}
 	
 					var time:Float = i[0] - offset;
@@ -116,6 +120,8 @@ class FNFToLineMap
 					if (lastDirs.length > 2)
 						lastDirs.shift();
 	
+					lastTime = time;
+					lastLength = i[2];
 					tileData.tiles.push({
 						time: time,
 						direction: rand,

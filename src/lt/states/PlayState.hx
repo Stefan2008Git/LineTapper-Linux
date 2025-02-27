@@ -43,7 +43,7 @@ class PlayState extends State {
     public var score:Int = 0;
     public var combo:Int = 0;
 
-    public var playbackRate:Float = 1;
+    public var playbackRate:Float = 0.8;
     public var paused:Bool = false;
 
     public function new(?song:String) {
@@ -134,6 +134,9 @@ class PlayState extends State {
 
 		if ((FlxG.keys.justReleased.ESCAPE || FlxG.keys.justReleased.BACKSPACE) && started)
             pauseGame();
+
+        if (FlxG.keys.justPressed.B) 
+            stage.autoplay = !stage.autoplay;
 
         camFollow.x = FlxMath.lerp(player.getMidpoint().x, camFollow.x, 1 - (elapsed * 12));
         camFollow.y = FlxMath.lerp(player.getMidpoint().y, camFollow.y, 1 - (elapsed * 12));
