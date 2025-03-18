@@ -139,7 +139,7 @@ class LevelEditorState extends State {
 
     var _lastClickPoint:FlxPoint = null;
     var _lastCameraScroll:FlxPoint = null;
-    
+    var _lastPlacedTile:Tile = null;
     function _mouseControls(elapsed:Float) {
         var mouseScreen:FlxPoint = FlxG.mouse.getViewPosition();
     
@@ -160,7 +160,14 @@ class LevelEditorState extends State {
         if (!FlxInputText.globalManager.isTyping) {
             if (FlxG.mouse.justPressed) 
                 placeTile();
-            if (FlxG.mouse.justPressedRight) 
+            if (FlxG.mouse.pressed && _lastPlacedTile != null) {
+                _lastPlacedTile.length = Math.round(((dummy.time - conduct.step_ms) - _lastPlacedTile.time) / conduct.step_ms) * conduct.step_ms;
+                _lastPlacedTile.direction = dummy.direction;
+            }
+            
+            if (FlxG.mouse.justReleased)
+                _lastPlacedTile = null;
+            if (FlxG.mouse.justReleasedRight) 
                 removeTile();
         }
     }
@@ -169,6 +176,8 @@ class LevelEditorState extends State {
         var tile:Tile = stage.tiles.getLastTile();
         if (tile == null) return;
         stage.removeTile(tile);
+        if (tile == _lastPlacedTile) 
+            _lastPlacedTile = null;
         stage.updateTileDirections();
     }
 
@@ -207,6 +216,7 @@ class LevelEditorState extends State {
     
         trace('${dummy.direction} >> $diff // ${newTile.x} // ${newTile.y} // ${newTile.direction} // ${newTile.time} // ${(conduct.step_ms * Math.abs(diff))}');
         stage.addTile(newTile);
+        _lastPlacedTile = newTile;
         stage.updateTileDirections();
     }
     

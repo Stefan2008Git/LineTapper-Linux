@@ -140,7 +140,6 @@ class GameplayStage extends FlxSpriteGroup {
             }
         }
     
-        // Handle conduct timing and desync check
         conduct.time += elapsed * 1000 * _playbackRate;
         if (FlxG.sound.music != null && FlxG.sound.music.playing && Math.abs(conduct.time - FlxG.sound.music.time) > 50) {
             conduct.time = FlxG.sound.music.time;

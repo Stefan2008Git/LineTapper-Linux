@@ -59,8 +59,19 @@ class Tile extends Sprite {
         color = Utils.getTileColor(time, editing);
         return time = val;
     }
-    public var length:Float = 0;
-    public var direction(default,set):Direction = LEFT;
+    public var length(default, set):Float = 0;
+    function set_length(val:Float):Float {
+        if (holdSprite!=null){
+            holdSprite.scale.x = (val/conduct.step_ms) * Player.BOX_SIZE;
+            holdSprite.scale.y = (Player.BOX_SIZE*0.65) / holdSprite.frameHeight;
+            holdSprite.updateHitbox();
+        }
+
+        updateProps();
+
+        return length = val;
+    }
+    public var direction(default, set):Direction = LEFT;
     function set_direction(val:Direction):Direction {
         direction = val;
         var updateGraphic:Bool = true;
@@ -80,6 +91,8 @@ class Tile extends Sprite {
         }
         if (updateGraphic)
             setGraphic("play/tile");
+
+        updateProps();
         return val;
     }
 
@@ -92,14 +105,13 @@ class Tile extends Sprite {
     private var conduct:Conductor = null;
 
     public var editing:Bool = false;
-    public function new(nX:Float, nY:Float, direction:Direction, time:Float, length:Float = 0.0) {
+    public function new(nX:Float, nY:Float, direction:Direction, time:Float, isRelease:Bool, length:Float = 0.0) {
         super(nX, nY);
 
         setGraphic("play/tile");
 
         this.time = time;
 		this.direction = direction;
-        this.length = length;
         conduct = Conductor.instance;
 
         // That one hit effect thing //
@@ -110,18 +122,17 @@ class Tile extends Sprite {
 		hitOutline.setGraphicSize(_graphicSize,_graphicSize);
 		hitOutline.updateHitbox();
 
-        if (length > 0) {
-            holdSprite = new Sprite().loadGraphic(Assets.image("play/hold"));
-            holdSprite.scale.x = (length/conduct.step_ms) * Player.BOX_SIZE;
-            holdSprite.scale.y = (Player.BOX_SIZE*0.65) / holdSprite.frameHeight;
-            holdSprite.updateHitbox();
-            holdSprite.active = false;
-            
-            releaseSprite = new Sprite().loadGraphic(Assets.image("play/stop_tile"));
-            releaseSprite.active = false;
-            releaseSprite.setGraphicSize(Player.BOX_SIZE, Player.BOX_SIZE);
-            releaseSprite.updateHitbox();
-        }
+        // hold sprite //
+        holdSprite = new Sprite().loadGraphic(Assets.image("play/hold"));
+        holdSprite.active = false;
+        
+        // release sprite //
+        releaseSprite = new Sprite().loadGraphic(Assets.image("play/stop_tile"));
+        releaseSprite.active = false;
+        releaseSprite.setGraphicSize(Player.BOX_SIZE, Player.BOX_SIZE);
+        releaseSprite.updateHitbox();
+
+        this.length = length;
     }
 
     public function resetProp() {
@@ -147,40 +158,7 @@ class Tile extends Sprite {
         super.draw();
     
         if (length > 0) {
-            switch (direction) {
-                case LEFT: 
-                    holdSprite.angle = 0;
-                    holdSprite.x = x - holdSprite.width;
-                    holdSprite.y = y + (height - holdSprite.height) * 0.5;
-    
-                    releaseSprite.x = holdSprite.x - releaseSprite.width;
-                    releaseSprite.y = y + (height - releaseSprite.height) * 0.5;
-    
-                case DOWN: 
-                    holdSprite.angle = 90;
-                    releaseSprite.x = x + (width - releaseSprite.width) * 0.5;
-                    releaseSprite.y = y + height + holdSprite.width;
-
-                    holdSprite.x = x + (width - holdSprite.width) * 0.5;
-                    holdSprite.y = y + height + (holdSprite.width-holdSprite.height)*0.5;
-                case UP: 
-                    holdSprite.angle = 90;
-                    releaseSprite.x = x + (width - releaseSprite.width) * 0.5;
-                    releaseSprite.y = y - (holdSprite.width+releaseSprite.height);
-
-                    holdSprite.x = x + (width - holdSprite.width) * 0.5;
-                    holdSprite.y = y - (holdSprite.width+holdSprite.height)*0.5;
-                case RIGHT: 
-                    holdSprite.angle = 0;
-                    holdSprite.x = x + width;
-                    holdSprite.y = y + (height - holdSprite.height) * 0.5;
-    
-                    releaseSprite.x = holdSprite.x + holdSprite.width;
-                    releaseSprite.y = y + (height - releaseSprite.height) * 0.5;
-                default:
-                    // do none
-            }
-    
+            updateProps();
             propDraw(holdSprite);
             propDraw(releaseSprite);
         }
@@ -192,6 +170,43 @@ class Tile extends Sprite {
         }
 
     }    
+
+    function updateProps() {
+        if (holdSprite == null || releaseSprite == null) return;
+        switch (direction) {
+            case LEFT: 
+                holdSprite.angle = 0;
+                holdSprite.x = x - holdSprite.width;
+                holdSprite.y = y + (height - holdSprite.height) * 0.5;
+
+                releaseSprite.x = holdSprite.x - releaseSprite.width;
+                releaseSprite.y = y + (height - releaseSprite.height) * 0.5;
+
+            case DOWN: 
+                holdSprite.angle = 90;
+                releaseSprite.x = x + (width - releaseSprite.width) * 0.5;
+                releaseSprite.y = y + height + holdSprite.width;
+
+                holdSprite.x = x + (width - holdSprite.width) * 0.5;
+                holdSprite.y = y + height + (holdSprite.width-holdSprite.height)*0.5;
+            case UP: 
+                holdSprite.angle = 90;
+                releaseSprite.x = x + (width - releaseSprite.width) * 0.5;
+                releaseSprite.y = y - (holdSprite.width+releaseSprite.height);
+
+                holdSprite.x = x + (width - holdSprite.width) * 0.5;
+                holdSprite.y = y - (holdSprite.width+holdSprite.height)*0.5;
+            case RIGHT: 
+                holdSprite.angle = 0;
+                holdSprite.x = x + width;
+                holdSprite.y = y + (height - holdSprite.height) * 0.5;
+
+                releaseSprite.x = holdSprite.x + holdSprite.width;
+                releaseSprite.y = y + (height - releaseSprite.height) * 0.5;
+            default:
+                // do none
+        }
+    }
     
 
     function propDraw(spr:Sprite) {

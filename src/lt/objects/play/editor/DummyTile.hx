@@ -21,8 +21,13 @@ class DummyTile extends Sprite {
         updateHitbox();
     }
 
+    var sinTime:Float = 0;
     override function update(elapsed:Float) {
         super.update(elapsed);
+        visible = !FlxG.mouse.pressed;
+        sinTime += elapsed;
+        if (visible)
+            alpha = 0.5 - (Math.sin(sinTime*2)*0.2);
         if (followMouse) {
             // angle stuff oh my god
             var object:{x:Float,y:Float} = {
@@ -58,7 +63,7 @@ class DummyTile extends Sprite {
                 y = Std.int(object.y / Player.BOX_SIZE) * Player.BOX_SIZE; 
                 time = ((Math.abs(object.x - x) / Player.BOX_SIZE)+1) * Conductor.instance.step_ms;
             }
-
+            time += currentObject?.time ?? 0;
             x = FlxG.keys.pressed.SHIFT ? x : Math.floor(x / Player.BOX_SIZE) * Player.BOX_SIZE;
             y = FlxG.keys.pressed.SHIFT ? y : Math.floor(y / Player.BOX_SIZE) * Player.BOX_SIZE;
 
