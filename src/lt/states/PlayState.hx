@@ -1,5 +1,6 @@
 package lt.states;
 
+import lt.backend.Lyrics;
 import lt.substates.PauseSubstate;
 import lt.objects.play.Tile;
 import lt.objects.play.TimingDisplay;
@@ -33,17 +34,20 @@ class PlayState extends State {
     public var player:Player;
 
     public var timeBar:FlxBar;
-    public var timeTextLeft:FlxText;
-    public var songText:FlxText;
-    public var timeTextRight:FlxText;
+    public var timeTextLeft:Text;
+    public var songText:Text;
+    public var timeTextRight:Text;
+
+    public var lyricsOverlay:Text;
+    public var lyricsList:Lyrics;
 
     public var timing:TimingDisplay;
-    public var playerText:FlxText;
+    public var playerText:Text;
 
     public var score:Int = 0;
     public var combo:Int = 0;
 
-    public var playbackRate:Float = 0.8;
+    public var playbackRate:Float = 1;
     public var paused:Bool = false;
 
     public function new(?song:String) {
@@ -107,6 +111,13 @@ class PlayState extends State {
         playerText = makeText(10, 0, "", 12, false, LEFT);
 		add(playerText);
 
+        lyricsList = Lyrics.fromSong(songName);
+        lyricsOverlay = makeText(0,FlxG.height - 120,"", 18, false, CENTER);
+        lyricsOverlay.setFont("musticapro");
+        lyricsOverlay.fieldWidth = FlxG.width * 0.7;
+        lyricsOverlay.screenCenter(X);
+		add(lyricsOverlay);
+
         timing = new TimingDisplay();
         timing.y = FlxG.height - 25;
         timing.cameras = [hudCamera];
@@ -149,6 +160,10 @@ class PlayState extends State {
         playerText.updateHitbox();
         playerText.setPosition(10, FlxG.height - (playerText.height + 10));
 
+        FlxG.camera.zoom = FlxMath.lerp(FlxG.camera.zoom, 1, elapsed*12);
+
+        lyricsOverlay.text = lyricsList.getLyric(Conductor.instance.time);
+
         super.update(elapsed);
     }
 
@@ -173,6 +188,7 @@ class PlayState extends State {
     public function onTileHit(tile:Tile) {
         timing.addBar(tile.time - Conductor.instance.time);
         combo++;
+        FlxG.camera.zoom += 0.08;
         updatePlayerText();
     }
     public function onTileMiss(tile:Tile) {

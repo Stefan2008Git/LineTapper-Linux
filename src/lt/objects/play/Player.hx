@@ -50,7 +50,7 @@ class Player extends Sprite {
 				angle = (3 - (3 * progress));
 				color = FlxColor.interpolate(FlxColor.RED, FlxColor.WHITE, progress);
 			} else {
-				
+				angle = 0;
 			}
 			if (glowLevel > 0) {
 				glowObject.x = x + (width - glowObject.width) * 0.5;

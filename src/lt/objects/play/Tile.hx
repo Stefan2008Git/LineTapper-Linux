@@ -25,28 +25,13 @@ class Tile extends Sprite {
      */
     public static var _TILE_EXIT_OFFSET:Float = 1;
     
+    /**
+     * Whether this tile can be hit or not.
+     */
     public var hitable(get, never):Bool;
-    inline function get_hitable():Bool {
-        return time > Conductor.instance.time - (Conductor.instance.safe_zone_offset * 1.5)
-            && time < Conductor.instance.time + (Conductor.instance.safe_zone_offset * 0.5);
-    }
-
     public var canUpdate(get,never):Bool;
-    inline function get_canUpdate():Bool {
-        return Conductor.instance.time + (conduct.step_ms * _TILE_ENTER_OFFSET) > time
-            && Conductor.instance.time < time + (conduct.beat_ms * (_TILE_EXIT_OFFSET+4));
-    }
-
     public var invalid(get,never):Bool;
-    function get_invalid() {
-        return !beenHit && time < (Conductor.instance.time - 166);
-    }
-
     public var canRelease(get, never):Bool;
-    inline function get_canRelease():Bool {
-        return time + length > Conductor.instance.time - (Conductor.instance.safe_zone_offset * 1.5)
-            && time + length < Conductor.instance.time + (Conductor.instance.safe_zone_offset * 0.5);
-    }
 
     public var beenHit:Bool = false;
     public var missed:Bool = false;
@@ -54,58 +39,23 @@ class Tile extends Sprite {
     public var released:Bool = false;
     public var holdFinish:Bool = false;
     public var time(default, set):Float = 0;
-    function set_time(val:Float):Float {
-        time = val;
-        color = Utils.getTileColor(time, editing);
-        return time = val;
-    }
+
     public var length(default, set):Float = 0;
-    function set_length(val:Float):Float {
-        if (holdSprite!=null){
-            holdSprite.scale.x = (val/conduct.step_ms) * Player.BOX_SIZE;
-            holdSprite.scale.y = (Player.BOX_SIZE*0.65) / holdSprite.frameHeight;
-            holdSprite.updateHitbox();
-        }
 
-        updateProps();
-
-        return length = val;
-    }
     public var direction(default, set):Direction = LEFT;
-    function set_direction(val:Direction):Direction {
-        direction = val;
-        var updateGraphic:Bool = true;
-        switch (val) {
-            case LEFT:
-                angle = 90;
-            case RIGHT:
-                angle = -90;
-            case UP:
-                angle = 180;
-            case DOWN:
-                angle = 0;
-            default:
-                updateGraphic = false;
-                setGraphic("play/stop_tile");
-                angle = 0;
-        }
-        if (updateGraphic)
-            setGraphic("play/tile");
 
-        updateProps();
-        return val;
-    }
 
     public var hitOutline:TileEffect;
 
     // Used by hold tiles.
     public var holdSprite:Sprite;
     public var releaseSprite:Sprite;
+    public var isRelease:Bool = false;
 
     private var conduct:Conductor = null;
 
     public var editing:Bool = false;
-    public function new(nX:Float, nY:Float, direction:Direction, time:Float, isRelease:Bool, length:Float = 0.0) {
+    public function new(nX:Float, nY:Float, direction:Direction, time:Float, length:Float = 0.0) {
         super(nX, nY);
 
         setGraphic("play/tile");
@@ -282,6 +232,67 @@ class Tile extends Sprite {
         releaseSprite?.destroy();
         super.destroy();
     }
+
+    inline function get_hitable():Bool {
+        return time > Conductor.instance.time - (Conductor.instance.safe_zone_offset * 1.5)
+            && time < Conductor.instance.time + (Conductor.instance.safe_zone_offset * 0.5);
+    }
+
+    inline function get_canUpdate():Bool {
+        return Conductor.instance.time + (conduct.step_ms * _TILE_ENTER_OFFSET) > time
+            && Conductor.instance.time < time + (conduct.beat_ms * (_TILE_EXIT_OFFSET+4));
+    }
+
+    function get_invalid() {
+        return !beenHit && time < (Conductor.instance.time - 166);
+    }
+
+    inline function get_canRelease():Bool {
+        return time + length > Conductor.instance.time - (Conductor.instance.safe_zone_offset * 1.5)
+            && time + length < Conductor.instance.time + (Conductor.instance.safe_zone_offset * 0.5);
+    }
+
+    function set_time(val:Float):Float {
+        time = val;
+        color = Utils.getTileColor(time, editing);
+        return time = val;
+    }
+
+    function set_length(val:Float):Float {
+        if (holdSprite!=null){
+            holdSprite.scale.x = (val/conduct.step_ms) * Player.BOX_SIZE;
+            holdSprite.scale.y = (Player.BOX_SIZE*0.65) / holdSprite.frameHeight;
+            holdSprite.updateHitbox();
+        }
+
+        updateProps();
+
+        return length = val;
+    }
+
+    function set_direction(val:Direction):Direction {
+        direction = val;
+        var updateGraphic:Bool = true;
+        switch (val) {
+            case LEFT:
+                angle = 90;
+            case RIGHT:
+                angle = -90;
+            case UP:
+                angle = 180;
+            case DOWN:
+                angle = 0;
+            default:
+                updateGraphic = false;
+                setGraphic("play/stop_tile");
+                angle = 0;
+        }
+        if (updateGraphic)
+            setGraphic("play/tile");
+
+        updateProps();
+        return val;
+    }
 }
 
 /**
@@ -330,4 +341,5 @@ class TileEffect extends Sprite {
     
         return outline = val;
     }
+    
 }

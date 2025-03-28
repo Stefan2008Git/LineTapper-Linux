@@ -165,8 +165,10 @@ class LevelEditorState extends State {
                 _lastPlacedTile.direction = dummy.direction;
             }
             
-            if (FlxG.mouse.justReleased)
+            if (FlxG.mouse.justReleased){
+                _lastPlacedTile.isRelease = true;
                 _lastPlacedTile = null;
+            }
             if (FlxG.mouse.justReleasedRight) 
                 removeTile();
         }

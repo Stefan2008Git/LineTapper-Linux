@@ -72,7 +72,7 @@ class Dialog extends FlxSubState {
         text = new Text(0, 0, body, 14);
         text.setFont("musticapro");
         if (text.width > MAX_SIZE.x) 
-            text.fieldWidth = MAX_SIZE.x;
+            text.fieldWidth = MAX_SIZE.x - MARGIN;
         text.scrollFactor.set();
         
         title = new Text(0, 0, _title.toUpperCase(), 16, CENTER, true);

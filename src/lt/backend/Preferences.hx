@@ -12,13 +12,13 @@ class PrefData {
     /** Whether to use antialiasing for sprites (smoother visuals) **/
     public var antialiasing:Bool = true;
     /** Defines offset value used in-game (Tile time offset) **/
-    public var offset:Float = 120;
+    public var offset:Float = 0;
 
     public var masterVolume:Float = 100;
     public var musicVolume:Float = 100;
     public var sfxVolume:Float = 100;
 
-    public var language:String = "indonesia";
+    public var language:String = "english";
 }
 
 class Preferences {
@@ -33,6 +33,7 @@ class Preferences {
         trace(FileSystem.exists(PATH) ? "Found preferences file." : "No preferences file found.");
         if (FileSystem.exists(PATH)) {
             load();
+            FlxSprite.defaultAntialiasing = data.antialiasing;
         } else {
             save();
             load();

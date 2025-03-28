@@ -125,7 +125,7 @@ class FNFToLineMap
 					tileData.tiles.push({
 						time: time,
 						direction: rand,
-						length: i[2],
+						length: 0,//i[2],
 						type: "",
 						event: []
 					});

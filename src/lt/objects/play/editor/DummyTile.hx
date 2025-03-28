@@ -31,8 +31,8 @@ class DummyTile extends Sprite {
         if (followMouse) {
             // angle stuff oh my god
             var object:{x:Float,y:Float} = {
-                x: currentObject?.x ?? 0,
-                y: currentObject?.y ?? 0
+                x: (currentObject?.isRelease ? currentObject?.releaseSprite.x ?? 0: currentObject?.x ?? 0) ?? 0,
+                y: (currentObject?.isRelease ? currentObject?.releaseSprite.y ?? 0: currentObject?.y ?? 0) ?? 0,
             }
             var deltaX:Float = FlxG.mouse.x - object.x;
             var deltaY:Float = FlxG.mouse.y - object.y;

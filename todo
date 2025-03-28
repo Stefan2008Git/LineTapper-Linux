@@ -3,6 +3,7 @@ H -> High priority.
 M -> Medium priority.
 L -> Low priority.
 - [H] finish level editor (ui, saving system, etc)
+- [H] hold note is broken atm ahhhhhhhhhhhhhhhhhhh, waiting for fix
 - [H] finish hold release tile mechanic
 - [H] implement song selection screen
 - [M] add more settings.

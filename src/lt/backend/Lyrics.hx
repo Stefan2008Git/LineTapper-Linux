@@ -1,5 +1,8 @@
 package lt.backend;
 
+import sys.io.File;
+import sys.FileSystem;
+
 typedef LyricsData = {
     var time:Float;
     var text:String;
@@ -7,6 +10,16 @@ typedef LyricsData = {
 
 class Lyrics {
     public var lyrics:Array<LyricsData> = [];
+
+    public static function fromSong(name:String):Lyrics {
+        var path:String = Assets._MAP_PATH+"/"+name +"/lyrics.txt";
+        trace("Loading lyrics: " + name);
+        if (!FileSystem.exists(path)) 
+            return new Lyrics("");
+
+        trace("Found.");
+        return new Lyrics(File.getContent(path));
+    }
 
     public function new(?content:String) {
         if (content == null) 
