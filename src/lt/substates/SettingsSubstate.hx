@@ -101,7 +101,9 @@ class SettingsPanel extends Sprite {
         bgCover = new Sprite().makeGraphic(Std.int(width-80), 150, 0xFF000000);
         objects.push(bgCover);
 
-        title = new Text(0,0, PhraseManager.getPhrase('settings').toString().toUpperCase(), 20, CENTER, true);
+        // cpp broke because of this :pray:
+        var wawa:String = PhraseManager.getPhrase('settings', "Settings").toString();
+        title = new Text(0,0, wawa.toUpperCase(), 20, CENTER, true);
         objects.push(title);
 
         randomText = new Text(0,0, FlxG.random.getObject(messages), 13, CENTER);

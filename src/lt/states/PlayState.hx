@@ -188,7 +188,7 @@ class PlayState extends State {
     public function onTileHit(tile:Tile) {
         timing.addBar(tile.time - Conductor.instance.time);
         combo++;
-        FlxG.camera.zoom += 0.08;
+        FlxG.camera.zoom += 0.02;
         updatePlayerText();
     }
     public function onTileMiss(tile:Tile) {

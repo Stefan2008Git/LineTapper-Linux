@@ -47,6 +47,7 @@ class Lyrics {
         return 0;
     }
     
+    
 
     public function getLyric(time:Float):String {
         var latest:String = "";

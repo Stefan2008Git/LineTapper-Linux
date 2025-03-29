@@ -77,6 +77,18 @@ class Assets
 	}
 
 	/**
+	 * Returns video file from a map.
+	 * @param name the map's name.
+	 * @return String Path.
+	 */
+	public static function video(name:String):String {
+		var path:String = '$_MAP_PATH/$name/video.mp4';
+		if (!FileSystem.exists(path)) return "";
+
+		return path;
+	}
+
+	/**
 	 * Returns an image file from `./assets/images/`, Returns null if the `path` does not exist.
 	 * @param file Image file name
 	 * @return FlxGraphic (Warning: might return null)

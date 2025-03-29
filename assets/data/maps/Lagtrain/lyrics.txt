@@ -1,37 +1,37 @@
-00:09.16 -- Hanarebanare no machi wo tsunagu ressha wa itte shimatta ne
-00:15.59 -- Nakushita kotoba wo shiranai nara
-00:18.88 -- Poketto de nigirishimete
-00:22.19 -- Agaite iki wo sutete nobiru kyou wa nemutte gomakase
-00:29.24 -- Nakushita kotoba wo shiranai nara
-00:31.70 -- Kakuekiteisha ni norikonde
-00:47.51 -- Yuugata to taikutsu no osanai wo kotowatte
-00:54.69 -- Hitori kiri
-00:57.61 -- Rojiura wa kesshite isoganai de
-01:00.82 -- Hora, oudanhodou mo matte kure to itteru
-01:07.70 -- Miharu machikado ga anata wo hikitomete ku
-01:14.44 -- Hanarebanare no machi wo tsunagu ressha wa itte shimatta ne
-01:21.25 -- Nakushita kotoba wo shiranai nara
-01:24.70 -- Poketto de nigirishimete
-01:27.32 -- Agaite yume wo sutete yureru kyou wa nemutte gomakase
-01:34.22 -- Nakushita kotoba wo shiranai nara
-01:37.75 -- Kakuekiteisha ni norikonde
-01:53.22 -- Yuugata no eki no hoomu wa hidoku komiatte
-02:00.06 -- Hitorijime dekiru made kyuukei shite hoshikute
-02:06.50 -- Mata, shuudan gekou ga anata wo sekashite iru
-02:19.59 -- Hora, jidou kaisatsu wa matte kure to itteru
-02:25.85 -- Fusagaru ryoute ga anata wo hikitomete ku
-02:33.38 -- Agaite yume wo sutete yureru kyou wa nemutte gomakase
-02:39.79 -- Nakushita kotoba wo shiranai nara
-02:42.75 -- Kakuekiteisha ni norikonde
-02:59.24 -- Hanareta machi to machi wo tsunagu ressha ga
-03:05.74 -- Yonda kaze ni tobasarenai de ite kure
-03:12.24 -- Nakushita kotoba wa sono mama de ii yo
-03:18.54 -- Yureru ressha ni mi wo makasete hoshii kara
-03:25.48 -- (Hanarebanare no machi wo)
-03:28.54 -- Hanarebanare no machi wo tsunagu ressha wa itte shimatta ne
-03:35.11 -- Nakushita kotoba wo shiranai nara
-03:38.67 -- Poketto de nigirishimete
-03:41.72 -- Agaite iki wo sutete nobiru kyou wa nemutte gomakase
-03:48.12 -- Nakushita kotoba wo shiranai nara
-03:51.84 -- Kakuekiteisha de tabi wo shite
-03:57.86 -- 
+00:09.160 -- Hanarebanare no machi wo tsunagu ressha wa itte shimatta ne
+00:15.590 -- Nakushita kotoba wo shiranai nara
+00:18.880 -- Poketto de nigirishimete
+00:22.190 -- Agaite iki wo sutete nobiru kyou wa nemutte gomakase
+00:29.240 -- Nakushita kotoba wo shiranai nara
+00:31.700 -- Kakuekiteisha ni norikonde
+00:47.510 -- Yuugata to taikutsu no osanai wo kotowatte
+00:54.690 -- Hitori kiri
+00:57.610 -- Rojiura wa kesshite isoganai de
+01:00.820 -- Hora, oudanhodou mo matte kure to itteru
+01:07.700 -- Miharu machikado ga anata wo hikitomete ku
+01:14.440 -- Hanarebanare no machi wo tsunagu ressha wa itte shimatta ne
+01:21.250 -- Nakushita kotoba wo shiranai nara
+01:24.700 -- Poketto de nigirishimete
+01:27.320 -- Agaite yume wo sutete yureru kyou wa nemutte gomakase
+01:34.220 -- Nakushita kotoba wo shiranai nara
+01:37.750 -- Kakuekiteisha ni norikonde
+01:53.220 -- Yuugata no eki no hoomu wa hidoku komiatte
+02:00.060 -- Hitorijime dekiru made kyuukei shite hoshikute
+02:06.500 -- Mata, shuudan gekou ga anata wo sekashite iru
+02:19.590 -- Hora, jidou kaisatsu wa matte kure to itteru
+02:25.850 -- Fusagaru ryoute ga anata wo hikitomete ku
+02:33.380 -- Agaite yume wo sutete yureru kyou wa nemutte gomakase
+02:39.790 -- Nakushita kotoba wo shiranai nara
+02:42.750 -- Kakuekiteisha ni norikonde
+02:59.240 -- Hanareta machi to machi wo tsunagu ressha ga
+03:05.740 -- Yonda kaze ni tobasarenai de ite kure
+03:12.240 -- Nakushita kotoba wa sono mama de ii yo
+03:18.540 -- Yureru ressha ni mi wo makasete hoshii kara
+03:25.480 -- (Hanarebanare no machi wo)
+03:28.540 -- Hanarebanare no machi wo tsunagu ressha wa itte shimatta ne
+03:35.110 -- Nakushita kotoba wo shiranai nara
+03:38.670 -- Poketto de nigirishimete
+03:41.720 -- Agaite iki wo sutete nobiru kyou wa nemutte gomakase
+03:48.120 -- Nakushita kotoba wo shiranai nara
+03:51.840 -- Kakuekiteisha de tabi wo shite
+03:57.860 -- 

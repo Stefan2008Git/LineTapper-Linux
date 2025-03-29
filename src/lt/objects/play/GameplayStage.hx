@@ -72,7 +72,7 @@ typedef TileSignal = FlxTypedSignal<Tile->Void>;
  * A gameplay group used in PlayState as well in editors.
  */
 class GameplayStage extends FlxSpriteGroup {
-    public var background:FlxSprite;
+    public var background:Background;
     public var tiles:TileGroup;
     public var player:Player;
     public var started:Bool = false;
@@ -95,11 +95,7 @@ class GameplayStage extends FlxSpriteGroup {
         super();
         this.parent = parent;
         conduct = Conductor.instance;
-		background = FlxGradient.createGradientFlxSprite(FlxG.width, FlxG.height, [FlxColor.BLACK, FlxColor.BLUE], 1, 90, true);
-		background.scale.set(1, 1);
-		background.scrollFactor.set();
-		background.alpha = 0.1;
-        background.active = false;
+		background = new Background(parent?.songName);
 		group.add(background);
 
         dummyTile = new Tile(0,0,DOWN,0);
@@ -115,6 +111,7 @@ class GameplayStage extends FlxSpriteGroup {
     
     public function start() {
         // add more stuff here soon
+        background.play();
         started = true;
         if (editing) {
             tiles.forEachAlive((tile:Tile) -> {
@@ -163,12 +160,13 @@ class GameplayStage extends FlxSpriteGroup {
         started = false;
     }
 
+    var deltaLength:Float = 0;
     private function _updateGameplay(elapsed:Float) {
         tiles.forEachAlive((tile:Tile) -> {
             if (tile.missed)
                 return;
             if (tile.length > 0 && tile.beenHit && conduct.time > tile.time && conduct.time < tile.time + tile.length) {
-                if (!autoplay && FlxG.keys.pressed.ANY) {
+                if (autoplay || FlxG.keys.pressed.ANY) {
                     player.startGlow(tile.color);
                 } else {
                     tile.beenHit = false;
@@ -176,12 +174,13 @@ class GameplayStage extends FlxSpriteGroup {
                     _onTileMiss(tile);
                 }
             }
-    
+
             if (tile.length > 0 && tile.beenHit && !tile.missed && !tile.released) {
-                if (tile.canRelease && FlxG.keys.justReleased.ANY) {
-                    tile.released = true;
+                if (tile.canRelease && FlxG.keys.justReleased.ANY && conduct.time >= tile.time + tile.length) {
+                    _onReleaseTile(tile); 
                 }
             }
+    
     
             if (tile.invalid) {
                 _onTileMiss(tile);
@@ -219,7 +218,9 @@ class GameplayStage extends FlxSpriteGroup {
         if (autoplay) {
             tile.released = true;
         } else {
-            if (FlxG.keys.pressed.ANY) {
+            if (conduct.time >= tile.time + tile.length) {
+                tile.released = true;
+            } else {
                 tile.beenHit = false;
                 tile.missed = true;
                 _onTileMiss(tile);

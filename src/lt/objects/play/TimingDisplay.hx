@@ -2,12 +2,16 @@ package lt.objects.play;
 
 class TimingDisplay extends Sprite {
     var indicators:Array<{spr:Sprite,diff:Float}> = [];
+    var msText:Text;
     public function new() {
         super();
         loadGraphic(Assets.image("play/hit_bar"));
         screenCenter(X);
-        blend = ADD;
-        alpha = 0.7;
+        //blend = ADD;
+        alpha = 1;
+
+        msText = new Text(0,0,"",14, CENTER);
+        msText.setFont("musticapro");
     }
 
     override function draw() {
@@ -28,6 +32,16 @@ class TimingDisplay extends Sprite {
             }
             i.spr?.draw();
         }
+
+        if (msText.alpha > 0) {
+            msText.alpha -= FlxG.elapsed*2;
+            msText.setPosition(
+                x + (width - msText.width) * 0.5,
+                FlxMath.lerp(msText.y, y - msText.height - 5, FlxG.elapsed * 12)
+            );
+            msText.cameras = cameras;
+            msText.draw();
+        }
     }
     
 
@@ -40,5 +54,9 @@ class TimingDisplay extends Sprite {
             spr: spr,
             diff: ms
         });
+
+        msText.text = FlxMath.roundDecimal(ms,1)+"ms";
+        msText.y += 5;
+        msText.alpha = 1;
     }
 }
