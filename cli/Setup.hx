@@ -1,5 +1,6 @@
 package;
 
+import sys.io.Process;
 import sys.io.File;
 import sys.FileSystem;
 using StringTools;
@@ -76,8 +77,13 @@ class Setup {
 
     static function run(cmd:String, args:Array<String>, onSuccess:Void->Void, onFail:String->Void):Void {
         Sys.println('${CYAN}> ${cmd} ${args.join(" ")}${RESET}');
-        var result = Sys.command(cmd, args);
-        if (result == 0) 
+
+        var process = new Process(cmd, args);
+        
+        var exitCode = process.exitCode();
+        process.close();
+
+        if (exitCode == 0) 
             onSuccess();
         else
             onFail(cmd);
