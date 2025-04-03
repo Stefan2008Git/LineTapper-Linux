@@ -12,7 +12,7 @@ class Conductor {
     public var time(default,set):Float = 0;
 
     /** Current song time / position offset **/
-    public var offset:Float = 120;
+    public var offset:Float = 0;
 
     /** Tracker for current beats **/
     public var current_beats:Int = 0;

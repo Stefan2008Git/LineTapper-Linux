@@ -1,5 +1,6 @@
 package lt.objects.play;
 
+import flixel.sound.FlxSound;
 import lt.states.PlayState;
 import flixel.util.FlxSignal.FlxTypedSignal;
 import flixel.util.FlxGradient;
@@ -87,6 +88,8 @@ class GameplayStage extends FlxSpriteGroup {
 
     public var paused:Bool = false;
     public var autoplay:Bool = false;
+
+    public var hitsound:FlxSound;
     var _playbackRate(get,never):Float;
     function get__playbackRate():Float {
         return (parent == null ? 1 : parent.playbackRate);
@@ -107,6 +110,8 @@ class GameplayStage extends FlxSpriteGroup {
 
         onTileHit = new TileSignal();
         onTileMiss = new TileSignal();
+
+        hitsound = FlxG.sound.load(Assets.sound("hitsound"), 0.8);
     }
     
     public function start() {
@@ -217,9 +222,13 @@ class GameplayStage extends FlxSpriteGroup {
     private function _onReleaseTile(tile:Tile) {
         if (autoplay) {
             tile.released = true;
+            hitsound.play(true, 0);
+
         } else {
             if (conduct.time >= tile.time + tile.length) {
                 tile.released = true;
+                hitsound.play(true, 0);
+
             } else {
                 tile.beenHit = false;
                 tile.missed = true;
@@ -398,6 +407,7 @@ class GameplayStage extends FlxSpriteGroup {
 
         tile.beenHit = true;
         onTileHit.dispatch(tile);
+        hitsound.play(true, 0);
     }
 
     private function _onTileMiss(tile:Tile) {

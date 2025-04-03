@@ -42,8 +42,9 @@
 	<!-- If removed, LineTapper won't display any video. -->
 	<define name="ALLOW_VIDEOS" if="cpp"/>
 
+	
 	<!-- _______________________________ Libraries ______________________________ -->
-
+	<!--LT_LIB-->
 	<haxelib name="flixel" />
 	<haxelib name="hscript" if="USING_SCRIPTS"/>
 
@@ -54,7 +55,7 @@
 
 	<!-- Videos -->
 	<haxelib name="hxCodec" if="ALLOW_VIDEOS"/>
-
+	<!--LT_LIB_END-->
 
 	<!-- ______________________________ Haxedefines _____________________________ -->
 

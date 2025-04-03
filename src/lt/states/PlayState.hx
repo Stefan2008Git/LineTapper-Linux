@@ -112,7 +112,7 @@ class PlayState extends State {
 		add(playerText);
 
         lyricsList = Lyrics.fromSong(songName);
-        lyricsOverlay = makeText(0,FlxG.height - 120,"", 18, false, CENTER);
+        lyricsOverlay = makeText(0,FlxG.height - 120,"", 20, false, CENTER);
         lyricsOverlay.setFont("musticapro");
         lyricsOverlay.fieldWidth = FlxG.width * 0.7;
         lyricsOverlay.screenCenter(X);
@@ -126,7 +126,7 @@ class PlayState extends State {
 
     function loadSong(_song:String) {
         var mapAsset:MapAsset = Assets.map(_song);
-        FlxG.sound.playMusic(mapAsset.audio, 1, false);
+        FlxG.sound.playMusic(mapAsset.audio, 0.7, false);
 		FlxG.sound.music.time = 0;
         FlxG.sound.music.pitch = playbackRate;
 		FlxG.sound.music.pause();
