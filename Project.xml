@@ -51,7 +51,7 @@
 	<haxelib name="flixel-addons" />
 
 	<!-- Translations -->
-	<haxelib name="langhaxe" version="0.0.5"/>
+	<haxelib name="Langhaxe" version="0.0.5"/>
 
 	<!-- Videos -->
 	<haxelib name="hxCodec" if="ALLOW_VIDEOS"/>
