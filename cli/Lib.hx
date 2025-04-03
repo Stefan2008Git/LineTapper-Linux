@@ -25,7 +25,8 @@ class Lib {
             for (lib in list) {
                 var args:Array<String> = ["install", lib.name];
                 if (Reflect.hasField(lib, "version")) args.push(lib.version);
-                if (Reflect.hasField(lib, "quiet") && lib.quiet) args.push("--quiet");
+                //if (Reflect.hasField(lib, "quiet") && lib.quiet) 
+                args.push("--quiet");
                 args.push("--always");
 
                 Sys.println('${BOLD}${YELLOW}Installing: ${lib.name} ${lib?.version ?? ""}${RESET}');
