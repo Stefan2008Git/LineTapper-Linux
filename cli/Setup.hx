@@ -41,9 +41,9 @@ class Setup {
         }
 
         Sys.println('${BOLD}${CYAN}Updating haxelib...${RESET}');
-        run("haxelib", ["update"], ()-> {
+        //run("haxelib", ["update"], ()-> {
             installLibraries(libsSection);
-        }, onFailed);
+        //}, onFailed);
     }
 
     static function installLibraries(libsSection:String):Void {
@@ -79,9 +79,9 @@ class Setup {
         Sys.println('${CYAN}> ${cmd} ${args.join(" ")}${RESET}');
 
         var process = new Process(cmd, args);
-        //Sys.println(process.stdout.readAll());
+        process.stdout.readAll();
         
-        var exitCode = process.exitCode();
+        var exitCode:Int = process.exitCode();
         process.close();
 
         if (exitCode == 0) 
