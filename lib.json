@@ -3,7 +3,8 @@
         "name": "openfl"
     },
     {
-        "name": "lime"
+        "name": "lime",
+        "quiet": true
     },
     {
         "name": "flixel"

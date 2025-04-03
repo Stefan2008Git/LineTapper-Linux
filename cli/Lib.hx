@@ -24,8 +24,8 @@ class Lib {
             var list:Array<LTLib> = Json.parse(File.getContent("./lib.json"));
             for (lib in list) {
                 var args:Array<String> = ["install", lib.name];
-                if (lib.version != null) args.push(lib.version);
-                args.push("--quiet");
+                if (Reflect.hasField(lib, "version")) args.push(lib.version);
+                if (Reflect.hasField(lib, "quiet") && lib.quiet) args.push("--quiet");
                 args.push("--always");
 
                 Sys.println('${BOLD}${YELLOW}Installing: ${lib.name} ${lib?.version ?? ""}${RESET}');
@@ -56,5 +56,6 @@ class Lib {
 
 typedef LTLib = {
     name:String,
-    ?version:String
+    ?version:String,
+    ?quiet:Bool
 }
