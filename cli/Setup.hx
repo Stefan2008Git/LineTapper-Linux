@@ -1,8 +1,8 @@
 package;
 
-import sys.io.Process;
-import sys.io.File;
 import sys.FileSystem;
+import sys.io.File;
+
 using StringTools;
 
 class Setup {
@@ -41,9 +41,10 @@ class Setup {
         }
 
         Sys.println('${BOLD}${CYAN}Updating haxelib...${RESET}');
-        //run("haxelib", ["update"], ()-> {
+        run("haxelib", ['update'], function() {
             installLibraries(libsSection);
-        //}, onFailed);
+        }, onFailed);
+        
     }
 
     static function installLibraries(libsSection:String):Void {
@@ -67,6 +68,7 @@ class Setup {
 
             if (libName != "") {
                 var args:Array<String> = libVersion != "" ? ["install", libName, libVersion] : ["install", libName];
+                args.push("--quiet");
                 Sys.println('${BOLD}${YELLOW}Installing: ${libName}${libVersion != "" ? " (version " + libVersion + ")" : ""}${RESET}');
                 run("haxelib", args, function() {
                     Sys.println('${GREEN}[✓] Installed: ${libName}${RESET}');
@@ -77,14 +79,10 @@ class Setup {
 
     static function run(cmd:String, args:Array<String>, onSuccess:Void->Void, onFail:String->Void):Void {
         Sys.println('${CYAN}> ${cmd} ${args.join(" ")}${RESET}');
-
-        var process = new Process(cmd, args);
-        process.stdout.readAll();
         
-        var exitCode:Int = process.exitCode();
-        process.close();
-
-        if (exitCode == 0) 
+        var result = Sys.command(cmd,args);
+        
+        if (result == 0) 
             onSuccess();
         else
             onFail(cmd);
