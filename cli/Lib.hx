@@ -25,6 +25,9 @@ class Lib {
             for (lib in list) {
                 var args:Array<String> = ["install", lib.name];
                 if (lib.version != null) args.push(lib.version);
+                args.push("--quiet");
+                args.push("--always");
+
                 Sys.println('${BOLD}${YELLOW}Installing: ${lib.name} ${lib?.version ?? ""}${RESET}');
                 run("haxelib", args, function() {
                     Sys.println('${GREEN}[✓] Installed: ${lib.name}${RESET}');
