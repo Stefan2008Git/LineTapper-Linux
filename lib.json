@@ -1,0 +1,24 @@
+[
+    {
+        "name": "openfl"
+    },
+    {
+        "name": "lime"
+    },
+    {
+        "name": "flixel"
+    },
+    {
+        "name": "flixel-addons"
+    },
+    {
+        "name": "hscript"
+    },
+    {
+        "name": "Langhaxe",
+        "version": "0.0.5"
+    },
+    {
+        "name": "hxCodec"
+    }
+]

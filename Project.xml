@@ -44,18 +44,16 @@
 
 	
 	<!-- _______________________________ Libraries ______________________________ -->
-	<!--LT_LIB-->
 	<haxelib name="flixel" />
-	<haxelib name="hscript" if="USING_SCRIPTS"/>
-
 	<haxelib name="flixel-addons" />
+
+	<haxelib name="hscript" if="USING_SCRIPTS"/>
 
 	<!-- Translations -->
 	<haxelib name="Langhaxe" version="0.0.5"/>
 
 	<!-- Videos -->
 	<haxelib name="hxCodec" if="ALLOW_VIDEOS"/>
-	<!--LT_LIB_END-->
 
 	<!-- ______________________________ Haxedefines _____________________________ -->
 
