@@ -41,10 +41,12 @@ class Setup {
         }
 
         Sys.println('${BOLD}${CYAN}Haxelib List${RESET}');
-        run("haxelib", ["list"],()->{}, onFailed);
+        
         Sys.println('${BOLD}${CYAN}Updating haxelib...${RESET}');
         run("haxelib", ['update'], function() {
             installLibraries(libsSection);
+            Sys.println('${BOLD}${CYAN}Haxelib List Final${RESET}');
+            run("haxelib", ["list"],()->{}, onFailed);
         }, onFailed);
         
     }
