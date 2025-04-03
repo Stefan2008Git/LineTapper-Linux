@@ -79,7 +79,7 @@ class Setup {
         Sys.println('${CYAN}> ${cmd} ${args.join(" ")}${RESET}');
 
         var process = new Process(cmd, args);
-        Sys.println(process.stdout.readAll());
+        //Sys.println(process.stdout.readAll());
         
         var exitCode = process.exitCode();
         process.close();
