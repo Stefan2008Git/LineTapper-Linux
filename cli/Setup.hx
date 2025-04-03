@@ -40,6 +40,8 @@ class Setup {
             return;
         }
 
+        Sys.println('${BOLD}${CYAN}Haxelib List${RESET}');
+        run("haxelib", ["list"],()->{}, onFailed);
         Sys.println('${BOLD}${CYAN}Updating haxelib...${RESET}');
         run("haxelib", ['update'], function() {
             installLibraries(libsSection);
@@ -69,6 +71,7 @@ class Setup {
             if (libName != "") {
                 var args:Array<String> = libVersion != "" ? ["install", libName, libVersion] : ["install", libName];
                 args.push("--quiet");
+                args.push("--always");
                 Sys.println('${BOLD}${YELLOW}Installing: ${libName}${libVersion != "" ? " (version " + libVersion + ")" : ""}${RESET}');
                 run("haxelib", args, function() {
                     Sys.println('${GREEN}[✓] Installed: ${libName}${RESET}');
