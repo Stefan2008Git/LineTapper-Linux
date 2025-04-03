@@ -7,6 +7,9 @@
         "quiet": true
     },
     {
+        "name": "hxcpp"
+    },
+    {
         "name": "flixel"
     },
     {
