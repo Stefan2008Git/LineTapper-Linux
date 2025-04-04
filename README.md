@@ -15,6 +15,8 @@
   </b>
 </p>
 
+Playable test builds are available on this repo's <a href='https://github.com/corecathx/LineTapper/actions'>Actions</a>.
+
 ## 🛠 Building Guide
 > **⚠️ WARNING:**
 > This game is still in active development, so there might be a lot of changes over time.
@@ -34,8 +36,7 @@ This is a project I started making on June 17th, 2024. It's inspired by this wei
 While I was doing this, something came to my mind: "Hey, what if the player were a box and had to turn after pressing a tile?" And here we are.
 
 ## 🎮 Credits
-<!-- I dunno what to write here. -->
-| Avatar                | Name       | Involvement                  |
+| Avatar                | Name       | Role                  |
 |---------------------|------------|-----------------------|
 | [<img src="https://github.com/corecathx.png" width="100" alt="CoreCat">](https://github.com/corecathx) | [CoreCat](https://github.com/corecathx) | Developer & Creator of LineTapper  |
 | [<img src="https://github.com/ZSolarDev.png" width="100" alt="ZSolarDev">](https://github.com/ZSolarDev) | [ZSolarDev](https://github.com/ZSolarDev) | Progamming & Game Designer       |
