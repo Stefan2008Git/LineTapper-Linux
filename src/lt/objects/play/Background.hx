@@ -47,11 +47,13 @@ class Background extends FlxSprite {
             );
             
             video.updateHitbox();
+            video.cameras = cameras;
             video.draw();
             video.screenCenter();
             #end
         } else {
             background.setPosition(x, y);
+            background.cameras = cameras;
             background.draw();
         }
     }

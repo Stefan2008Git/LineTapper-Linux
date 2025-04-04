@@ -1,5 +1,10 @@
 package lt.states;
 
+import openfl.geom.Matrix;
+import openfl.display.BitmapData;
+import flixel.graphics.FlxGraphic;
+import lt.graphics.shaders.ShadowShader;
+import openfl.filters.ShaderFilter;
 import lt.backend.Lyrics;
 import lt.substates.PauseSubstate;
 import lt.objects.play.Tile;
@@ -20,14 +25,22 @@ class PlayState extends State {
 	 */
 	public var songName:String = "Tutorial";
     /**
-	 * The world camera, shortcut to `FlxG.camera`.
+     * Background camera, used by Backgrounds.
+     * Lowest layer over everything.
+     */
+    public var bgCamera:FlxCamera;
+
+    /**
+	 * Gameplay camera, shortcut to `FlxG.camera`.
 	 */
 	public var gameCamera:FlxCamera;
 	
 	/**
-	 * The HUD Camera.
+	 * HUD Camera, has the highest layer.
 	 */
 	public var hudCamera:FlxCamera;
+
+    public var shadowShader:ShadowShader;
 
     public var stage:GameplayStage;
     public var camFollow:FlxObject;
@@ -50,6 +63,8 @@ class PlayState extends State {
     public var playbackRate:Float = 1;
     public var paused:Bool = false;
 
+    public var previewSprite:FlxSprite;
+
     public function new(?song:String) {
         super();
         songName = song ?? "Tutorial";
@@ -58,12 +73,21 @@ class PlayState extends State {
         instance = this;
         Conductor.instance.time = 0;
 
+        bgCamera = new FlxCamera();
+		
         gameCamera = new FlxCamera();
+        gameCamera.bgColor = FlxColor.TRANSPARENT;
 		FlxG.cameras.reset(gameCamera);
 
+        FlxG.cameras.insert(bgCamera, FlxG.cameras.list.indexOf(gameCamera), false);
 		hudCamera = new FlxCamera();
 		hudCamera.bgColor = FlxColor.TRANSPARENT;
 		FlxG.cameras.add(hudCamera, false);
+
+        //shadowShader = new ShadowShader();
+        //gameCamera.filters = [new ShaderFilter(shadowShader)];
+        //hudCamera.filters = [new ShaderFilter(shadowShader)];
+        
 
         stage = new GameplayStage(this);
         stage.generateTiles(loadSong(songName));
@@ -78,7 +102,16 @@ class PlayState extends State {
 		add(camFollow);
 		FlxG.camera.follow(camFollow, LOCKON);
         super.create();
+
+        //ok
+        cameraBitmap = new BitmapData(FlxG.camera.width, FlxG.camera.height);
+        cameraBitmap.draw(gameCamera.canvas);
+        previewSprite = new FlxSprite().loadGraphic(cameraBitmap);
+        previewSprite.cameras = [hudCamera];
+        add(previewSprite);
     }
+
+    var cameraBitmap:BitmapData;
 
     inline function initHUD() {
         inline function makeText(nX:Float,nY:Float,label:String, size:Int, ?bold:Bool = false, ?align:FlxTextAlign):Text {
@@ -163,6 +196,14 @@ class PlayState extends State {
         FlxG.camera.zoom = FlxMath.lerp(FlxG.camera.zoom, 1, elapsed*12);
 
         lyricsOverlay.text = lyricsList.getLyric(Conductor.instance.time);
+
+        //no work :(
+        previewSprite.graphic.bitmap.draw(FlxG.camera.canvas);
+        if (previewSprite != null) {
+            previewSprite.scale.set(0.4,0.4);
+            previewSprite.updateHitbox();
+            previewSprite.setPosition(FlxG.width - previewSprite.width, (FlxG.height - previewSprite.height) * 0.5);    
+        }
 
         super.update(elapsed);
     }

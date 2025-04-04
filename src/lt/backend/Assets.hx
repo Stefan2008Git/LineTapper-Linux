@@ -20,6 +20,7 @@ class Assets
 	@:noCompletion inline public static var _ASSET_PATH:String = "./assets";
 
 	@:noCompletion inline public static var _DATA_PATH:String = '$_ASSET_PATH/data';
+	@:noCompletion inline public static var _SHADER_PATH:String  = '$_DATA_PATH/shaders';
 	@:noCompletion inline public static var _FONT_PATH:String = '$_DATA_PATH/fonts';
 	@:noCompletion inline public static var _MAP_PATH:String = '$_DATA_PATH/maps';
 
@@ -166,6 +167,20 @@ class Assets
 			mAsset.lyrics = new Lyrics(File.getContent(lyricsPath));
 
 		return mAsset;
+	}
+
+	/**
+	 * Returns .frag shader file.
+	 * @param name Shader filename.
+	 */
+	 public static function frag(name:String) {
+		var path:String = '$_SHADER_PATH/$name.frag';
+		if (!FileSystem.exists(path)) {
+			trace("does not exist: " + path);
+			return "";
+		} 
+		trace("shader exists");
+		return File.getContent(path);
 	}
 
 	/**

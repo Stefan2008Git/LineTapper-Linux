@@ -1,5 +1,6 @@
 package lt.states;
 
+import openfl.display.BitmapData;
 import lt.objects.ui.Dialog;
 import lt.objects.play.Tile;
 import flixel.addons.transition.FlxTransitionSprite;
@@ -8,6 +9,7 @@ import flixel.addons.display.FlxBackdrop;
 
 class TestTransition extends State {
     var f:Tile;
+    var spr:FlxSprite;
     override function create() {
         super.create();
         var wawa:FlxBackdrop = new FlxBackdrop(FlxGridOverlay.createGrid(10,10,FlxG.width,FlxG.height,true,0xFF353535,0xFF505050));
@@ -23,6 +25,11 @@ class TestTransition extends State {
         add(a);
         var c:Tile = new Tile(200,300,DOWN,Conductor.instance.step_ms*3,Conductor.instance.step_ms*4);
         add(c);
+
+        //ok
+        var bitmap:BitmapData = new BitmapData(FlxG.camera.width, FlxG.camera.height);
+        spr = new FlxSprite().loadGraphic(bitmap);
+        add(spr);
     }
 
     var ue:Bool = false;
@@ -40,6 +47,10 @@ class TestTransition extends State {
 
         if (FlxG.keys.pressed.Q || FlxG.keys.pressed.E) 
             FlxG.camera.zoom -= FlxG.keys.pressed.Q ? -(3*elapsed) : (3*elapsed);
+
+
+        //work
+        spr.graphic.bitmap.draw(FlxG.camera.canvas);
 
         if (FlxG.keys.justPressed.SPACE) {
             trace("Wawa");

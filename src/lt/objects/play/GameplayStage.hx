@@ -99,6 +99,7 @@ class GameplayStage extends FlxSpriteGroup {
         this.parent = parent;
         conduct = Conductor.instance;
 		background = new Background(parent?.songName);
+        background.cameras = [parent.bgCamera];
 		group.add(background);
 
         dummyTile = new Tile(0,0,DOWN,0);
