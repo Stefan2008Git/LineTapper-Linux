@@ -1,5 +1,6 @@
 package lt.objects.play;
 
+import lt.backend.MapData.TileData;
 import lt.objects.play.Player.Direction;
 import openfl.geom.Rectangle;
 import openfl.display.BitmapData;
@@ -44,6 +45,7 @@ class Tile extends Sprite {
 
     public var direction(default, set):Direction = LEFT;
 
+    public var multiplier:Float = 1;
 
     public var hitOutline:TileEffect;
 
@@ -67,7 +69,7 @@ class Tile extends Sprite {
         // That one hit effect thing //
         var _graphicSize:Float = Player.BOX_SIZE + (200);
         hitOutline = new TileEffect(nX,nY).makeGraphic(300,300,0xFFFFFFFF);
-        hitOutline.outline = 0.95;
+        hitOutline.outline = 0.9;
 		hitOutline.alpha = 0;
 		hitOutline.setGraphicSize(_graphicSize,_graphicSize);
 		hitOutline.updateHitbox();
@@ -205,7 +207,6 @@ class Tile extends Sprite {
                 if (_rotationAdd == 0){
                     _rotationAdd = FlxG.random.float(-90, 90);
                     alpha = 1;
-                    // Snap the scaling.
                     var toThis:Float = Player.BOX_SIZE/hitOutline.frameWidth;
                     hitOutline.scale.set(toThis, toThis);
                     hitOutline.alpha = 1;
@@ -260,8 +261,8 @@ class Tile extends Sprite {
 
     function set_length(val:Float):Float {
         if (holdSprite!=null){
-            holdSprite.scale.x = (val/conduct.step_ms) * Player.BOX_SIZE;
-            holdSprite.scale.y = (Player.BOX_SIZE*0.65) / holdSprite.frameHeight;
+            holdSprite.scale.x = (val/conduct.step_ms) * Player.BOX_SIZE * multiplier;
+            holdSprite.scale.y = ((Player.BOX_SIZE*multiplier)*0.65) / holdSprite.frameHeight;
             holdSprite.updateHitbox();
         }
 
@@ -292,6 +293,16 @@ class Tile extends Sprite {
 
         updateProps();
         return val;
+    }
+
+    public function getData():TileData {
+        return {
+            direction: cast direction,
+            length: this.length,
+            time: this.time,
+            event: [],
+            type: ''
+        };
     }
 }
 

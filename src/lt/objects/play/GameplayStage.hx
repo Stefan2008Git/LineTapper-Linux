@@ -73,6 +73,7 @@ typedef TileSignal = FlxTypedSignal<Tile->Void>;
  * A gameplay group used in PlayState as well in editors.
  */
 class GameplayStage extends FlxSpriteGroup {
+    public static var TILE_MULTIPLIER:Float = 1;
     public var background:Background;
     public var tiles:TileGroup;
     public var player:Player;
@@ -99,9 +100,10 @@ class GameplayStage extends FlxSpriteGroup {
         this.parent = parent;
         conduct = Conductor.instance;
 		background = new Background(parent?.songName);
-        background.cameras = [parent.bgCamera];
+        if (parent!=null)
+            background.cameras = [parent.bgCamera];
 		group.add(background);
-
+ 
         dummyTile = new Tile(0,0,DOWN,0);
         tiles = new TileGroup();
         add(tiles);
@@ -337,11 +339,13 @@ class GameplayStage extends FlxSpriteGroup {
                     // do nothin
             }
             var pos:{x:Float,y:Float} = {
-                x: tilePos[0] * Player.BOX_SIZE,
-                y: tilePos[1] * Player.BOX_SIZE,
+                x: tilePos[0] * (Player.BOX_SIZE * TILE_MULTIPLIER),
+                y: tilePos[1] * (Player.BOX_SIZE * TILE_MULTIPLIER),
             }
 
-            addTile(new Tile(pos.x, pos.y, direction, curTime+conduct.offset,tile.length));
+            var newTile:Tile = new Tile(pos.x, pos.y, direction, curTime+conduct.offset,tile.length);
+            newTile.multiplier = TILE_MULTIPLIER;
+            addTile(newTile);
 
             curDir = direction;
         }
@@ -362,6 +366,14 @@ class GameplayStage extends FlxSpriteGroup {
             tile.active = false;
             tile.visible = false;
         }
+    }
+
+    public function clearTiles():Void {
+        for (tile in tiles.members) {
+            remove(tile);
+            tile.destroy();
+        }
+        tiles.clear();
     }
     
 

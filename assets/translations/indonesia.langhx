@@ -11,6 +11,7 @@
 		"level_editor": "Editor Level",
 		"credits": "Kredit",
 		"beats_per_minute": "Beats Per Menit",
+		"song_name": "Nama Lagu",
 		"start_typing_your_songs_name": "MULAI KETIK NAMA LAGU KAMU",
 		"settings_messages": [
 			"Sesuaikan sesuai preferensimu.",

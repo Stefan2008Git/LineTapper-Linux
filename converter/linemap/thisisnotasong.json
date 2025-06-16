@@ -1,3889 +1,4218 @@
 {
-	"name": "wavetapper",
+	"name": "override",
 	"lyrics": true,
 	"tiles": [
 		{
-			"direction": 1,
+			"direction": 2,
 			"length": 0,
-			"time": 2142.856,
+			"time": 294.118,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 3,
 			"length": 0,
-			"time": 2678.57,
+			"time": 588.236,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 1,
 			"length": 0,
-			"time": 3080.3555000000006,
+			"time": 882.354,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 2,
 			"length": 0,
-			"time": 3348.2125000000005,
+			"time": 1176.4720000000002,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 0,
 			"length": 0,
-			"time": 3616.069500000001,
+			"time": 1470.5900000000004,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 3749.998000000001,
+			"time": 1617.6490000000003,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 1,
 			"length": 0,
-			"time": 4017.8550000000009,
+			"time": 1764.7080000000003,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 2,
 			"length": 0,
-			"time": 4285.712,
+			"time": 1911.7670000000005,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 3,
 			"length": 0,
-			"time": 4821.4259999999995,
+			"time": 2058.8260000000005,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 5223.2114999999994,
+			"time": 2205.885,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 5491.0684999999994,
+			"time": 2352.9440000000004,
 			"event": [],
 			"type": ""
 		},
 		{
+			"direction": 2,
+			"length": 0,
+			"time": 2647.0620000000004,
+			"event": [],
+			"type": ""
+		},
+		{
 			"direction": 3,
 			"length": 0,
-			"time": 5758.9254999999985,
+			"time": 2941.1800000000007,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 5892.8539999999985,
+			"time": 3088.2390000000005,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 6026.7824999999975,
+			"time": 3235.2980000000007,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 1,
 			"length": 0,
-			"time": 6160.7109999999975,
+			"time": 3529.4160000000006,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 3,
 			"length": 0,
-			"time": 6428.5679999999966,
+			"time": 3676.4750000000008,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
+			"length": 0,
+			"time": 3823.534000000001,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
 			"length": 0,
-			"time": 6964.2819999999965,
+			"time": 3970.5930000000008,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 7366.0674999999965,
+			"time": 4117.652000000001,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 7633.9244999999955,
+			"time": 4264.711,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 7901.7814999999946,
+			"time": 4411.7699999999995,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 8035.7099999999946,
+			"time": 4558.829,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 8303.5669999999936,
+			"time": 4705.887999999999,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 8571.4239999999936,
+			"time": 4852.9469999999983,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 0,
 			"length": 0,
-			"time": 9107.1379999999936,
+			"time": 5000.0059999999985,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 1,
 			"length": 0,
-			"time": 9508.9234999999935,
+			"time": 5294.1239999999971,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 2,
 			"length": 0,
-			"time": 9776.7804999999917,
+			"time": 5441.1829999999973,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 0,
 			"length": 0,
-			"time": 10044.637499999992,
+			"time": 5588.2419999999966,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 10178.565999999992,
+			"time": 5882.359999999996,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 10312.494499999992,
+			"time": 6029.4189999999953,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 10446.42299999999,
+			"time": 6176.4779999999946,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 0,
 			"length": 0,
-			"time": 10580.35149999999,
+			"time": 6323.5369999999948,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 1,
 			"length": 0,
-			"time": 10714.27999999999,
+			"time": 6470.5959999999941,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 10982.13699999999,
+			"time": 6617.6549999999943,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 0,
 			"length": 0,
-			"time": 11116.06549999999,
+			"time": 6764.7139999999936,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 11249.993999999988,
+			"time": 6911.7729999999929,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 1,
 			"length": 0,
-			"time": 11517.850999999988,
+			"time": 7058.8319999999931,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 2,
 			"length": 0,
-			"time": 11785.707999999988,
+			"time": 7205.8909999999923,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 11919.636499999986,
+			"time": 7352.9499999999916,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 1,
 			"length": 0,
-			"time": 12187.493499999986,
+			"time": 7647.0679999999911,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 12321.421999999986,
+			"time": 7794.12699999999,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 2,
 			"length": 0,
-			"time": 12589.278999999986,
+			"time": 7941.1859999999906,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 12857.135999999984,
+			"time": 8235.303999999991,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 3,
 			"length": 0,
-			"time": 13124.992999999984,
+			"time": 8382.36299999999,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 13258.921499999984,
+			"time": 8529.4219999999914,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 13392.849999999984,
+			"time": 8676.4809999999925,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 13660.706999999982,
+			"time": 8823.5399999999918,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 13928.563999999982,
+			"time": 8970.5989999999929,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 0,
 			"length": 0,
-			"time": 14062.492499999982,
+			"time": 9117.657999999994,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 1,
 			"length": 0,
-			"time": 14330.34949999998,
+			"time": 9264.7169999999933,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 14464.27799999998,
+			"time": 9411.7759999999944,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 14732.13499999998,
+			"time": 9558.8349999999955,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 3,
 			"length": 0,
-			"time": 14999.99199999998,
+			"time": 9705.8939999999948,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 15267.848999999978,
+			"time": 10000.011999999997,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 0,
 			"length": 0,
-			"time": 15401.777499999978,
+			"time": 10147.070999999996,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 3,
 			"length": 0,
-			"time": 15535.705999999978,
+			"time": 10294.129999999997,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 15803.562999999978,
+			"time": 10588.247999999998,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 1,
 			"length": 0,
-			"time": 16071.419999999978,
+			"time": 10735.306999999999,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 0,
 			"length": 0,
-			"time": 16205.348499999978,
+			"time": 10882.366,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 16473.205499999978,
+			"time": 11029.425,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 16607.133999999976,
+			"time": 11176.484,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 16874.990999999976,
+			"time": 11323.543000000001,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 0,
 			"length": 0,
-			"time": 17142.847999999976,
+			"time": 11470.602,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
-			"length": 0,
-			"time": 17410.704999999976,
-			"event": [],
-			"type": ""
-		},
-		{
-			"direction": 0,
 			"length": 0,
-			"time": 17544.633499999974,
+			"time": 11617.661000000002,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 17678.561999999976,
+			"time": 11764.720000000003,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 17946.418999999973,
+			"time": 11911.779000000002,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 18214.275999999973,
+			"time": 12058.838000000003,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 18348.204499999974,
+			"time": 12352.956000000004,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
+			"length": 0,
+			"time": 12500.015000000005,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
 			"length": 0,
-			"time": 18616.061499999971,
+			"time": 12647.074000000006,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 18749.989999999972,
+			"time": 12794.133000000005,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 1,
 			"length": 0,
-			"time": 19017.846999999972,
+			"time": 12941.192000000006,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 2,
 			"length": 0,
-			"time": 19285.703999999972,
+			"time": 13088.251000000007,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 19553.560999999969,
+			"time": 13235.310000000007,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 19687.489499999971,
+			"time": 13382.369000000008,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 19821.417999999969,
+			"time": 13529.428000000009,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 0,
 			"length": 0,
-			"time": 20089.274999999969,
+			"time": 13970.605000000009,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 20357.131999999969,
+			"time": 14117.664000000008,
 			"event": [],
 			"type": ""
 		},
 		{
+			"direction": 2,
+			"length": 0,
+			"time": 14264.723000000009,
+			"event": [],
+			"type": ""
+		},
+		{
 			"direction": 0,
 			"length": 0,
-			"time": 20491.060499999967,
+			"time": 14411.78200000001,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 3,
 			"length": 0,
-			"time": 20758.917499999967,
+			"time": 14705.900000000011,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 20892.845999999965,
+			"time": 14852.959000000012,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 0,
 			"length": 0,
-			"time": 21160.702999999965,
+			"time": 15000.018000000011,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 2,
 			"length": 0,
-			"time": 21428.559999999965,
+			"time": 15147.077000000012,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 21696.416999999965,
+			"time": 15294.136000000013,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 0,
 			"length": 0,
-			"time": 21830.345499999963,
+			"time": 15441.195000000012,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 21964.273999999965,
+			"time": 15588.254000000014,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 22232.130999999965,
+			"time": 15735.313000000015,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 3,
 			"length": 0,
-			"time": 22499.987999999961,
+			"time": 15882.372000000014,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 22633.916499999963,
+			"time": 16323.549000000014,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 22901.773499999963,
+			"time": 16470.608000000011,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 3,
 			"length": 0,
-			"time": 23035.701999999961,
+			"time": 16617.667000000012,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 23303.558999999961,
+			"time": 16764.72600000001,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 0,
 			"length": 0,
-			"time": 23571.415999999961,
+			"time": 16911.785000000011,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 1,
 			"length": 0,
-			"time": 23839.272999999961,
+			"time": 17058.844000000008,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 23973.201499999959,
+			"time": 17205.903000000006,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 24107.129999999957,
+			"time": 17500.021000000004,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 24374.986999999957,
+			"time": 17647.08,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 24642.843999999957,
+			"time": 17794.139000000003,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 24776.772499999955,
+			"time": 17941.198,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 3,
 			"length": 0,
-			"time": 25044.629499999955,
+			"time": 18088.256999999998,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 25178.557999999957,
+			"time": 18235.316,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 2,
 			"length": 0,
-			"time": 25446.414999999957,
+			"time": 18382.374999999996,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 25714.271999999954,
+			"time": 18529.433999999994,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
+			"length": 0,
+			"time": 18676.492999999995,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
 			"length": 0,
-			"time": 25982.128999999954,
+			"time": 18823.551999999992,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
+			"length": 0,
+			"time": 19117.669999999991,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
 			"length": 0,
-			"time": 26116.057499999955,
+			"time": 19558.846999999991,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 26249.985999999953,
+			"time": 19705.905999999988,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 26517.842999999953,
+			"time": 20000.02399999999,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 26785.699999999953,
+			"time": 20294.141999999989,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 26919.628499999952,
+			"time": 20588.259999999987,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 27187.485499999952,
+			"time": 20735.318999999985,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 27321.41399999995,
+			"time": 20882.377999999986,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
-			"length": 0,
-			"time": 27589.27099999995,
-			"event": [],
-			"type": ""
-		},
-		{
-			"direction": 3,
 			"length": 0,
-			"time": 27857.12799999995,
+			"time": 21470.613999999983,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 28124.98499999995,
+			"time": 21764.731999999985,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 28258.913499999948,
+			"time": 21911.790999999983,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 28392.84199999995,
+			"time": 22058.84999999998,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 28660.698999999946,
+			"time": 22205.908999999981,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 28928.555999999946,
+			"time": 22352.967999999979,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 29062.484499999948,
+			"time": 22500.026999999976,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 29330.341499999948,
+			"time": 22647.085999999978,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 29464.269999999946,
+			"time": 22794.144999999975,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 29732.126999999946,
+			"time": 22941.203999999972,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 29999.983999999946,
+			"time": 23216.939624999974,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
+			"length": 0,
+			"time": 23382.380999999972,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
 			"length": 0,
-			"time": 30267.840999999942,
+			"time": 23529.439999999973,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 30401.769499999944,
+			"time": 23676.498999999971,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 1,
 			"length": 0,
-			"time": 30535.697999999942,
+			"time": 23823.557999999972,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 30803.554999999942,
+			"time": 23970.616999999969,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 31071.411999999942,
+			"time": 24117.675999999967,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 31205.34049999994,
+			"time": 24393.411624999968,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 31473.19749999994,
+			"time": 24558.852999999966,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 31607.125999999942,
+			"time": 24705.911999999968,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
+			"length": 0,
+			"time": 24852.970999999965,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
 			"length": 0,
-			"time": 31874.982999999938,
+			"time": 25000.029999999962,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 32142.839999999942,
+			"time": 25147.088999999964,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 0,
 			"length": 0,
-			"time": 32410.696999999949,
+			"time": 25294.147999999961,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 32544.625499999951,
+			"time": 25441.206999999958,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 32678.553999999956,
+			"time": 25588.26599999996,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 32946.410999999964,
+			"time": 25882.383999999955,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 33214.267999999967,
+			"time": 26029.442999999956,
 			"event": [],
 			"type": ""
 		},
 		{
+			"direction": 1,
+			"length": 0,
+			"time": 26176.501999999953,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 26335.815916666619,
+			"event": [],
+			"type": ""
+		},
+		{
 			"direction": 3,
 			"length": 0,
-			"time": 33348.196499999969,
+			"time": 26470.619999999952,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 2,
 			"length": 0,
-			"time": 33616.05349999998,
+			"time": 26617.678999999949,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 33749.981999999982,
+			"time": 26764.737999999947,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 34017.838999999985,
+			"time": 26911.796999999948,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 34285.695999999996,
+			"time": 27058.855999999945,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 34553.553,
+			"time": 27205.914999999943,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 34687.4815,
+			"time": 27352.973999999944,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 34821.410000000011,
+			"time": 27500.032999999941,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 35089.267000000014,
+			"time": 27647.091999999939,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 0,
 			"length": 0,
-			"time": 35357.124000000018,
+			"time": 27794.15099999994,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 35491.05250000002,
+			"time": 27941.209999999937,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 3,
 			"length": 0,
-			"time": 35758.909500000031,
+			"time": 28235.327999999936,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 35892.838000000032,
+			"time": 28529.445999999931,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 1,
 			"length": 0,
-			"time": 36160.695000000036,
+			"time": 28823.563999999929,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 36428.552000000047,
+			"time": 29117.681999999932,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 36696.409000000051,
+			"time": 29411.79999999993,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 36830.337500000052,
+			"time": 29705.917999999929,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 36964.266000000061,
+			"time": 29852.97699999993,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 3,
 			"length": 0,
-			"time": 37232.123000000065,
+			"time": 30000.035999999927,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 37499.980000000069,
+			"time": 30147.094999999925,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 37633.908500000078,
+			"time": 30294.153999999926,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 37901.765500000081,
+			"time": 30441.212999999923,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 38035.694000000083,
+			"time": 30588.271999999921,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 38303.551000000094,
+			"time": 30735.330999999922,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 38571.4080000001,
+			"time": 30882.389999999919,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 38839.2650000001,
+			"time": 31323.566999999919,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 38973.19350000011,
+			"time": 31470.625999999917,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 39107.122000000112,
+			"time": 31746.361624999918,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 39374.979000000116,
+			"time": 31911.802999999916,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 39642.836000000127,
+			"time": 32058.861999999921,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 0,
 			"length": 0,
-			"time": 39776.764500000128,
+			"time": 32334.597624999922,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 40044.621500000132,
+			"time": 32500.038999999924,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 40178.550000000134,
+			"time": 32647.097999999922,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 0,
 			"length": 0,
-			"time": 40446.407000000145,
+			"time": 32922.833624999927,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 40714.264000000148,
+			"time": 32941.215999999928,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 40982.121000000159,
+			"time": 33235.333999999923,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 0,
 			"length": 0,
-			"time": 41116.049500000161,
+			"time": 33455.922499999921,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 1,
 			"length": 0,
-			"time": 41249.978000000163,
+			"time": 33676.510999999919,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 41517.835000000166,
+			"time": 33823.56999999992,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 2,
 			"length": 0,
-			"time": 41785.692000000177,
+			"time": 34044.158499999918,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 1,
 			"length": 0,
-			"time": 41919.620500000179,
+			"time": 34117.687999999915,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 0,
 			"length": 0,
-			"time": 42187.477500000183,
+			"time": 34264.746999999923,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 2,
 			"length": 0,
-			"time": 42321.406000000185,
+			"time": 34411.805999999917,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 42589.263000000195,
+			"time": 34687.541624999925,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 1,
 			"length": 0,
-			"time": 42857.1200000002,
+			"time": 34852.98299999992,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 43124.97700000021,
+			"time": 35000.041999999921,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 43258.905500000212,
+			"time": 35147.100999999922,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 43392.834000000214,
+			"time": 35294.159999999916,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 1,
 			"length": 0,
-			"time": 43660.691000000217,
+			"time": 35441.218999999917,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 2,
 			"length": 0,
-			"time": 43928.548000000228,
+			"time": 35588.277999999918,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 0,
 			"length": 0,
-			"time": 44062.47650000023,
+			"time": 35882.395999999913,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 1,
 			"length": 0,
-			"time": 44330.333500000233,
+			"time": 36176.513999999916,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 2,
 			"length": 0,
-			"time": 44464.262000000243,
+			"time": 36323.572999999909,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 0,
 			"length": 0,
-			"time": 44732.119000000246,
+			"time": 36470.63199999991,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 44999.97600000025,
+			"time": 36617.690999999912,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 45267.833000000261,
+			"time": 36764.749999999905,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 45535.690000000264,
+			"time": 37058.867999999908,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 45937.47550000027,
+			"time": 37205.9269999999,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 46205.332500000273,
+			"time": 37352.9859999999,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 46339.261000000275,
+			"time": 37647.1039999999,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 46473.189500000284,
+			"time": 37794.1629999999,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 46607.118000000286,
+			"time": 37941.2219999999,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 3,
 			"length": 0,
-			"time": 46874.97500000029,
+			"time": 38382.398999999896,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 47142.8320000003,
+			"time": 38529.45799999989,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 47410.689000000304,
+			"time": 38970.634999999886,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 47678.546000000308,
+			"time": 39117.693999999887,
 			"event": [],
 			"type": ""
 		},
 		{
+			"direction": 1,
+			"length": 0,
+			"time": 39411.811999999882,
+			"event": [],
+			"type": ""
+		},
+		{
 			"direction": 3,
+			"length": 0,
+			"time": 39705.929999999884,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
 			"length": 0,
-			"time": 48080.331500000313,
+			"time": 40000.047999999879,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 48348.188500000317,
+			"time": 40147.10699999988,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 48482.117000000319,
+			"time": 40294.165999999874,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 48616.045500000328,
+			"time": 40441.224999999875,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 0,
 			"length": 0,
-			"time": 48749.974000000329,
+			"time": 40588.283999999876,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 49017.831000000333,
+			"time": 40735.34299999987,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 49285.688000000344,
+			"time": 40882.401999999871,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 49553.545000000347,
+			"time": 41029.460999999872,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 49821.402000000351,
+			"time": 41176.519999999866,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 50223.187500000357,
+			"time": 41323.578999999867,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 50491.04450000036,
+			"time": 41470.637999999868,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 50624.973000000369,
+			"time": 41617.696999999862,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 3,
 			"length": 0,
-			"time": 50758.901500000371,
+			"time": 41764.755999999863,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 1,
 			"length": 0,
-			"time": 50892.830000000373,
+			"time": 42058.873999999858,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 51160.687000000376,
+			"time": 42352.99199999986,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 3,
 			"length": 0,
-			"time": 51428.544000000387,
+			"time": 42647.109999999855,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 1,
 			"length": 0,
-			"time": 51696.401000000391,
+			"time": 42941.22799999985,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 0,
 			"length": 0,
-			"time": 51964.2580000004,
+			"time": 43088.286999999851,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 52366.0435000004,
+			"time": 43235.345999999852,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 52633.900500000411,
+			"time": 43382.404999999846,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 52767.829000000413,
+			"time": 43529.463999999847,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 52901.757500000414,
+			"time": 43823.581999999842,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 53035.686000000416,
+			"time": 43970.640999999843,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 53303.543000000427,
+			"time": 44117.699999999844,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 53571.400000000431,
+			"time": 44264.758999999838,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
+			"length": 0,
+			"time": 44411.817999999839,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
 			"length": 0,
-			"time": 53839.257000000434,
+			"time": 45000.053999999836,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
+			"length": 0,
+			"time": 45147.112999999837,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
 			"length": 0,
-			"time": 53973.185500000443,
+			"time": 45294.171999999831,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 54107.114000000445,
+			"time": 45441.230999999832,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 3,
 			"length": 0,
-			"time": 54374.971000000449,
+			"time": 45588.289999999834,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 54642.82800000046,
+			"time": 45735.348999999827,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 0,
 			"length": 0,
-			"time": 54776.756500000462,
+			"time": 45882.407999999828,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 3,
 			"length": 0,
-			"time": 55044.613500000465,
+			"time": 46029.46699999983,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 55178.542000000467,
+			"time": 46176.525999999823,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 55446.399000000478,
+			"time": 46323.584999999825,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 3,
 			"length": 0,
-			"time": 55714.256000000481,
+			"time": 46470.643999999826,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 1,
 			"length": 0,
-			"time": 55982.113000000485,
+			"time": 46764.761999999821,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 56116.041500000494,
+			"time": 47058.879999999815,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 56249.970000000496,
+			"time": 47352.997999999818,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 0,
 			"length": 0,
-			"time": 56517.8270000005,
+			"time": 47647.115999999813,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 56785.68400000051,
+			"time": 47794.174999999814,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 56919.612500000512,
+			"time": 47941.233999999808,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
+			"length": 0,
+			"time": 48088.292999999809,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
 			"length": 0,
-			"time": 57187.469500000516,
+			"time": 48235.35199999981,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 57321.398000000518,
+			"time": 48382.4109999998,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
+			"length": 0,
+			"time": 48529.469999999805,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
 			"length": 0,
-			"time": 57589.255000000529,
+			"time": 48823.5879999998,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 57857.112000000532,
+			"time": 48970.6469999998,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 58124.969000000543,
+			"time": 49117.7059999998,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 3,
 			"length": 0,
-			"time": 58258.897500000545,
+			"time": 49558.8829999998,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 1,
 			"length": 0,
-			"time": 58392.826000000547,
+			"time": 49705.941999999792,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 58660.68300000055,
+			"time": 49853.000999999793,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 58928.540000000561,
+			"time": 50000.059999999794,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 59062.468500000563,
+			"time": 50147.118999999788,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 59330.325500000567,
+			"time": 50294.177999999789,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 59464.254000000576,
+			"time": 50441.23699999979,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 59732.111000000579,
+			"time": 50588.295999999784,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 59999.968000000583,
+			"time": 50735.354999999785,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 0,
 			"length": 0,
-			"time": 60267.825000000594,
+			"time": 50882.413999999786,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 60401.753500000596,
+			"time": 51029.47299999978,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 60535.6820000006,
+			"time": 51176.531999999781,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 0,
 			"length": 0,
-			"time": 60803.539000000608,
+			"time": 51323.590999999782,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 61071.396000000612,
+			"time": 51470.649999999776,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 1,
 			"length": 0,
-			"time": 61205.324500000614,
+			"time": 51764.767999999778,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 0,
 			"length": 0,
-			"time": 61473.181500000617,
+			"time": 52058.885999999773,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 61607.110000000626,
+			"time": 52353.003999999768,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 1,
 			"length": 0,
-			"time": 61874.96700000063,
+			"time": 52500.062999999769,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
+			"length": 0,
+			"time": 52647.12199999977,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
 			"length": 0,
-			"time": 62142.824000000634,
+			"time": 52794.180999999764,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 62410.681000000644,
+			"time": 52941.239999999765,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 62544.609500000646,
+			"time": 53088.298999999766,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 62678.538000000648,
+			"time": 53235.35799999976,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 62946.395000000659,
+			"time": 53382.416999999761,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 0,
 			"length": 0,
-			"time": 63214.252000000663,
+			"time": 53529.475999999762,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 1,
 			"length": 0,
-			"time": 63348.180500000664,
+			"time": 53823.593999999757,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 63616.037500000675,
+			"time": 54411.829999999754,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 3,
 			"length": 0,
-			"time": 63749.966000000677,
+			"time": 54687.565624999756,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 64017.823000000673,
+			"time": 54705.947999999757,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 64285.68000000067,
+			"time": 54853.006999999758,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 64553.537000000659,
+			"time": 55000.065999999759,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 64687.465500000653,
+			"time": 55147.124999999753,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 0,
 			"length": 0,
-			"time": 64821.394000000655,
+			"time": 55294.183999999754,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 65089.251000000644,
+			"time": 55441.242999999755,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 65357.108000000633,
+			"time": 55588.301999999749,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 3,
 			"length": 0,
-			"time": 65491.036500000635,
+			"time": 55882.419999999751,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 65758.893500000631,
+			"time": 56158.155624999752,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 1,
 			"length": 0,
-			"time": 65892.822000000626,
+			"time": 56176.537999999753,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 3,
 			"length": 0,
-			"time": 66160.679000000615,
+			"time": 56470.655999999748,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 66428.5360000006,
+			"time": 56764.77399999975,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 0,
 			"length": 0,
-			"time": 66696.3930000006,
+			"time": 57058.891999999745,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 1,
 			"length": 0,
-			"time": 66830.321500000588,
+			"time": 57205.950999999746,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 66964.2500000006,
+			"time": 57353.00999999974,
 			"event": [],
 			"type": ""
 		},
 		{
+			"direction": 0,
+			"length": 0,
+			"time": 57500.068999999741,
+			"event": [],
+			"type": ""
+		},
+		{
 			"direction": 1,
 			"length": 0,
-			"time": 67232.107000000586,
+			"time": 57647.127999999742,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 67499.964000000575,
+			"time": 57794.186999999736,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 67633.892500000569,
+			"time": 57941.245999999737,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 2,
 			"length": 0,
-			"time": 67901.749500000558,
+			"time": 58382.422999999733,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 1,
 			"length": 0,
-			"time": 68035.678000000553,
+			"time": 58529.481999999734,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 68303.535000000556,
+			"time": 58676.540999999728,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 68571.392000000546,
+			"time": 58823.599999999729,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 68839.249000000535,
+			"time": 58970.65899999973,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 68973.177500000529,
+			"time": 59117.717999999724,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
-			"length": 0,
-			"time": 69107.106000000524,
-			"event": [],
-			"type": ""
-		},
-		{
-			"direction": 2,
 			"length": 0,
-			"time": 69374.963000000513,
+			"time": 68529.49399999973,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 69642.820000000516,
+			"time": 68823.611999999732,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 69776.748500000511,
+			"time": 68970.670999999726,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 70044.6055000005,
+			"time": 69117.729999999719,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 70178.5340000005,
+			"time": 69264.788999999728,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 1,
 			"length": 0,
-			"time": 70446.391000000483,
+			"time": 69411.847999999722,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 2,
 			"length": 0,
-			"time": 70714.248000000487,
+			"time": 69558.906999999715,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 70982.105000000476,
+			"time": 69705.965999999724,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 1,
 			"length": 0,
-			"time": 71116.033500000471,
+			"time": 69853.024999999718,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 71249.962000000465,
+			"time": 70000.083999999712,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 3,
 			"length": 0,
-			"time": 71517.819000000454,
+			"time": 70147.14299999972,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 1,
 			"length": 0,
-			"time": 71785.676000000443,
+			"time": 70294.201999999714,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 71919.604500000452,
+			"time": 70441.260999999708,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 72187.461500000441,
+			"time": 70588.319999999716,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 72321.390000000436,
+			"time": 70735.37899999971,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 72589.247000000425,
+			"time": 70882.4379999997,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 72857.104000000414,
+			"time": 71176.5559999997,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 0,
 			"length": 0,
-			"time": 73124.961000000418,
+			"time": 71323.6149999997,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 73258.889500000412,
+			"time": 71470.673999999708,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 3,
 			"length": 0,
-			"time": 73392.8180000004,
+			"time": 71617.7329999997,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 1,
 			"length": 0,
-			"time": 73660.6750000004,
+			"time": 71764.7919999997,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 73928.532000000385,
+			"time": 71911.8509999997,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 3,
 			"length": 0,
-			"time": 74062.460500000379,
+			"time": 72058.9099999997,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 1,
 			"length": 0,
-			"time": 74330.317500000383,
+			"time": 72205.968999999692,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 74464.246000000378,
+			"time": 72353.0279999997,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 74732.103000000367,
+			"time": 72500.0869999997,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 1,
 			"length": 0,
-			"time": 74999.960000000356,
+			"time": 72647.145999999688,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 3,
 			"length": 0,
-			"time": 75267.817000000345,
+			"time": 72794.2049999997,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
+			"length": 0,
+			"time": 72941.26399999969,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
 			"length": 0,
-			"time": 75401.745500000339,
+			"time": 73088.322999999684,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 75535.674000000348,
+			"time": 73235.381999999692,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 0,
 			"length": 0,
-			"time": 75803.531000000337,
+			"time": 73529.49999999968,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 76071.388000000326,
+			"time": 73676.558999999688,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 76205.316500000321,
+			"time": 73823.617999999682,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 76473.17350000031,
+			"time": 73970.676999999676,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 76607.1020000003,
+			"time": 74117.735999999684,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 76874.959000000308,
+			"time": 74264.794999999678,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
+			"length": 0,
+			"time": 74411.853999999672,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
 			"length": 0,
-			"time": 77142.8160000003,
+			"time": 74558.91299999968,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 77410.673000000286,
+			"time": 74705.971999999674,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 77544.601500000281,
+			"time": 74853.030999999668,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 77678.530000000275,
+			"time": 75000.089999999676,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 77946.387000000264,
+			"time": 75147.14899999967,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
+			"length": 0,
+			"time": 75294.207999999664,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
 			"length": 0,
-			"time": 78214.244000000268,
+			"time": 75441.266999999672,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
+			"length": 0,
+			"time": 75588.325999999666,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
 			"length": 0,
-			"time": 78348.172500000263,
+			"time": 75882.443999999668,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 78616.029500000252,
+			"time": 76029.502999999662,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 78749.958000000246,
+			"time": 76176.561999999656,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 79017.815000000235,
+			"time": 76323.620999999664,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 79285.672000000239,
+			"time": 76470.679999999658,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 79553.529000000228,
+			"time": 76617.738999999652,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 79687.457500000222,
+			"time": 76764.797999999661,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 79821.386000000217,
+			"time": 76911.856999999654,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 80089.2430000002,
+			"time": 77058.915999999648,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 0,
 			"length": 0,
-			"time": 80357.1000000002,
+			"time": 77205.974999999657,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 80491.0285000002,
+			"time": 77353.03399999965,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 80758.8855000002,
+			"time": 77647.151999999653,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 3,
 			"length": 0,
-			"time": 80892.814000000188,
+			"time": 77794.210999999646,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 81160.671000000177,
+			"time": 77941.269999999655,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
+			"length": 0,
+			"time": 78235.387999999642,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
 			"length": 0,
-			"time": 81428.528000000166,
+			"time": 78382.446999999651,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 81696.385000000169,
+			"time": 78529.505999999645,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 81830.313500000164,
+			"time": 78676.564999999639,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 81964.242000000158,
+			"time": 78823.623999999647,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 82232.099000000147,
+			"time": 78970.682999999641,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 82499.956000000137,
+			"time": 79117.741999999635,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 0,
 			"length": 0,
-			"time": 82633.884500000131,
+			"time": 79264.800999999643,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 82901.741500000135,
+			"time": 79411.859999999637,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 2,
 			"length": 0,
-			"time": 83035.670000000129,
+			"time": 79558.918999999631,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 83303.527000000118,
+			"time": 79705.977999999639,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 83571.384000000107,
+			"time": 79853.036999999633,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 83839.2410000001,
+			"time": 80000.095999999627,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 83973.169500000091,
+			"time": 80147.154999999635,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 84107.0980000001,
+			"time": 80294.213999999629,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 0,
 			"length": 0,
-			"time": 84374.955000000089,
+			"time": 80588.331999999631,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 84642.812000000078,
+			"time": 80735.390999999625,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 84776.740500000073,
+			"time": 80882.449999999619,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 85044.597500000062,
+			"time": 81029.508999999627,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 0,
 			"length": 0,
-			"time": 85178.526000000056,
+			"time": 81176.567999999621,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 85446.38300000006,
+			"time": 81323.626999999615,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
-			"length": 0,
-			"time": 85714.240000000049,
-			"event": [],
-			"type": ""
-		},
-		{
-			"direction": 2,
 			"length": 0,
-			"time": 85982.097000000038,
+			"time": 81470.685999999623,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 86116.025500000032,
+			"time": 81617.744999999617,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 86249.954000000027,
+			"time": 81764.803999999611,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 86517.811000000016,
+			"time": 81911.862999999619,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 86785.66800000002,
+			"time": 82058.921999999613,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 86919.596500000014,
+			"time": 82205.9809999996,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 87187.4535,
+			"time": 82353.039999999615,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 87321.382,
+			"time": 82500.098999999609,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 0,
 			"length": 0,
-			"time": 87589.238999999987,
+			"time": 82647.1579999996,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 3,
 			"length": 0,
-			"time": 92142.80799999999,
+			"time": 82941.2759999996,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 1,
 			"length": 0,
-			"time": 100714.23199999997,
+			"time": 83088.3349999996,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 100848.16049999998,
+			"time": 83235.393999999607,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 100982.08899999998,
+			"time": 83382.4529999996,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 0,
 			"length": 0,
-			"time": 109285.65599999997,
+			"time": 83529.5119999996,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 1,
 			"length": 0,
-			"time": 109553.51299999996,
+			"time": 83676.5709999996,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 117857.07999999997,
+			"time": 83823.6299999996,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 0,
 			"length": 0,
-			"time": 118124.93699999996,
+			"time": 83970.688999999591,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 126428.50399999996,
+			"time": 84117.7479999996,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 1,
 			"length": 0,
-			"time": 126696.36099999995,
+			"time": 84264.8069999996,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 126830.28949999996,
+			"time": 84411.865999999587,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 3,
 			"length": 0,
-			"time": 126964.21799999995,
+			"time": 84558.9249999996,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 127232.07499999994,
+			"time": 84705.983999999589,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 0,
 			"length": 0,
-			"time": 127499.93199999993,
+			"time": 84853.042999999583,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
+			"length": 0,
+			"time": 85000.101999999591,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 85294.219999999579,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
 			"length": 0,
-			"time": 127633.86049999992,
+			"time": 85441.278999999588,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 127901.71749999991,
+			"time": 85588.337999999581,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 1,
 			"length": 0,
-			"time": 128035.64599999994,
+			"time": 85735.396999999575,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 128303.50299999992,
+			"time": 85882.455999999584,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 128571.35999999991,
+			"time": 86029.514999999577,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 128839.2169999999,
+			"time": 86176.573999999571,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 128973.1454999999,
+			"time": 86323.63299999958,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 129107.07399999989,
+			"time": 86470.691999999573,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 129374.93099999989,
+			"time": 86617.750999999567,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 129642.78799999988,
+			"time": 86764.809999999576,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 129776.71649999988,
+			"time": 86911.868999999569,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 130044.57349999987,
+			"time": 87058.927999999563,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
+			"length": 0,
+			"time": 87205.986999999572,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
 			"length": 0,
-			"time": 130178.50199999986,
+			"time": 87353.045999999566,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 130446.35899999987,
+			"time": 88382.458999999551,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 130714.21599999985,
+			"time": 88529.51799999956,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 130982.07299999984,
+			"time": 88676.576999999554,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 131116.00149999984,
+			"time": 88823.635999999547,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 3,
 			"length": 0,
-			"time": 131249.92999999985,
+			"time": 88970.694999999556,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 1,
 			"length": 0,
-			"time": 131517.78699999984,
+			"time": 89117.75399999955,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 131785.64399999983,
+			"time": 89411.871999999552,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 3,
 			"length": 0,
-			"time": 131919.57249999981,
+			"time": 89705.98999999954,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 132187.42949999979,
+			"time": 89853.048999999548,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 132321.3579999998,
+			"time": 90000.107999999542,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 132589.21499999979,
+			"time": 90147.166999999536,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
+			"length": 0,
+			"time": 90294.225999999544,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
 			"length": 0,
-			"time": 132857.07199999978,
+			"time": 90441.284999999538,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 133124.92899999977,
+			"time": 90588.343999999532,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 133258.85749999978,
+			"time": 90735.40299999954,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 2,
 			"length": 0,
-			"time": 133392.78599999976,
+			"time": 90882.461999999534,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 0,
 			"length": 0,
-			"time": 133660.64299999978,
+			"time": 91029.520999999528,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 133928.49999999977,
+			"time": 91176.579999999536,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 134062.42849999975,
+			"time": 91470.697999999524,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 134330.28549999974,
+			"time": 91764.815999999526,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 134464.21399999975,
+			"time": 92058.933999999528,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 134732.07099999973,
+			"time": 92353.051999999516,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 134999.92799999972,
+			"time": 92500.110999999524,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 135267.78499999971,
+			"time": 92647.169999999518,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 0,
 			"length": 0,
-			"time": 135401.71349999972,
+			"time": 92794.228999999512,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
+			"length": 0,
+			"time": 92941.28799999952,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
 			"length": 0,
-			"time": 135535.6419999997,
+			"time": 93088.346999999514,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
+			"length": 0,
+			"time": 93235.405999999508,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
 			"length": 0,
-			"time": 135803.49899999969,
+			"time": 93529.52399999951,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 136071.35599999971,
+			"time": 93676.5829999995,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 136205.28449999969,
+			"time": 93823.641999999512,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 136473.14149999968,
+			"time": 94080.9952499995,
 			"event": [],
 			"type": ""
 		},
 		{
+			"direction": 3,
+			"length": 0,
+			"time": 94411.8779999995,
+			"event": [],
+			"type": ""
+		},
+		{
 			"direction": 0,
 			"length": 0,
-			"time": 136607.06999999969,
+			"time": 94705.9959999995,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 136874.92699999968,
+			"time": 94853.0549999995,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 137142.78399999966,
+			"time": 95000.113999999492,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 137410.64099999965,
+			"time": 95147.1729999995,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 137544.56949999966,
+			"time": 95294.2319999995,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 137678.49799999964,
+			"time": 95441.290999999488,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 137946.35499999963,
+			"time": 95588.3499999995,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 138214.21199999962,
+			"time": 95882.467999999484,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 138348.14049999963,
+			"time": 96029.526999999493,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 138615.99749999962,
+			"time": 96176.585999999486,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 138749.92599999963,
+			"time": 96470.703999999489,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 1,
 			"length": 0,
-			"time": 139017.78299999962,
+			"time": 96764.821999999491,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 139285.63999999961,
+			"time": 97058.939999999478,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 139553.4969999996,
+			"time": 97205.998999999487,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 3,
 			"length": 0,
-			"time": 139687.4254999996,
+			"time": 97353.057999999481,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 0,
+			"length": 0,
+			"time": 97500.116999999475,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
 			"length": 0,
-			"time": 139821.35399999958,
+			"time": 97647.175999999483,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 140089.21099999957,
+			"time": 97794.234999999477,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 3,
 			"length": 0,
-			"time": 140357.06799999956,
+			"time": 97941.293999999471,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 1,
 			"length": 0,
-			"time": 140490.99649999957,
+			"time": 98235.411999999473,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 140758.85349999956,
+			"time": 98382.470999999467,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 0,
 			"length": 0,
-			"time": 140892.78199999957,
+			"time": 98529.529999999475,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 141160.63899999956,
+			"time": 98970.706999999471,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 2,
 			"length": 0,
-			"time": 141428.49599999955,
+			"time": 99117.765999999465,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 0,
 			"length": 0,
-			"time": 141696.35299999954,
+			"time": 99264.824999999459,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 141830.28149999952,
+			"time": 99411.883999999467,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 2,
 			"length": 0,
-			"time": 141964.20999999953,
+			"time": 99558.942999999461,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 3,
 			"length": 0,
-			"time": 142232.06699999952,
+			"time": 99706.001999999455,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 1,
+			"length": 0,
+			"time": 99853.060999999463,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
 			"length": 0,
-			"time": 142499.9239999995,
+			"time": 100000.11999999946,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 142633.85249999951,
+			"time": 100147.17899999945,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 142901.7094999995,
+			"time": 100294.23799999946,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 143035.63799999948,
+			"time": 100588.35599999945,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 0,
 			"length": 0,
-			"time": 143303.4949999995,
+			"time": 100735.41499999946,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
+			"length": 0,
+			"time": 100882.47399999945,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
+			"length": 0,
+			"time": 101029.53299999944,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
 			"length": 0,
-			"time": 143571.35199999949,
+			"time": 101176.59199999945,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
+			"length": 0,
+			"time": 101470.70999999944,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
 			"length": 0,
-			"time": 143839.20899999948,
+			"time": 101764.82799999944,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 143973.13749999946,
+			"time": 101911.88699999943,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 144107.06599999947,
+			"time": 102058.94599999944,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 144374.92299999946,
+			"time": 102206.00499999944,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 144642.77999999945,
+			"time": 102353.06399999943,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
+			"length": 0,
+			"time": 102500.12299999944,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
 			"length": 0,
-			"time": 144776.70849999945,
+			"time": 102647.18199999943,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 145044.56549999944,
+			"time": 102794.24099999943,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 145178.49399999942,
+			"time": 102941.29999999944,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 145446.35099999941,
+			"time": 103088.35899999943,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 145714.2079999994,
+			"time": 103235.41799999942,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 145982.06499999942,
+			"time": 103823.65399999943,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 146115.9934999994,
+			"time": 103970.71299999942,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 146249.92199999941,
+			"time": 104117.77199999942,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 146517.7789999994,
+			"time": 104264.83099999942,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 3,
 			"length": 0,
-			"time": 146785.63599999939,
+			"time": 104411.88999999942,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 146919.56449999937,
+			"time": 104558.94899999941,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 0,
 			"length": 0,
-			"time": 147187.42149999939,
+			"time": 104706.00799999942,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 147321.34999999937,
+			"time": 104853.06699999941,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 147589.20699999935,
+			"time": 105000.12599999941,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 147857.06399999934,
+			"time": 105147.18499999942,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 148124.92099999933,
+			"time": 105294.24399999941,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 1,
 			"length": 0,
-			"time": 148258.84949999934,
+			"time": 105441.3029999994,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 148392.77799999935,
+			"time": 105588.36199999941,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 0,
 			"length": 0,
-			"time": 148660.63499999934,
+			"time": 105735.42099999941,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 148928.49199999933,
+			"time": 105882.4799999994,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 149062.42049999931,
+			"time": 106029.53899999941,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
+			"length": 0,
+			"time": 106176.5979999994,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
+			"length": 0,
+			"time": 106323.6569999994,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
 			"length": 0,
-			"time": 149330.2774999993,
+			"time": 106470.7159999994,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
+			"length": 0,
+			"time": 106617.7749999994,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
 			"length": 0,
-			"time": 149464.20599999931,
+			"time": 106764.83399999939,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 149732.0629999993,
+			"time": 106911.8929999994,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
+			"length": 0,
+			"time": 107058.95199999939,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
 			"length": 0,
-			"time": 149999.91999999929,
+			"time": 107206.01099999939,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
+			"length": 0,
+			"time": 107353.0699999994,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
 			"length": 0,
-			"time": 150267.77699999927,
+			"time": 107794.24699999939,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 150401.70549999928,
+			"time": 107941.30599999939,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 150535.63399999926,
+			"time": 108235.42399999939,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 150803.49099999928,
+			"time": 108382.48299999938,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 151071.34799999927,
+			"time": 108529.54199999938,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 151205.27649999925,
+			"time": 109706.01399999938,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 3,
 			"length": 0,
-			"time": 151473.13349999924,
+			"time": 110882.48599999939,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 151607.06199999925,
+			"time": 117941.31799999939,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 151874.91899999924,
+			"time": 118088.37699999938,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 152142.77599999923,
+			"time": 118235.43599999938,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 152410.63299999922,
+			"time": 118382.49499999938,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 152544.56149999922,
+			"time": 118529.55399999938,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 152678.4899999992,
+			"time": 118676.61299999937,
 			"event": [],
 			"type": ""
 		},
 		{
+			"direction": 1,
+			"length": 0,
+			"time": 118823.67199999938,
+			"event": [],
+			"type": ""
+		},
+		{
 			"direction": 3,
+			"length": 0,
+			"time": 118970.73099999937,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
 			"length": 0,
-			"time": 152946.34699999919,
+			"time": 119117.78999999937,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 153214.20399999921,
+			"time": 119264.84899999938,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
+			"length": 0,
+			"time": 119411.90799999937,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 3,
 			"length": 0,
-			"time": 153348.13249999919,
+			"time": 119706.02599999937,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 153615.98949999918,
+			"time": 119853.08499999937,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 153749.91799999919,
+			"time": 120000.14399999936,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 154017.77499999918,
+			"time": 120294.26199999936,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 3,
 			"length": 0,
-			"time": 154285.63199999917,
+			"time": 120588.37999999936,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 154553.48899999916,
+			"time": 120735.43899999936,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
+			"length": 0,
+			"time": 120882.49799999935,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
 			"length": 0,
-			"time": 154687.41749999917,
+			"time": 121029.55699999936,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 154821.34599999915,
+			"time": 121176.61599999935,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 0,
+			"direction": 1,
 			"length": 0,
-			"time": 155089.20299999914,
+			"time": 121323.67499999935,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 155357.05999999912,
+			"time": 121470.73399999936,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 0,
 			"length": 0,
-			"time": 155490.98849999913,
+			"time": 121764.85199999934,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 155758.84549999912,
+			"time": 122058.96999999935,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
+			"length": 0,
+			"time": 122647.20599999934,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
 			"length": 0,
-			"time": 155892.77399999913,
+			"time": 122794.26499999934,
 			"event": [],
 			"type": ""
 		},
 		{
+			"direction": 3,
+			"length": 0,
+			"time": 122941.32399999934,
+			"event": [],
+			"type": ""
+		},
+		{
 			"direction": 0,
 			"length": 0,
-			"time": 156160.63099999912,
+			"time": 123088.38299999933,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 156428.48799999911,
+			"time": 123235.44199999934,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 156696.3449999991,
+			"time": 123382.50099999933,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 0,
 			"length": 0,
-			"time": 156830.27349999911,
+			"time": 123529.55999999934,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 2,
 			"length": 0,
-			"time": 156964.20199999909,
+			"time": 123676.61899999934,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 157232.05899999908,
+			"time": 123823.67799999933,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 0,
 			"length": 0,
-			"time": 157499.91599999907,
+			"time": 124117.79599999933,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 157633.84449999908,
+			"time": 124264.85499999933,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 3,
+			"direction": 2,
 			"length": 0,
-			"time": 157901.70149999906,
+			"time": 124411.91399999933,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
 			"length": 0,
-			"time": 158035.62999999907,
+			"time": 124558.97299999933,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 1,
 			"length": 0,
-			"time": 158303.48699999906,
+			"time": 124706.03199999932,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 158571.34399999905,
+			"time": 125000.14999999932,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 0,
 			"length": 0,
-			"time": 158839.20099999904,
+			"time": 125294.26799999933,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 2,
 			"length": 0,
-			"time": 158973.12949999902,
+			"time": 125441.32699999932,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
+			"length": 0,
+			"time": 125588.38599999931,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
 			"length": 0,
-			"time": 159107.05799999903,
+			"time": 125735.44499999932,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 2,
 			"length": 0,
-			"time": 159374.91499999902,
+			"time": 125882.50399999932,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 1,
+			"direction": 0,
 			"length": 0,
-			"time": 159642.771999999,
+			"time": 126029.56299999931,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
 			"length": 0,
-			"time": 159776.70049999902,
+			"time": 126176.62199999932,
 			"event": [],
 			"type": ""
 		},
 		{
-			"direction": 2,
+			"direction": 1,
 			"length": 0,
-			"time": 160044.557499999,
+			"time": 126617.79899999932,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 0,
+			"length": 0,
+			"time": 126764.85799999931,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 2,
 			"length": 0,
-			"time": 160178.485999999,
+			"time": 126911.9169999993,
 			"event": [],
 			"type": ""
 		},
 		{
 			"direction": 3,
+			"length": 0,
+			"time": 127058.97599999931,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 1,
+			"length": 0,
+			"time": 127206.03499999931,
+			"event": [],
+			"type": ""
+		},
+		{
+			"direction": 0,
 			"length": 0,
-			"time": 160446.342999999,
+			"time": 127353.0939999993,
 			"event": [],
 			"type": ""
 		}
@@ -3894,7 +4223,7 @@
 			"value": "Unknown"
 		}
 	],
-	"bpm": 112,
+	"bpm": 204,
 	"data": {
 		"version": "LineTapper v0.1.0",
 		"apiLevel": 1

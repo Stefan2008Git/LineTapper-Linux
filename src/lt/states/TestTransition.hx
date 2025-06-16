@@ -1,5 +1,6 @@
 package lt.states;
 
+import lt.objects.ui.Button;
 import openfl.display.BitmapData;
 import lt.objects.ui.Dialog;
 import lt.objects.play.Tile;
@@ -27,9 +28,10 @@ class TestTransition extends State {
         add(c);
 
         //ok
-        var bitmap:BitmapData = new BitmapData(FlxG.camera.width, FlxG.camera.height);
-        spr = new FlxSprite().loadGraphic(bitmap);
-        add(spr);
+        add(new Button(500,450, "TOGGLE", 100, 20, true));
+        add(new Button(500,500, "NORMAL", 100, 20, (val:Bool)->{
+            trace(val);
+        }));
     }
 
     var ue:Bool = false;
@@ -50,7 +52,6 @@ class TestTransition extends State {
 
 
         //work
-        spr.graphic.bitmap.draw(FlxG.camera.canvas);
 
         if (FlxG.keys.justPressed.SPACE) {
             trace("Wawa");

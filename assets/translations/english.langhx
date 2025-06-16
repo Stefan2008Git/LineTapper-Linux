@@ -11,6 +11,7 @@
 		"level_editor": "Level Editor",
 		"credits": "Credits",
 		"beats_per_minute": "Beats Per Minute",
+		"song_name": "Song Name",
 		"start_typing_your_songs_name": "START TYPING YOUR SONG'S NAME",
 		"settings_messages": [
 			"Adjust these to your preferences.",

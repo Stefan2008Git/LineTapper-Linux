@@ -84,6 +84,13 @@ class PlayState extends State {
 		hudCamera.bgColor = FlxColor.TRANSPARENT;
 		FlxG.cameras.add(hudCamera, false);
 
+        FlxG.camera = gameCamera;
+
+        inline function __i(cam:FlxCamera){
+            return '${FlxG.cameras.list.indexOf(cam)} // ';
+        }
+        trace(__i(bgCamera) + __i(gameCamera) + __i(hudCamera));
+
         //shadowShader = new ShadowShader();
         //gameCamera.filters = [new ShaderFilter(shadowShader)];
         //hudCamera.filters = [new ShaderFilter(shadowShader)];
@@ -104,11 +111,11 @@ class PlayState extends State {
         super.create();
 
         //ok
-        cameraBitmap = new BitmapData(FlxG.camera.width, FlxG.camera.height);
-        cameraBitmap.draw(gameCamera.canvas);
-        previewSprite = new FlxSprite().loadGraphic(cameraBitmap);
-        previewSprite.cameras = [hudCamera];
-        add(previewSprite);
+        //cameraBitmap = new BitmapData(FlxG.camera.width, FlxG.camera.height);
+        //previewSprite = new FlxSprite().loadGraphic(cameraBitmap);
+        //previewSprite.scrollFactor.set();
+        //previewSprite.cameras = [hudCamera];
+        //add(previewSprite);
     }
 
     var cameraBitmap:BitmapData;
@@ -198,14 +205,14 @@ class PlayState extends State {
         lyricsOverlay.text = lyricsList.getLyric(Conductor.instance.time);
 
         //no work :(
-        previewSprite.graphic.bitmap.draw(FlxG.camera.canvas);
-        if (previewSprite != null) {
-            previewSprite.scale.set(0.4,0.4);
-            previewSprite.updateHitbox();
-            previewSprite.setPosition(FlxG.width - previewSprite.width, (FlxG.height - previewSprite.height) * 0.5);    
-        }
 
         super.update(elapsed);
+        //previewSprite.graphic.bitmap.draw(gameCamera.canvas);
+        //if (previewSprite != null) {
+        //    previewSprite.scale.set(0.4,0.4);
+        //    previewSprite.updateHitbox();
+        //    previewSprite.setPosition(FlxG.width - previewSprite.width, (FlxG.height - previewSprite.height) * 0.5);    
+        //}
     }
 
     override function closeSubState() {
@@ -234,11 +241,11 @@ class PlayState extends State {
     }
     public function onTileMiss(tile:Tile) {
         combo = 0;
-        updatePlayerText("Missed!");
+        updatePlayerText("MISSED");
     }
 
     var _tween:FlxTween;
-    public function updatePlayerText(rating:String = "Perfect!") {
+    public function updatePlayerText(rating:String = "PERFECT!") {
         playerText.text = '$rating\n${combo}x';
 
         playerText.scale.set(1.2,1.2);

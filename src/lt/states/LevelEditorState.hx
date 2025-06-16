@@ -1,5 +1,12 @@
 package lt.states;
 
+import lt.objects.ui.Button;
+import haxe.Json;
+import lt.backend.Game;
+import sys.io.File;
+import sys.FileSystem;
+import lt.objects.ui.Dialog;
+import lt.backend.MapData;
 import flixel.sound.FlxSound;
 import flixel.text.FlxInputText;
 import flixel.text.FlxInputTextManager;
@@ -13,6 +20,7 @@ import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.display.FlxBackdrop;
 
 class LevelEditorState extends State {
+    var mapData:LineMap;
     var stage:GameplayStage;
     var dummy:DummyTile;
     var camFollow:FlxObject;
@@ -21,6 +29,8 @@ class LevelEditorState extends State {
 	var hudCamera:FlxCamera;
 
     var lastScroll:FlxPoint;
+    
+    var streamPath:String = '';
 
     var zoomLevel(default,set):Float = 1;
     var conduct(get,never):Conductor;
@@ -32,6 +42,22 @@ class LevelEditorState extends State {
     }
     override function create() {
         super.create();
+        mapData = {
+            name: "LTSONG",
+            lyrics: true,
+            tiles: [],
+            meta: [
+                {
+                    name: "Artist",
+                    value: "Unknown"
+                }
+            ],
+            bpm: conduct.bpm,
+            data: {
+                version: "LineTapper v0.1.0",
+                apiLevel: 1
+            }
+        }
         gameCamera = new FlxCamera();
 		FlxG.cameras.reset(gameCamera);
 
@@ -46,8 +72,9 @@ class LevelEditorState extends State {
     }
 
     function onDropFile(path:String) {
+        streamPath = path;
         FlxG.sound.music = new FlxSound();
-        FlxG.sound.music.loadStream(path, false);
+        FlxG.sound.music.loadStream(streamPath, false);
     } 
 
     function initStage() {
@@ -58,6 +85,7 @@ class LevelEditorState extends State {
         stage = new GameplayStage(null);
         stage.editing = true;
         add(stage);
+        stage.autoplay = true;
 
         dummy = new DummyTile(stage);
         stage.add(dummy);
@@ -66,16 +94,54 @@ class LevelEditorState extends State {
 		add(camFollow);
     }
 
+    var audioPath:Text;
     function initHUD() {
-        var bpm:InputBox = new InputBox(10,FlxG.height - 50,200,"120");
-        bpm.label.text = PhraseManager.getPhrase("Beats Per Minute");
-        bpm.filterMode = CHARS("0123456789.");
-        bpm.cameras = [hudCamera];
-        bpm.onTextChange.add((t, c)->{
+        var lastY:Float = 10;
+        inline function makeInputBox(text:String, defaultTxt:String = '', onChange:(String, FlxInputTextChange)->Void):InputBox {
+            var obj:InputBox = new InputBox(20,lastY+30,200,defaultTxt);
+            obj.label.text = PhraseManager.getPhrase(text);
+            obj.cameras = [hudCamera];
+            obj.onTextChange.add(onChange);
+            obj.scrollFactor.set();
+            add(obj);
+            
+            lastY = obj.y + obj.height;
+            return obj;
+        }
+        inline function makeText(nx:Float, ny:Float, text:String):Text {
+            var txt:Text = new Text(nx,ny,text, 14, RIGHT);
+            txt.cameras = [hudCamera];
+            txt.setFont('musticapro');
+            add(txt);
+            return txt;
+        }
+        inline function makeButton(text:String,onClick:Bool->Void,isToggle:Bool) {
+            var btn:Button = new Button(20, lastY, text,200,20, isToggle, onClick);
+            btn.cameras = [hudCamera];
+            add(btn);
+            lastY = btn.y + btn.height + 10;
+            return btn;
+        }
+        var songName:InputBox = makeInputBox("Song Name", '${mapData.name}', (t,c)->{
+            mapData.name = t;
+        });
+
+        var load:Button = makeButton("Load", (_)->{
+            loadMap(songName.text);
+            trace("haha");
+        }, false);
+
+        var bpm:InputBox = makeInputBox("Beats Per Minute", '${conduct.bpm}', (t,c)->{
             Conductor.instance.updateBPM(Std.parseFloat(t));
         });
-        bpm.scrollFactor.set();
-        add(bpm);
+        bpm.filterMode = CHARS("0123456789.");
+        
+        // TEXTS
+        audioPath = makeText(0,0,'');
+
+        var version:Text = makeText(20,0,'LT v${Game.VERSION} API-${Game.API_LEVEL} // Development in progress, features may change.');
+        version.y = FlxG.height - version.height - 20;
+        version.alpha = 0.5;
     }
 
     var playing = false;
@@ -85,6 +151,10 @@ class LevelEditorState extends State {
             camFollow.y = FlxMath.lerp(stage.player.getMidpoint().y, camFollow.y, 1 - (elapsed * 12));
         }
         super.update(elapsed);
+
+        // UI UPDATE //
+        audioPath.setPosition(FlxG.width - audioPath.width - 20, 20);
+        audioPath.text = streamPath == "" ? 'Drop .ogg file to this window to set the song.' : streamPath;
 
         _keyboardControls(elapsed);
         _mouseControls(elapsed);
@@ -114,6 +184,10 @@ class LevelEditorState extends State {
                     y: stage.player.getMidpoint().y - FlxG.camera.height * 0.5}, 1, {
                         ease: FlxEase.expoInOut, 
                         onComplete: (_)->{
+                            camFollow.setPosition(
+                                stage.player.getMidpoint().x, 
+                                stage.player.getMidpoint().y
+                            );
                             lastScroll = FlxG.camera.scroll;
                             camTween = null;
                             startPlaytest();
@@ -135,6 +209,11 @@ class LevelEditorState extends State {
         FlxG.camera.scroll.y += scrollY;
 
         zoomLevel += (FlxG.keys.pressed.Q ? zoomChange : 0) - (FlxG.keys.pressed.E ? zoomChange : 0);
+    
+        // Operations //
+        if (FlxG.keys.pressed.CONTROL && FlxG.keys.justPressed.S) {
+            saveMap();
+        }
     }    
 
     var _lastClickPoint:FlxPoint = null;
@@ -165,7 +244,7 @@ class LevelEditorState extends State {
                 _lastPlacedTile.direction = dummy.direction;
             }
             
-            if (FlxG.mouse.justReleased){
+            if (FlxG.mouse.justReleased && _lastPlacedTile != null){
                 _lastPlacedTile.isRelease = true;
                 _lastPlacedTile = null;
             }
@@ -227,7 +306,10 @@ class LevelEditorState extends State {
         playing = true;
         Conductor.instance.time = 0;
         FlxG.camera.follow(camFollow, LOCKON);
+        FlxG.sound.music?.fadeTween?.cancel();
         FlxG.sound.music?.play();
+        if (FlxG.sound.music != null)
+            FlxG.sound.music.volume = 1;
         stage.start();
     }
 
@@ -236,8 +318,62 @@ class LevelEditorState extends State {
         FlxG.camera.target = null;
         FlxG.camera.scroll = lastScroll;
         Conductor.instance.time = 0;
-        FlxG.sound.music?.stop();
+        FlxG.sound.music?.fadeOut(0.5, 0, (t)->{
+            FlxG.sound.music?.stop();
+        });
         stage.stop();
         stage.player.setPosition();
     }
+
+    function saveMap():Void {
+        mapData.tiles = stage.tiles.members.map(t->t.getData());
+        var info:Array<String> = [];
+
+        var exportFolder:String = "./assets/data/maps/" + mapData.name;
+        if (!FileSystem.exists(exportFolder)) {
+            FileSystem.createDirectory(exportFolder);
+        }
+        var curdate:String = DateTools.format(Date.now(), "%Y-%m-%d_%H-%M-%S").toString();
+        var exportFile:String = exportFolder+"/"+'map.json';
+        var json:String = Json.stringify(mapData, "\t");
+        File.saveContent(exportFile, json);
+        info.push('Exported to ' + exportFile);
+
+        if (streamPath.endsWith("ogg")) {
+            File.copy(streamPath, exportFolder+'/audio.ogg');
+            info.push('Audio copied to ' + exportFolder+'/audio.ogg');
+        } else {
+            info.push('Copy failed, audio should be in OGG format.');
+        }
+
+        Dialog.show("Editor", info.join('\n'));
+    }
+
+    function loadMap(mapName:String):Void {
+        var folder = './assets/data/maps/' + mapName;
+        var path = folder + '/map.json';
+    
+        if (!FileSystem.exists(path)) {
+            Dialog.show("Error", 'Map file not found:\n$path');
+            return;
+        }
+    
+        var json:String = File.getContent(path);
+        var data:Dynamic = Json.parse(json);
+        
+        mapData = cast data;
+        conduct.updateBPM(mapData.bpm);
+    
+        stage.clearTiles();
+        stage.generateTiles(mapData);
+        var audioFile = folder + '/audio.ogg';
+        if (FileSystem.exists(audioFile)) {
+            streamPath = audioFile;
+            FlxG.sound.music = new FlxSound();
+            FlxG.sound.music.loadStream(streamPath, false);
+        } else {
+            Dialog.show("Warning", 'Audio file not found:\n$audioFile');
+        }
+    }
+    
 }
