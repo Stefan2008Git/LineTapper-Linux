@@ -2,7 +2,6 @@ name: Windows Build
 on:
   push:
   workflow_dispatch:
-
 jobs:
   build:
     name: Windows Build
@@ -11,25 +10,38 @@ jobs:
     steps:
       - name: Retrieving latest commit.
         uses: actions/checkout@v4
-
       - name: Setting up Haxe
         uses: krdlab/setup-haxe@v1
         with:
-          haxe-version: 4.3.7
-
-      - name: Display current Haxe Version
-        run: haxe -version
-
-      - name: Installing libraries
+          haxe-version: 4.3.7 # haxe version i used cuz yes
+      - name: Restore existing build cache for faster compilation
+        uses: actions/cache@v3
+        with:
+          key: cache-build-windows
+          path: |
+            .haxelib/
+            export/windows/haxe/
+            export/windows/obj/
+          restore-keys: |
+            cache-build-windows
+      - name: Installing / Updating libraries
         run: |
           haxe -cp cli --run Lib
-
       - name: Building the game
         run: |
           haxelib run lime build windows
-
       - name: Uploading artifact
         uses: actions/upload-artifact@v4
         with:
           name: LineTapper
           path: export/windows/bin
+      - name: Uploading new cache
+        uses: actions/cache@v3
+        with:
+          key: cache-build-windows
+          path: |
+            .haxelib/
+            export/windows/haxe/
+            export/windows/obj/
+          restore-keys: |
+            cache-build-windows
