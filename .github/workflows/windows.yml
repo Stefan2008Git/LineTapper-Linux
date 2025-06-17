@@ -24,6 +24,9 @@ jobs:
             export/windows/obj/
           restore-keys: |
             cache-build-windows
+      - name: Install latest HXCPP
+        run: haxelib install hxcpp --always --quiet
+
       - name: Installing / Updating libraries
         run: |
           haxe -cp cli --run Lib

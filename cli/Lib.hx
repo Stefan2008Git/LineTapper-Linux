@@ -30,7 +30,7 @@ class Lib {
                 args.push("--always");
 
                 Sys.println('${BOLD}${YELLOW}Installing: ${lib.name} ${lib?.version ?? ""}${RESET}');
-                run("haxelib", args, function() {
+                run("haxelib", args, ()->{
                     Sys.println('${GREEN}[✓] Installed: ${lib.name}${RESET}');
                 }, onFailed);
             }
