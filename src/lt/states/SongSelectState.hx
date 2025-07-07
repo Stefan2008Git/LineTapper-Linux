@@ -6,16 +6,20 @@ class SongSelectState extends State {
 	var topText:FlxText;
 	var topText_phrase:String = 'SELECT A SONG';
 
+	var centerDoubleLeftText:FlxText;
 	var centerLeftText:FlxText;
 	var centerText:FlxText;
 	var centerRightText:FlxText;
+	var centerDoubleRightText:FlxText;
 
 	var bottomText:FlxText;
 	var bottomText_phrase:String = 'INVALID SONG';
 
+	var songDoubleLeft:String = '';
 	var songLeft:String = '';
 	var song:String = 'Tutorial';
 	var songRight:String = '';
+	var songDoubleRight:String = '';
 	var songList:Array<String> = ['Tutorial'];
 	var songIndex:Int = 0;
 
@@ -40,6 +44,16 @@ class SongSelectState extends State {
 		centerRightText.setFormat(Assets.font('extenro-extrabold'), 22, FlxColor.WHITE, CENTER, OUTLINE, FlxColor.BLACK);
 		add(centerRightText);
 		centerRightText.alpha = 0.5;
+
+		centerDoubleLeftText = new FlxText(20, 180, -1, songDoubleLeft, 20);
+		centerDoubleLeftText.setFormat(Assets.font('extenro-extrabold'), 22, FlxColor.WHITE, CENTER, OUTLINE, FlxColor.BLACK);
+		add(centerDoubleLeftText);
+		centerDoubleLeftText.alpha = 0.25;
+
+		centerDoubleRightText = new FlxText(20, 180, -1, songDoubleRight, 20);
+		centerDoubleRightText.setFormat(Assets.font('extenro-extrabold'), 22, FlxColor.WHITE, CENTER, OUTLINE, FlxColor.BLACK);
+		add(centerDoubleRightText);
+		centerDoubleRightText.alpha = 0.25;
 
 		bottomText = new FlxText(20, FlxG.height - 180, -1, PhraseManager.getPhrase(bottomText_phrase, bottomText_phrase), 20);
 		bottomText.setFormat(Assets.font('extenro-extrabold'), 22, FlxColor.WHITE, CENTER, OUTLINE, FlxColor.BLACK);
@@ -89,28 +103,46 @@ class SongSelectState extends State {
 		if (songIndex < 0)
 			songIndex = 0;
 
-		if (songIndex >= songList.length - 1)
-			songIndex = songList.length - 1;
+		var songlistlen = songList.length - 1;
+
+		if (songIndex >= songlistlen)
+			songIndex = songlistlen;
 
 		song = songList[songIndex];
 		songLeft = '';
 		songRight = '';
+		songDoubleLeft = '';
+		songDoubleRight = '';
 		if (songIndex - 1 >= 0)
 			songLeft = songList[songIndex - 1];
-		if (songIndex + 1 <= songList.length - 1)
+		if (songIndex + 1 <= songlistlen)
 			songRight = songList[songIndex + 1];
+		if (songIndex - 2 >= 0)
+			songDoubleLeft = songList[songIndex - 2];
+		if (songIndex + 2 <= songlistlen)
+			songDoubleRight = songList[songIndex + 2];
 
 		songSelectionTransition();
 	}
 
 	function songSelectionTransition() {
 		centerText.text = song.toLowerCase();
-		centerLeftText.text = songLeft.toLowerCase();
-		centerRightText.text = songRight.toLowerCase();
 		centerText.screenCenter();
+
+		centerLeftText.text = songLeft.toLowerCase();
 		centerLeftText.screenCenter();
-		centerRightText.screenCenter();
 		centerLeftText.x -= centerText.width + centerLeftText.width;
+
+		centerRightText.text = songRight.toLowerCase();
+		centerRightText.screenCenter();
 		centerRightText.x += centerText.width + centerRightText.width;
+
+		centerDoubleLeftText.text = songDoubleLeft.toLowerCase();
+		centerDoubleLeftText.screenCenter();
+		centerDoubleLeftText.x = centerLeftText.x - centerLeftText.width - centerDoubleLeftText.width;
+
+		centerDoubleRightText.text = songDoubleRight.toLowerCase();
+		centerDoubleRightText.screenCenter();
+		centerDoubleRightText.x = centerRightText.x + centerRightText.width + centerDoubleRightText.width;
 	}
 }
