@@ -8,6 +8,9 @@ class SongSelectState extends State {
 
 	var centerText:FlxText;
 
+	var bottomText:FlxText;
+	var bottomText_phrase:String = 'INVALID SONG';
+
 	var song:String = 'Tutorial';
 	var songList:Array<String> = ['Tutorial'];
 	var songIndex:Int = 0;
@@ -23,6 +26,13 @@ class SongSelectState extends State {
 		centerText = new FlxText(20, 180, -1, song, 20);
 		centerText.setFormat(Assets.font('extenro-extrabold'), 22, FlxColor.WHITE, CENTER, OUTLINE, FlxColor.BLACK);
 		add(centerText);
+
+		bottomText = new FlxText(20, FlxG.height - 180, -1, PhraseManager.getPhrase(bottomText_phrase, bottomText_phrase), 20);
+		bottomText.setFormat(Assets.font('extenro-extrabold'), 22, FlxColor.WHITE, CENTER, OUTLINE, FlxColor.BLACK);
+		bottomText.color = FlxColor.RED;
+		bottomText.screenCenter(X);
+		bottomText.visible = false;
+		add(bottomText);
 
 		songList = FileSystem.readDirectory('assets/data/maps');
 
@@ -45,6 +55,20 @@ class SongSelectState extends State {
 			incrementSongIndex(-1);
 		if (FlxG.keys.justReleased.RIGHT)
 			incrementSongIndex(1);
+
+		if (FlxG.keys.justPressed.ENTER) {
+			if (song.length > 0 && FileSystem.exists('${Assets._MAP_PATH}/$song')) {
+				Utils.switchState(() -> new PlayState(song.trim()), PhraseManager.getPhrase("Gameplay"));
+				FlxG.sound.play(Assets.sound("menu/press"));
+			} else {
+				FlxFlicker.flicker(bottomText, 1, 0.02, false);
+				FlxG.sound.play(Assets.sound("menu/key_cancel"));
+				new FlxTimer().start(1, function(tmr:FlxTimer) {
+					bottomText.color = FlxColor.WHITE;
+					bottomText.visible = false;
+				});
+			}
+		}
 	}
 
 	function incrementSongIndex(increment:Int = 0) {
