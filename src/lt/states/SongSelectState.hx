@@ -100,14 +100,21 @@ class SongSelectState extends State {
 	function incrementSongIndex(increment:Int = 0) {
 		songIndex += increment;
 
+		var noScroll = function() {
+			FlxG.sound.play(Assets.sound("menu/key_cancel"));
+			centerText.color = FlxColor.RED;
+			FlxFlicker.flicker(centerText);
+		};
 		var songlistlen = songList.length - 1;
 		if (songIndex < 0) {
 			songIndex = 0;
-			FlxG.sound.play(Assets.sound("menu/key_cancel"));
+			noScroll();
 		} else if (songIndex >= songlistlen) {
 			songIndex = songlistlen;
-			FlxG.sound.play(Assets.sound("menu/key_cancel"));
+			noScroll();
 		} else {
+			centerText.color = FlxColor.WHITE;
+			FlxFlicker.stopFlickering(centerText);
 			FlxG.sound.play(Assets.sound("menu/press"));
 		}
 
