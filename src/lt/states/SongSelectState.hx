@@ -107,8 +107,9 @@ class SongSelectState extends State {
 		} else if (songIndex >= songlistlen) {
 			songIndex = songlistlen;
 			FlxG.sound.play(Assets.sound("menu/key_cancel"));
-		} else
-			FlxG.sound.play(Assets.sound("menu/scroll"));
+		} else {
+			FlxG.sound.play(Assets.sound("menu/select"));
+		}
 
 		song = songList[songIndex];
 		songLeft = '';
