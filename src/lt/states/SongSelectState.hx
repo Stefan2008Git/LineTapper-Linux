@@ -85,7 +85,7 @@ class SongSelectState extends State {
 		if (FlxG.keys.justPressed.ENTER) {
 			if (song.length > 0 && FileSystem.exists('${Assets._MAP_PATH}/$song')) {
 				Utils.switchState(() -> new PlayState(song.trim()), PhraseManager.getPhrase("Gameplay"));
-				FlxG.sound.play(Assets.sound("menu/press"));
+				FlxG.sound.play(Assets.sound("menu/select"));
 			} else {
 				FlxFlicker.flicker(bottomText, 1, 0.02, false);
 				FlxG.sound.play(Assets.sound("menu/key_cancel"));
@@ -108,7 +108,7 @@ class SongSelectState extends State {
 			songIndex = songlistlen;
 			FlxG.sound.play(Assets.sound("menu/key_cancel"));
 		} else {
-			FlxG.sound.play(Assets.sound("menu/select"));
+			FlxG.sound.play(Assets.sound("menu/press"));
 		}
 
 		song = songList[songIndex];
