@@ -17,6 +17,10 @@ class Main extends Sprite
 	{
 		super();
 
+		#if SONG_SELECT
+		STARTING_STATE = lt.states.SongSelectState;
+		#end
+
 		init();
 		addChild(new FlxGame(0, 0, STARTING_STATE, 120,120,true,false));
 		FlxG.fixedTimestep = FlxG.autoPause = false;
