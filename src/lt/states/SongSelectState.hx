@@ -100,13 +100,15 @@ class SongSelectState extends State {
 	function incrementSongIndex(increment:Int = 0) {
 		songIndex += increment;
 
-		if (songIndex < 0)
-			songIndex = 0;
-
 		var songlistlen = songList.length - 1;
-
-		if (songIndex >= songlistlen)
+		if (songIndex < 0) {
+			songIndex = 0;
+			FlxG.sound.play(Assets.sound("menu/key_cancel"));
+		} else if (songIndex >= songlistlen) {
 			songIndex = songlistlen;
+			FlxG.sound.play(Assets.sound("menu/key_cancel"));
+		} else
+			FlxG.sound.play(Assets.sound("menu/scroll"));
 
 		song = songList[songIndex];
 		songLeft = '';
@@ -122,10 +124,62 @@ class SongSelectState extends State {
 		if (songIndex + 2 <= songlistlen)
 			songDoubleRight = songList[songIndex + 2];
 
-		songSelectionTransition();
+		songSelectionTransition(0);
 	}
 
-	function songSelectionTransition() {
+	function songSelectionTransition(increment:Int = 0) {
+		if (increment == 0) {
+			songSelectionTransitionFinished();
+			return;
+		}
+
+		var positions = {
+			centerText: centerText.getPosition(),
+			centerLeftText: centerLeftText.getPosition(),
+			centerDoubleLeftText: centerDoubleLeftText.getPosition(),
+			centerRightText: centerRightText.getPosition(),
+			centerDoubleRightText: centerDoubleRightText.getPosition(),
+		}
+		var opacities = {
+			centerText: centerText.alpha,
+			centerLeftText: centerLeftText.alpha,
+			centerDoubleLeftText: centerDoubleLeftText.alpha,
+			centerRightText: centerRightText.alpha,
+			centerDoubleRightText: centerDoubleRightText.alpha,
+		}
+
+		// ! SEVERE WORK IN PROGRESS ! \\
+		if (increment < 0) {
+			FlxTween.tween(centerDoubleLeftText, {x: positions.centerLeftText.x, alpha: opacities.centerLeftText}, 1);
+			FlxTween.tween(centerLeftText, {x: positions.centerText.x, alpha: opacities.centerText}, 1);
+			FlxTween.tween(centerText, {x: positions.centerRightText.x, alpha: opacities.centerRightText}, 1);
+			FlxTween.tween(centerRightText, {x: positions.centerDoubleRightText.x, alpha: opacities.centerDoubleRightText}, 1);
+			centerDoubleRightText.alpha = 0;
+			centerDoubleRightText.x = positions.centerDoubleLeftText.x - centerDoubleLeftText.width - centerDoubleRightText.width;
+			centerDoubleRightText.text = songDoubleLeft;
+			FlxTween.tween(centerDoubleRightText, {x: positions.centerDoubleLeftText.x, alpha: opacities.centerDoubleLeftText}, 1, {
+				onComplete: tween -> {
+					songSelectionTransitionFinished();
+				}
+			});
+		} else {
+			centerDoubleLeftText.alpha = 0;
+			centerDoubleLeftText.x = positions.centerDoubleRightText.x - centerDoubleRightText.width - centerDoubleLeftText.width;
+			centerDoubleLeftText.text = songDoubleLeft;
+			FlxTween.tween(centerDoubleLeftText, {x: positions.centerDoubleRightText.x, alpha: opacities.centerDoubleRightText}, 1, {
+				onComplete: tween -> {
+					songSelectionTransitionFinished();
+				}
+			});
+			FlxTween.tween(centerLeftText, {x: positions.centerDoubleLeftText.x, alpha: opacities.centerDoubleLeftText}, 1);
+			FlxTween.tween(centerText, {x: positions.centerLeftText.x, alpha: opacities.centerLeftText}, 1);
+			FlxTween.tween(centerRightText, {x: positions.centerText.x, alpha: opacities.centerText}, 1);
+
+			FlxTween.tween(centerDoubleRightText, {x: positions.centerRightText.x, alpha: opacities.centerRightText}, 1);
+		}
+	}
+
+	function songSelectionTransitionFinished() {
 		centerText.text = song.toLowerCase();
 		centerText.screenCenter();
 
@@ -144,5 +198,11 @@ class SongSelectState extends State {
 		centerDoubleRightText.text = songDoubleRight.toLowerCase();
 		centerDoubleRightText.screenCenter();
 		centerDoubleRightText.x = centerRightText.x + centerRightText.width + centerDoubleRightText.width;
+
+		centerText.alpha = 1.0;
+		centerLeftText.alpha = 0.5;
+		centerRightText.alpha = 0.5;
+		centerDoubleLeftText.alpha = 0.25;
+		centerDoubleRightText.alpha = 0.25;
 	}
 }
