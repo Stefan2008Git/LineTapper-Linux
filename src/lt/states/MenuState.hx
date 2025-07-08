@@ -41,7 +41,7 @@ class MenuState extends State {
 	function get_options():Array<Dynamic>{
 		return [
 			[PhraseManager.getPhrase("settings").toLowerCase(), () -> openSubState(new SettingsSubstate())],
-			[PhraseManager.getPhrase("play").toLowerCase(), () -> Utils.switchState(new MenuDebugState(), PhraseManager.getPhrase("Song Select"))],
+			[PhraseManager.getPhrase("play").toLowerCase(), () -> Utils.switchState(() -> new SongSelectState(), PhraseManager.getPhrase("Song Select"))],
 			[PhraseManager.getPhrase("edit").toLowerCase(), () -> Utils.switchState(new LevelEditorState(), PhraseManager.getPhrase("Level Editor"))],
 			[PhraseManager.getPhrase("credits").toLowerCase(), () -> Utils.switchState(new CreditsState(), PhraseManager.getPhrase("Credits"))],
 		];	
