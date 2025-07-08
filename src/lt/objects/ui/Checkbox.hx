@@ -1,55 +1,55 @@
 package lt.objects.ui;
 
-
-class Checkbox extends Text {
+class Checkbox extends Sprite {
     var check:Sprite;
-    var checkOutline:Sprite;
-    var nWidth:Int = 0;
+    public var nWidth:Float = -1;
+    public var checked:Bool = false;
+    public var label:Text;
+    public var onCheckChanged:Bool->Void = (_)->{}
+    public function new(nX:Float, nY:Float, nWidth:Float = -1, text:String, ?onCheckChanged:Bool->Void):Void {
+        super(nX,nY);
+        this.nWidth = nWidth;
+        if (onCheckChanged != null)
+            this.onCheckChanged = onCheckChanged;
 
-    public var onChanged:Bool -> Void = (wa:Bool)->{};
-    public var checked(default, set):Bool = false;
-    var __skipCall:Bool = false;
-    function set_checked(val:Bool):Bool {
-        checked = val;
-        if (!__skipCall) onChanged(checked);
-        return val;
-    }
-    public function new(nX:Float, nY:Float, nText:String, nWidth:Float = 200, ?checked:Bool = false) {
-        super(nX,nY,nText,16);
-        __skipCall = true;
-        this.checked = checked;
-        __skipCall = false;
-        this.nWidth = Std.int(nWidth);
-        setFont("musticapro");
-        check = new Sprite().makeGraphic(20,20,0xFFFFFFFF);
-        checkOutline = new Sprite().loadGraphic(check.graphic);
-        checkOutline.setScale(1.1);
+        loadGraphic(Assets.image('ui/rectangle'));
+        setGraphicSize(20,20);
+        updateHitbox();
+
+        check = new Sprite().loadGraphic(Assets.image("ui/icons/check"));
+        check.setGraphicSize(width,height);
+        check.updateHitbox();
+
+        label = new Text(0,0,text,13);
+        if (nWidth > 0)
+            label.fieldWidth = nWidth-(width + 5);
+        label.applyUIFont();
     }
 
     override function draw() {
         super.draw();
-        if (FlxG.mouse.overlaps(check) && FlxG.mouse.justPressed) {
-            checked = !checked;
-            Sound.playSfx(Assets.sound("menu/click"), 0.6);
+
+        alpha = 0.7;
+        if (FlxG.mouse.overlaps(this)) {
+            alpha = FlxG.mouse.pressed ? 0.5 : 1;
+
+            if (FlxG.mouse.justReleased) {
+                checked = !checked;
+                onCheckChanged(checked);
+            }
         }
-        check.color = checked ? 0xFFFFFFFF : 0xFF000000;
-        check.x = x + (width - check.width);
-        check.y = y + (height - check.height) * 0.5;
 
-        checkOutline.x = check.x + (check.width - checkOutline.width) * 0.5;
-        checkOutline.y = check.y + (check.width - checkOutline.width) * 0.5;
-        checkOutline.draw();
-        check.draw();
-    }
+        check.setPosition(
+            x + (width - check.width) * 0.5,
+            y + (height - check.height) * 0.5
+        );
+        if (checked)
+            check.draw();
 
-    override function get_width():Float {
-        super.get_width();
-        return nWidth;
-    }
-
-    override function destroy() {
-        check?.destroy();
-        checkOutline?.destroy();
-        super.destroy();
+        label.setPosition(
+            x + width + 5,
+            y + (height - label.height) * 0.5
+        );
+        label.draw();
     }
 }

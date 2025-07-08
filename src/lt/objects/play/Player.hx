@@ -9,16 +9,28 @@ enum abstract Direction(Int) {
 }
 
 class Player extends Sprite {
-    public static var BOX_SIZE:Int = 50;
-	/** Defines current direction of the player. **/
-	public var direction:Direction = DOWN;
-    public var showTrails:Bool = true;
-    public var trails:Array<Sprite> = [];
-    public var trails_delay:Float = 0.05;
+	/** Size of the player sprite (also used by Tile objects). **/
+	public static var BOX_SIZE:Int = 50;
 
+	/** Current facing direction of the player. **/
+	public var direction:Direction = DOWN;
+
+	/** Whether to show trails while the player moves. **/
+	public var showTrails:Bool = true;
+
+	/** List of trail sprites. **/
+	public var trails:Array<Sprite> = [];
+
+	/** Delay between each trail spawn. **/
+	public var trails_delay:Float = 0.05;
+
+	/** Strength of the glow effect. **/
 	public var glowLevel:Float = 0;
+
+	/** Glow sprite used for held tiles. **/
 	public var glowObject:Sprite;
 
+	/** Whether this player is being used in the editor. **/
 	public var editing:Bool = false;
 
     public function new(nX:Float, nY:Float) {
@@ -32,12 +44,19 @@ class Player extends Sprite {
 		glowObject.blend = ADD;
     }
 
+	/**
+	 * Starts the glow effect.
+	 * @param c Glow color.
+	 */
 	public function startGlow(c:FlxColor) {
 		glowLevel = 1;
 		glowObject.color = c;
 	}
 
 	var missTimer:Float = 0;
+	/**
+	 * Starts the miss effect.
+	 */
 	public function startMiss() {
 		missTimer = 0;
 	}

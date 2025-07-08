@@ -11,7 +11,7 @@ class TimingDisplay extends Sprite {
         alpha = 1;
 
         msText = new Text(0,0,"",14, CENTER);
-        msText.setFont("musticapro");
+        msText.applyUIFont();
     }
 
     override function draw() {

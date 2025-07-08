@@ -8,55 +8,63 @@ import openfl.utils.ByteArray;
 import flixel.math.FlxRect;
 
 class Tile extends Sprite {
-    /**
-     * Time offset for a tile's entrance animation, measured in steps.
-     * This determines how early the animation starts relative to the current audio time.
-     * Example: If the offset is 2.5, the entrance animation begins when 
-     *          `Conductor.time + _TILE_ENTER_OFFSET` exceeds the tile's time.
-     */
+    /** Step offset for tile entrance animation. Starts early relative to the tile's time. **/
     public static var _TILE_ENTER_OFFSET:Float = 6.4;
 
-    /**
-     * Time offset for a tile's exit animation, measured in steps.
-     * This determines how late the animation plays relative to the tile's time.
-     * Example: If the offset is 0.5, the exit animation triggers when 
-     *          `Conductor.time` surpasses the tile's time plus `_TILE_EXIT_OFFSET`.
-     * 
-     * Note: This timer will start when the player missed the tile.
-     */
+    /** Step offset for tile exit animation. Starts late after the tile's time (used when missed). **/
     public static var _TILE_EXIT_OFFSET:Float = 1;
-    
-    /**
-     * Whether this tile can be hit or not.
-     */
+
+    /** Whether this tile can currently be hit. **/
     public var hitable(get, never):Bool;
-    public var canUpdate(get,never):Bool;
-    public var invalid(get,never):Bool;
+
+    /** Whether this tile should currently update. **/
+    public var canUpdate(get, never):Bool;
+
+    /** Whether this tile has been missed. **/
+    public var invalid(get, never):Bool;
+
+    /** Whether this tile can currently be released. **/
     public var canRelease(get, never):Bool;
 
+    /** Whether this tile has already been hit. **/
     public var beenHit:Bool = false;
+
+    /** Whether this tile was missed by the player. **/
     public var missed:Bool = false;
 
+    /** Whether this tile has already been released. **/
     public var released:Bool = false;
+
+    /** Whether the hold duration has ended. **/
     public var holdFinish:Bool = false;
+
+    /** The timing value (in steps) for this tile. **/
     public var time(default, set):Float = 0;
 
+    /** Hold length (in steps) for this tile. **/
     public var length(default, set):Float = 0;
 
+    /** Direction assigned to this tile. **/
     public var direction(default, set):Direction = LEFT;
 
+    /** (DEBUG) Multiplier for hold duration. **/
     public var multiplier:Float = 1;
 
+    /** Visual outline shown on hit. **/
     public var hitOutline:TileEffect;
 
-    // Used by hold tiles.
+    /** Hold body sprite (used for hold tiles). **/
     public var holdSprite:Sprite;
-    public var releaseSprite:Sprite;
-    public var isRelease:Bool = false;
 
+    /** Release tile sprite (used for hold tiles). **/
+    public var releaseSprite:Sprite;
+
+    /** Reference to the main conductor. **/
     private var conduct:Conductor = null;
 
+    /** Whether this tile is placed in the editor. **/
     public var editing:Bool = false;
+
     public function new(nX:Float, nY:Float, direction:Direction, time:Float, length:Float = 0.0) {
         super(nX, nY);
 
@@ -325,32 +333,27 @@ class TileEffect extends Sprite {
     }
     
     function set_outline(val:Float):Float {
-        if (val < 0) val = 0;
-        if (val > 1) val = 1;
-
-        if (clipRect == null)
-            clipRect = new FlxRect(0, 0, frameWidth, frameHeight);
+        val = FlxMath.bound(val, 0, 1);
     
-        var actualVal:Float = 1-val;
-        var _progress = {
-            width: frameWidth * actualVal,
-            height: frameHeight * actualVal,
-        };
+        pixels.copyPixels(
+            _ogPixels,
+            new Rectangle(0, 0, _ogPixels.width, _ogPixels.height),
+            new openfl.geom.Point()
+        );
     
-        clipRect.width = frameWidth - _progress.width;
-        clipRect.height = frameHeight - _progress.height;
-        clipRect.x = _progress.width * 0.5;
-        clipRect.y = _progress.height * 0.5;
+        var actualVal:Float = 1 - val;
+        var innerW = frameWidth * actualVal;
+        var innerH = frameHeight * actualVal;
+        var innerX = (frameWidth - innerW) * 0.5;
+        var innerY = (frameHeight - innerH) * 0.5;
     
-        this.pixels.copyPixels(_ogPixels, new Rectangle(0, 0, _ogPixels.width, _ogPixels.height), new openfl.geom.Point());
-
-        var bitmapData:BitmapData = this.pixels;
-        bitmapData.fillRect(new Rectangle(clipRect.x, clipRect.y, clipRect.width, clipRect.height), 0x00000000);
-        
-        var byteArray:ByteArray = bitmapData.getPixels(new Rectangle(0, 0, bitmapData.width, bitmapData.height));
-        pixels.setPixels(new Rectangle(0, 0, bitmapData.width, bitmapData.height), byteArray);
+        pixels.fillRect(
+            new Rectangle(innerX, innerY, innerW, innerH),
+            0x00000000
+        );
     
         return outline = val;
     }
+    
     
 }

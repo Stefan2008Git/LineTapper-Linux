@@ -13,11 +13,10 @@ class InputBox extends FlxInputText {
         font = Assets.font("musticapro");
 
         placeholder = new Text(nX,nY, "", nSize);
-        placeholder.setFont("musticapro");
+        placeholder.applyUIFont();
         placeholder.alpha = 0.5;
-
         label = new Text(nX,nY, "", nSize);
-        label.setFont("musticapro");
+        label.applyUIFont();
     }
 
     override function draw() {

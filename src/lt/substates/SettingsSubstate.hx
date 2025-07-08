@@ -1,5 +1,6 @@
 package lt.substates;
 
+import lt.backend.Game;
 import lt.objects.ui.CategoryGroup;
 import lt.objects.ui.CategoryGroup.CategoryType;
 import lt.objects.ui.InputBox;
@@ -27,6 +28,7 @@ class SettingsSubstate extends FlxSubState {
     override function update(elapsed:Float) {
         if (!exiting && (FlxG.keys.justPressed.ESCAPE || (!FlxG.mouse.overlaps(panel) && FlxG.mouse.justPressed) && !panel.searchBar.hasFocus)) {
             exit();
+            Preferences.save();
         }
         super.update(elapsed);
     }
@@ -60,33 +62,37 @@ typedef SettingsChild = {
     name:String,
     langname:String,
     field:String,
-    desc:String,
-    type:CategoryType,
-    min:Float, // Used by "Scroll Bar" type.
-    max:Float,  // Used by "Scroll Bar" type.
-    suffix:String,
-    onChange:Dynamic -> Void
+    ?desc:String,
+    ?type:CategoryType,
+    ?min:Float,
+    ?max:Float,
+    ?suffix:String,
+    ?onChange:Dynamic -> Void,
+    ?step:Float,
+    ?data:Array<String>
 }
+
 typedef SettingsCategory = {
     name:String,
     langname:String,
-    child:Array<SettingsChild>
+    children:Array<SettingsChild>
 }
+
 class SettingsPanel extends Sprite {
     var bgCover:Sprite;
-    var title:Text;
-    var randomText:Text;
+    var titleText:Text;
+    var subtitleText:Text;
     public var searchBar:InputBox;
     var divider:Sprite;
 
-
     var messages:Array<String> = [];
-
     public var categories:Array<SettingsCategory> = [];
     public var objects:Array<Dynamic> = [];
     public var settings:Array<CategoryGroup> = [];
+
     public var scrollY:Float = 0;
     private var _scrollY:Float = 0;
+
     public function new():Void {
         super();
         loadGraphic(Assets.image("ui/settings/panel"));
@@ -95,86 +101,144 @@ class SettingsPanel extends Sprite {
             "Adjust these to your preferences.",
             "Let me guess, offset?",
             "Looking for something?",
-            ""
         ]);
 
-        bgCover = new Sprite().makeGraphic(Std.int(width-80), 150, 0xFF000000);
+        bgCover = new Sprite().makeGraphic(Std.int(width - 80), 150, 0xFF000000);
         objects.push(bgCover);
 
-        // cpp broke because of this :pray:
-        var wawa:String = PhraseManager.getPhrase('settings', "Settings").toString();
-        title = new Text(0,0, wawa.toUpperCase(), 20, CENTER, true);
-        objects.push(title);
+        titleText = new Text(0, 0, PhraseManager.getPhrase('settings', "Settings").toUpperCase(), 20, CENTER, true);
+        objects.push(titleText);
 
-        randomText = new Text(0,0, FlxG.random.getObject(messages), 13, CENTER);
-        randomText.setFont("musticapro");
-        randomText.alpha = 0.5;
-        objects.push(randomText);
+        subtitleText = new Text(0, 0, FlxG.random.getObject(messages), 13, CENTER);
+        subtitleText.applyUIFont();
+        subtitleText.alpha = 0.5;
+        objects.push(subtitleText);
 
-        searchBar = new InputBox(0,0, width-80);
+        searchBar = new InputBox(0, 0, width - 80);
         searchBar.placeholder.text = PhraseManager.getPhrase('search_settings', 'Search settings...');
         objects.push(searchBar);
 
-        divider = new Sprite().makeGraphic(Std.int(width-80), 1, 0xFF303030);
+        divider = new Sprite().makeGraphic(Std.int(width - 80), 1, 0xFF303030);
         objects.push(divider);
 
         generateSettings();
     }
-    
+
     function generateSettings() {
-        // Add the category and it's child //
-        addCategory("Graphics", 'settings_graphics', [
-            makeCategoryChild("Antialiasing", 'settings_antialiasing', "Whether to use antialiasing for sprites (smoother visuals)", "antialiasing", CHECKBOX, 0,0,"",(data:Dynamic)->{
-                FlxSprite.defaultAntialiasing = data;
+        // Define categories & children
+        addCategory("Display", 'settings_graphics', [
+            createCheckbox("Antialiasing", 'settings_antialiasing', 'Whether to use antialiasing (smoother visuals)', 'antialiasing', (val:Bool) -> {
+                FlxSprite.defaultAntialiasing = val;
+            }),
+            createDropdown('Language', "settings_language", "Language used in the game.", 'language', Game.SUPPORTED_LANGUAGES, (val:String)->{
+                PhraseManager.init(); //Reinit phrases.
             })
         ]);
-        addCategory("Gameplay", 'settings_gameplay', [
-            makeCategoryChild("Tile Offset", 'settings_tile_offset', "Defines offset value used in-game (Tile time offset)", "offset", SCROLLBAR, -600, 600, "ms")
-        ]);
-        addCategory("Audio", 'settings_audio', [
-            makeCategoryChild("Master Volume", 'settings_master_volume', "Adjust how loud the game's audio.", "masterVolume", SCROLLBAR, 0, 100, "%", (val:Dynamic) -> {
-                FlxG.sound.volume = val/100;
-            }),
-            makeCategoryChild("Music Volume", 'settings_music_volume', "Adjust how loud are musics supposed to be.", "musicVolume", SCROLLBAR, 0, 100, "%", (val:Dynamic) -> {
-                Preferences.data.musicVolume = val/100;
 
-            }),
-            makeCategoryChild("SFX Volume", 'settings_sfx_volume', "Adjust how loud are sound effects supposed to be.", "sfxVolume", SCROLLBAR, 0, 100, "%", (val:Dynamic) -> {
-                Preferences.data.sfxVolume = val/100;
-            }),
+        addCategory("Gameplay", 'settings_gameplay', [
+            createScrollbar("Tile Offset", "settings_tile_offset", "Defines offset value used in-game (Tile time offset)", 'offset', -300, 300, 10, 'ms')
         ]);
-        // Then generate the UI //
+
+        addCategory("Audio", 'settings_audio', [
+            createScrollbar("Master Volume", "settings_master_volume", "Adjust how loud the game's audio.", 'masterVolume', 0, 1, 0.1, '%', (val:Float)->{
+                FlxG.sound.volume = val;
+            }),
+            createScrollbar("Music Volume", "settings_music_volume", "Adjust how loud music should be.", 'musicVolume', 0, 1, 0.1, '%'),
+            createScrollbar("SFX Volume", "settings_sfx_volume", "Adjust how loud sound effects should be.", 'sfxVolume', 0, 1, 0.1, '%'),
+        ]);
+
+        // create elements
         for (category in categories) {
-            var wawa:CategoryGroup = new CategoryGroup(0,0, category.langname);
-            for (child in category.child) {
+            var group = new CategoryGroup(0, 0, category.langname);
+            for (child in category.children) {
+                var prefValue:Dynamic = Reflect.getProperty(Preferences.data, child.field);
+
                 switch (child.type) {
                     case CHECKBOX:
-                        wawa.addCheckBox(child.langname, Reflect.getProperty(Preferences.data,child.field),(val:Bool)->{
-                            Reflect.setProperty(Preferences.data, child.field, val);
-                            child.onChange(val);
+                        group.addCheckBox(child.langname, prefValue, (v:Bool) -> {
+                            Reflect.setProperty(Preferences.data, child.field, v);
+                            child.onChange(v);
                         });
                     case SCROLLBAR:
-                        wawa.addScrollBar(child.langname, child.suffix, Reflect.getProperty(Preferences.data,child.field), child.min, child.max,(val:Float)->{
-                            Reflect.setProperty(Preferences.data, child.field, val);
-                            child.onChange(val);
+                        group.addScrollBar(child.langname, child.suffix, prefValue, child.min, child.max, child.step, (v:Float) -> {
+                            Reflect.setProperty(Preferences.data, child.field, v);
+                            child.onChange(v);
                         });
-                        // do nothing
+                    case DROPDOWN:
+                        group.addDropDown(child.langname, child.data, (v:String, _)->{
+                            Reflect.setProperty(Preferences.data, child.field, v);
+                            child.onChange(v);
+                        });
                 }
             }
-            
-            settings.push(wawa);
+            settings.push(group);
         }
     }
 
-    function addCategory(name:String, langname:String, child:Array<SettingsChild>) {
+    function addCategory(name:String, langname:String, children:Array<SettingsChild>) {
         categories.push({
             name: name,
             langname: PhraseManager.getPhrase(langname, name),
-            child: child
+            children: children
         });
     }
 
-    function makeCategoryChild(name:String, langname:String, desc:String, field:String, type:CategoryType, ?min:Float = 0, ?max:Float = 1, ?suffix:String = "", ?onChange:Dynamic -> Void):SettingsChild {
+    /**
+     * Creates checkbox option.
+     */
+    function createCheckbox(
+        name:String, langname:String, desc:String, field:String, onChange:Bool->Void
+    ):SettingsChild {
+        return {
+            type: CHECKBOX,
+            name: name,
+            langname: PhraseManager.getPhrase(langname, name),
+            desc: desc,
+            field: field,
+            onChange: onChange
+        }
+    }
+
+
+    /**
+     * Creates scrollbar option.
+     */
+    function createScrollbar(
+        name:String, langname:String, desc:String, field:String, min:Float, max:Float, step:Float, suffix:String, ?onChange:Float -> Void
+    ):SettingsChild {
+        return {
+            type: SCROLLBAR,
+            name: name,
+            langname: PhraseManager.getPhrase(langname, name),
+            desc: desc,
+            field: field,
+            min: min,
+            max: max,
+            step: step,
+            suffix: suffix,
+            onChange: onChange != null ? onChange : (_) -> {}
+        }
+    }
+
+    function createDropdown(
+        name:String, langname:String, desc:String, field:String, data:Array<String>, onChange:String -> Void
+    ):SettingsChild {
+        return {
+            type: DROPDOWN,
+            name: name,
+            langname: PhraseManager.getPhrase(langname, name),
+            desc: desc,
+            field: field,
+            data: data,
+            onChange: onChange != null ? onChange : (_) -> {}
+        }
+    }
+
+    function createChild(
+        name:String, langname:String, desc:String, field:String,
+        type:CategoryType, ?min:Float = 0, ?max:Float = 1,
+        ?suffix:String = "", ?onChange:Dynamic -> Void, ?step:Float = 1,
+    ):SettingsChild {
         return {
             name: name,
             langname: PhraseManager.getPhrase(langname, name),
@@ -184,11 +248,9 @@ class SettingsPanel extends Sprite {
             min: min,
             max: max,
             suffix: suffix,
-            onChange: (w:Dynamic)->{
-                if (onChange != null)
-                    onChange(w);
-            }
-        }
+            onChange: onChange != null ? onChange : (_) -> {},
+            step: step,
+        };
     }
 
     override function update(elapsed:Float) {
@@ -196,45 +258,35 @@ class SettingsPanel extends Sprite {
         if (FlxG.mouse.wheel != 0) {
             scrollY += 20 * FlxG.mouse.wheel;
         }
-        _scrollY = FlxMath.lerp(_scrollY, scrollY, 12*elapsed);
-        for (obj in settings) {
-            obj.update(elapsed);
-        }
+        _scrollY = FlxMath.lerp(_scrollY, scrollY, 12 * elapsed);
+        for (obj in settings) obj.update(elapsed);
         super.update(elapsed);
     }
 
     override function draw() {
         super.draw();
-        objectCenterX(bgCover);
-        bgCover.y = y;
-
-        objectCenterX(title);
-        title.y = y + 60;
+    
+        objectCenterX(bgCover); bgCover.y = y;
+        objectCenterX(titleText); titleText.y = y + 60;
+        objectCenterX(subtitleText); subtitleText.y = titleText.y + titleText.height + 3;
+        objectCenterX(searchBar); searchBar.y = subtitleText.y + 30;
+        objectCenterX(divider); divider.y = bgCover.y + bgCover.height;
+    
+        var offsetY:Float = divider.y + 40 + _scrollY;
+        for (group in settings) {
+            group.exists = true;
+            group.setPosition(x + 40, offsetY);
+            offsetY += group.height + 10;
+        }
         
-        objectCenterX(randomText);
-        randomText.y = title.y + title.height + 3;
-
-        objectCenterX(searchBar);
-        searchBar.y = randomText.y + 30;
-
-        objectCenterX(divider);
-        divider.y = bgCover.y + bgCover.height;
-
-        var lastPos:Float = 0;
-        var lastHeight:Float = 0;
-        for (obj in settings) {
-            obj.exists = true;
-            obj.setPosition(x + 40, divider.y + 40 + _scrollY + lastPos + lastHeight + 10);
-            obj.draw();
-
-            lastPos = obj.y - (divider.y + 40 + _scrollY);
-            lastHeight = obj.height;
-        }
-
-        for (obj in objects) {
-            obj.draw();
-        }
+        var a:Array<CategoryGroup> = settings.copy();
+        a.reverse();
+        for (group in a)
+            group.draw();
+    
+        for (obj in objects) obj.draw();
     }
+    
 
     inline function objectCenterX(obj:FlxObject) {
         obj.x = x + (width - obj.width) * 0.5;

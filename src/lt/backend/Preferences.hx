@@ -47,6 +47,7 @@ class Preferences {
      */
     public static function save():Void {
         var jsonData:String = Json.stringify(data, "\t");
+        trace(jsonData);
         File.saveContent(PATH, Serializer.run(jsonData));
     }
 

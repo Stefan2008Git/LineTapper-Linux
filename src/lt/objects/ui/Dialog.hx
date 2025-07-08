@@ -70,7 +70,7 @@ class Dialog extends FlxSubState {
 
     function generateDialog(_title:String, body:String, ?buttons:Array<DialogButton>) {
         text = new Text(0, 0, body, 14);
-        text.setFont("musticapro");
+        text.applyUIFont();
         if (text.width > MAX_SIZE.x) 
             text.fieldWidth = MAX_SIZE.x - MARGIN;
         text.scrollFactor.set();

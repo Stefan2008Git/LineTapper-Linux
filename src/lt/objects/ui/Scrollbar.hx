@@ -8,14 +8,14 @@ class Scrollbar extends Text {
     var valueIndicator:Text;
     var nWidth:Int = 0;
 
-    public var stepSize:Float = 10;
+    public var stepSize:Float = 0.1;
     public var onChanged:Float -> Void = (wa:Float)->{};
     public var value(default,set):Float = 0;
     
     var __lastValue(default,set):Float = 0;
     var __skipCall:Bool = false;
 
-
+    var lerpValue:Float = 0;
 
     function set_value(val:Float):Float {
         value = val;
@@ -35,22 +35,23 @@ class Scrollbar extends Text {
 
     public var suffix:String = "";
 
-    public function new(nX:Float, nY:Float, nText:String, suffix:String = "", nWidth:Float = 200, ?value:Float = 0.5, ?min:Float = 0, ?max:Float = 0) {
-        super(nX,nY,nText,16);
+    public function new(nX:Float, nY:Float, nText:String, suffix:String = "", nWidth:Float = 200, ?value:Float = 0.5, ?min:Float = 0, ?max:Float = 100, ?step:Float = 1) {
+        super(nX,nY,nText,13);
         this.suffix = suffix;
         __skipCall = true;
         this.value = value;
+        this.stepSize = step;
         __skipCall = false;
         this.nWidth = Std.int(nWidth);
-        setFont("musticapro");
+        applyUIFont();
 
-        bar = new FlxBar(0,0,LEFT_TO_RIGHT, Std.int(nWidth), 5, this, "value", min, max);
+        bar = new FlxBar(0,0,LEFT_TO_RIGHT, Std.int(nWidth), 5, this, "lerpValue", min, max);
         bar.createFilledBar(0xFF303030, 0xFFFFFFFF);
 
         barHandle = new Sprite().makeGraphic(10,10,0xFFFFFFFF);
 
-        valueIndicator = new Text(0,0,"",14, RIGHT);
-        valueIndicator.setFont("musticapro");
+        valueIndicator = new Text(0,0,"",13, RIGHT);
+        valueIndicator.applyUIFont();
     }
 
     override function update(elapsed:Float) {
@@ -63,10 +64,10 @@ class Scrollbar extends Text {
         super.draw();
     
         bar.x = x;
-        bar.y = y + 30;
+        bar.y = y + 25;
         bar.draw();
     
-        barHandle.x = bar.x + (Utils.normalize(value, bar.min, bar.max) * bar.width) - (barHandle.width * 0.5);
+        barHandle.x = bar.x + (Utils.normalize(lerpValue, bar.min, bar.max) * bar.width) - (barHandle.width * 0.5);
         barHandle.y = bar.y + (bar.height - barHandle.height) * 0.5;
         barHandle.draw();
     
@@ -80,6 +81,8 @@ class Scrollbar extends Text {
             value = Math.round(rawValue / stepSize) * stepSize;
             value = Math.max(bar.min, Math.min(value, bar.max));
         }
+
+        lerpValue = FlxMath.lerp(lerpValue, value, FlxG.elapsed * 12);
     
         if (FlxG.mouse.justReleased)
             moving = false;

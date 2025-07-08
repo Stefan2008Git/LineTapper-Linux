@@ -96,7 +96,7 @@ class MenuState extends State {
 		var localChanges:Bool = Github.getGitHasLocalChanges();
 		var debugTXT:String = ' (DEBUG)\n${Github.getGitBranch()}/${Github.getGitCommitHash()}${localChanges ? ' (Modified)' : ''}';
 		var versionText:Text = new Text(0,0,'v${Game.VERSION #if debug + debugTXT #end}', 14);
-		versionText.setFont("musticapro");
+		versionText.applyUIFont();
 
 		versionText.setPosition(10, FlxG.height - versionText.height - 10);
 		versionText.alpha = 0.0;

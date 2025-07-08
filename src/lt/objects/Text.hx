@@ -9,4 +9,8 @@ class Text extends FlxText {
     public function setFont(name:String, bold:Bool = false):Void {
         font = Assets.font(name+(bold?"-bold":""));
     }
+
+    public function applyUIFont() {
+        setFont('musticapro');
+    }
 }

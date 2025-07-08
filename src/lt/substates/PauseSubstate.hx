@@ -39,6 +39,8 @@ class PauseSubstate extends FlxSubState {
     override function update(elapsed:Float) {
         if (FlxG.keys.justReleased.ESCAPE) {
             Utils.switchState(new MenuState(), PhraseManager.getPhrase("Leaving Gameplay"));
+            FlxG.sound.music.stop();
+            FlxG.sound.music.onComplete = ()->{}
         } else if (FlxG.keys.justPressed.ANY) {
             FlxTween.tween(pauseBG, {alpha: 0}, FADE_DURATION, {ease: FlxEase.expoOut});
             FlxTween.tween(pauseText, {alpha: 0}, FADE_DURATION, {ease: FlxEase.expoOut});

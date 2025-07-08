@@ -1,84 +1,62 @@
 package lt.objects.ui;
 
-import flixel.FlxG;
-
-class Button extends Sprite {
-    public var outline:Sprite;
+enum abstract ButtonAlignment(String) from String to String {
+    var LEFT = 'left';
+    var CENTER = 'center';
+    var RIGHT = 'right';
+}
+class Button extends Panel {
     public var label:Text;
-    public var onClick:Bool->Void;
+    public var align:ButtonAlignment = CENTER;
+    public var toggled:Bool = true;
 
-    public var toggle:Bool = false;
-    public var toggled:Bool = false;
-
-    public function new(nX:Float, nY:Float, text:String, w:Float = 150, h:Float = 20, isToggle:Bool = false, ?onClick:Bool->Void) {
-        super();
+    public var nWidth:Float = -1;
+    public var isToggle:Bool = false;
+    public var onClick:Bool->Void = (status:Bool = false)->{};
+    public function new(nX:Float, nY:Float, nWidth:Float = -1, text:String, onClick:Bool->Void) {
+        super(nX, nY, 20, 20);
+        this.nWidth = nWidth;
         this.onClick = onClick;
-        toggle = isToggle;
-
-        x = nX;
-        y = nY;
-
-        makeGraphic(1, 1, 0xFF101010);
-        outline = new Sprite();
-        outline.makeGraphic(1, 1, 0xFF303030);
-
-        label = new Text(0, 0, text, 13);
-        label.setFont("musticapro");
-        label.alignment = "center";
-        label.color = 0xFFFFFFFF;
-
-        setSize(w, h);
-    }
-
-    override public function setSize(w:Float, h:Float):Void {
-        setGraphicSize(Std.int(w), Std.int(h));
-        updateHitbox();
-
-        outline.setGraphicSize(Std.int(w + 2), Std.int(h + 2));
-        outline.updateHitbox();
-
-        label.setPosition(
-            x + (w - label.width) * 0.5,
-            y + (h - label.height) * 0.5
-        );
-    }
-
-    override function update(elapsed:Float):Void {
-        super.update(elapsed);
-
-        var hovered:Bool = FlxG.mouse.overlaps(this);
-
-        if (hovered && FlxG.mouse.justPressed) {
-            if (toggle) toggled = !toggled;
-            if (onClick!=null) onClick(toggle ? toggled : true);
-        }
-
-        alpha = hovered ? 1.0 : 0.9;
+        label = new Text(0,0,text,13, CENTER);
+        label.applyUIFont();
     }
 
     override function draw():Void {
-        outline.setPosition(
-            x + (width - outline.width) * 0.5,
-            y + (height - outline.height) * 0.5
-        );
-        outline.cameras = cameras;
-        outline.alpha = alpha;
-        outline.draw();
+        if (nWidth < 0)
+            width = label.width + 2;
+        else
+            width = nWidth;
 
-        super.draw();
+        height = label.height + 2;
 
-        label.setPosition(
-            x + (width - label.width) * 0.5,
-            y + (height - label.height) * 0.5
-        );
+        switch (align) {
+            case CENTER:
+                label.x = x + (width - label.width) * 0.5;
+            case LEFT:
+                label.x = x + 2;
+            case RIGHT:
+                label.x = x + (width - label.width) - 2;
+        }
+        label.y = y + (height - label.height) * 0.5;
+
+        if (isToggle) {
+            label.alpha = toggled ? 1 : 0.5;
+        }
+
+        if (isToggle)
+            alpha = toggled ? 1 : 0.5;
+        else
+            alpha = 0.7;
+        if (FlxG.mouse.overlaps(this, cameras[0])) {
+            alpha = FlxG.mouse.pressed ? 0.7 : 1;
+            if (FlxG.mouse.justReleased) {
+                if (isToggle) toggled = !toggled; // Toggle state
+                onClick(toggled);
+            }
+        }
+        
         label.cameras = cameras;
-        label.alpha = alpha;
+        super.draw();
         label.draw();
-    }
-
-    override function destroy():Void {
-        outline?.destroy();
-        label?.destroy();
-        super.destroy();
     }
 }

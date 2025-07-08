@@ -11,7 +11,7 @@ import flixel.sound.FlxSound;
 import flixel.text.FlxInputText;
 import flixel.text.FlxInputTextManager;
 import lt.objects.ui.InputBox;
-import flixel.math.FlxPoint;
+
 import lt.objects.play.Tile;
 import lt.objects.play.editor.DummyTile;
 import lt.objects.play.GameplayStage;
@@ -54,8 +54,8 @@ class LevelEditorState extends State {
             ],
             bpm: conduct.bpm,
             data: {
-                version: "LineTapper v0.1.0",
-                apiLevel: 1
+                version: Game.VERSION,
+                apiLevel: Game.API_LEVEL
             }
         }
         gameCamera = new FlxCamera();
@@ -111,12 +111,13 @@ class LevelEditorState extends State {
         inline function makeText(nx:Float, ny:Float, text:String):Text {
             var txt:Text = new Text(nx,ny,text, 14, RIGHT);
             txt.cameras = [hudCamera];
-            txt.setFont('musticapro');
+            txt.applyUIFont();
             add(txt);
             return txt;
         }
         inline function makeButton(text:String,onClick:Bool->Void,isToggle:Bool) {
-            var btn:Button = new Button(20, lastY, text,200,20, isToggle, onClick);
+            var btn:Button = new Button(20, lastY,200, text, onClick);
+            btn.isToggle = isToggle;
             btn.cameras = [hudCamera];
             add(btn);
             lastY = btn.y + btn.height + 10;
@@ -132,7 +133,8 @@ class LevelEditorState extends State {
         }, false);
 
         var bpm:InputBox = makeInputBox("Beats Per Minute", '${conduct.bpm}', (t,c)->{
-            Conductor.instance.updateBPM(Std.parseFloat(t));
+            mapData.bpm = Std.parseFloat(t);
+            Conductor.instance.updateBPM(mapData.bpm);
         });
         bpm.filterMode = CHARS("0123456789.");
         
@@ -245,7 +247,7 @@ class LevelEditorState extends State {
             }
             
             if (FlxG.mouse.justReleased && _lastPlacedTile != null){
-                _lastPlacedTile.isRelease = true;
+                //_lastPlacedTile.isRelease = true;
                 _lastPlacedTile = null;
             }
             if (FlxG.mouse.justReleasedRight) 

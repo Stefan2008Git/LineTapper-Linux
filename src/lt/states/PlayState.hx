@@ -153,7 +153,7 @@ class PlayState extends State {
 
         lyricsList = Lyrics.fromSong(songName);
         lyricsOverlay = makeText(0,FlxG.height - 120,"", 20, false, CENTER);
-        lyricsOverlay.setFont("musticapro");
+        lyricsOverlay.applyUIFont();
         lyricsOverlay.fieldWidth = FlxG.width * 0.7;
         lyricsOverlay.screenCenter(X);
 		add(lyricsOverlay);
@@ -169,6 +169,9 @@ class PlayState extends State {
         FlxG.sound.playMusic(mapAsset.audio, 0.7, false);
 		FlxG.sound.music.time = 0;
         FlxG.sound.music.pitch = playbackRate;
+        FlxG.sound.music.onComplete = () -> {
+            Utils.switchState(new MenuState(), PhraseManager.getPhrase("Leaving Gameplay"));
+        }
 		FlxG.sound.music.pause();
         Conductor.instance.updateBPM(mapAsset.map.bpm);
         return mapAsset.map;
@@ -177,6 +180,7 @@ class PlayState extends State {
     public var started:Bool = false;
 
     override function update(elapsed:Float) {
+        super.update(elapsed);
 		if (FlxG.keys.justPressed.SPACE && !started) {
             stage.start();
             FlxG.sound.music.play();
@@ -189,8 +193,10 @@ class PlayState extends State {
         if (FlxG.keys.justPressed.B) 
             stage.autoplay = !stage.autoplay;
 
-        camFollow.x = FlxMath.lerp(player.getMidpoint().x, camFollow.x, 1 - (elapsed * 12));
-        camFollow.y = FlxMath.lerp(player.getMidpoint().y, camFollow.y, 1 - (elapsed * 12));
+        camFollow.x = player.getMidpoint().x;
+        camFollow.y = player.getMidpoint().y;
+        //camFollow.x = FlxMath.lerp(player.getMidpoint().x, camFollow.x, 1 - (elapsed * 12));
+        //camFollow.y = FlxMath.lerp(player.getMidpoint().y, camFollow.y, 1 - (elapsed * 12));
 
         timeBar.percent = (Conductor.instance.time / FlxG.sound.music.length) * 100;
         timeTextLeft.text = Utils.formatMS(Conductor.instance.time);
@@ -206,7 +212,6 @@ class PlayState extends State {
 
         //no work :(
 
-        super.update(elapsed);
         //previewSprite.graphic.bitmap.draw(gameCamera.canvas);
         //if (previewSprite != null) {
         //    previewSprite.scale.set(0.4,0.4);

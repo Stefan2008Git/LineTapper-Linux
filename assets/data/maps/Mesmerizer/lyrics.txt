@@ -1,34 +1,50 @@
-00:14.230 -- Jissai no kanjō wa no think!  
-00:15.680 -- Kizukanai furi?  
-00:16.810 -- Zettaiteki na kyojitsu to shinchū  
-00:19.460 -- Sō yatte hette iku anchi  
-00:20.850 -- Kizu no kiriuri  
-00:22.060 -- Moroku sakebu, shūtai  
-00:24.020 -- Sonna anata ni osusume! Saikōkyū no tōhikō  
-00:26.650 -- Yagate, kanbi na wana ni tsurareta mono kara sukuwareru?  
-00:29.230 -- Mohaya shōki no sata de wa yatte ikenai kono shaba ja  
-00:31.920 -- Aete soshiranu kao de mi o makaseru no ga saitekikai?  
-00:35.440 -- Kotoba de kazatta hanataba mo kokoro o ubaeba, honmono ka?  
-00:40.500 -- Subete ga somatte iku yō na jishō ni goshōtai  
-00:44.600 -- Saraba!  
-00:45.310 -- Konna jidai ni atsuraeta mitegure no zeijakusei  
-00:50.520 -- Hontō no shibai de damasareru yatarato urusai shinzō no kodō  
-00:55.730 -- Zanki wa tō ni nai natte iru suriheru taikyūsei  
-01:00.590 -- Me no mae no jishō o kawashitsutsu ikiru no de teippai!  
-01:04.980 -- Dareka, tasukete ne  
-01:19.070 -- "Anata dandan nemuku naru" asahaka na sainminjutsu  
-01:21.650 -- Atama, karada, kemuri ni maku masaka, amata taburakasu!?  
-01:24.300 -- Me no mae de yuragu kōka ugokanaku naru kanata  
-01:26.830 -- "Kore de ii nda" jibun sae mo damashi damashi shut down  
-01:29.540 -- "Anata dandan nemuku naru" asahaka na sainminjutsu  
-01:32.060 -- Atama, karada, kemuri ni maku masaka, amata taburakasu!?  
-01:34.690 -- Me no mae de yuragu kōka ugokanaku naru kanata...  
-01:39.880 -- Donna ni kyō o ikinuitemo mukuwarenu everyday  
-01:44.600 -- Mō bot mitai na saikuru de dasei no shunkan o tsudzukete iru no da  
-01:50.290 -- Un mo kibō mo nai naraba naosara shō ga nee  
-01:55.160 -- Nai mon wa nai de, akiramete yobutsu de shōbu suru no ga unmei  
-02:00.640 -- Konna jidai ni atsuraeta mitegure no zeijakusei  
-02:05.590 -- Hontō no shibai de damasareru yatarato urusai shinzō no kodō  
-02:10.990 -- Sanbi wa mō imi nai natte iru nise no karisuma-sei  
-02:15.830 -- Genjitsu o chokushi shisugiru to shitsumei shichau nda!  
-02:20.200 -- Dakara, tekido ni ne  
+00:14.160 -- Don't reflect on feelings you don't need  
+00:15.650 -- Do you pretend you can't see all the certainties and even your own heartbeat?  
+00:19.320 -- That's the way the safe zone will decrease  
+00:20.670 -- Your wounds are sold by each piece, your cries are weakened completely  
+00:24.020 -- You know, I really gotta give a little tip, okay, for the greatest escape  
+00:26.590 -- While traps await, you are always gonna find another method to be saved every day  
+00:29.130 -- Now that it's plain you are never gonna be sane, living in this world all the same  
+00:31.720 -- Maybe it's better if you play really dumb and you say you're giving in and fall away  
+00:35.270 -- If flowers in a bouquet, dressed in pretty lies  
+00:37.890 -- Can steal a heart in some way, are they real inside?  
+00:40.500 -- Where every little thing stains  
+00:42.110 -- I will save an invite 'til you're tied up by my side  
+00:44.520 -- Bye, later!  
+00:45.120 -- You're tailor-made for this day and age  
+00:47.300 -- 'Cause you're powerless and look like prey  
+00:49.990 -- You are fooled by the way that this act behaves  
+00:52.760 -- And your beating heart has gone insane, it's always resonating  
+00:55.760 -- Now, not a trace of your lives remain and your fortitude is growing faint  
+01:00.340 -- While you dodge and evade what is in your face  
+01:02.910 -- You are busy living all the same  
+01:04.870 -- Somebody, help me right away  
+01:06.760 --  
+01:18.810 -- "Falling asleep, you're falling asleep"  
+01:20.120 -- And maybe you seemed more dizzy to me  
+01:21.540 -- All you can be is muddled, indeed  
+01:22.640 -- But what do I see? Every trick up your sleeve?!  
+01:24.110 -- Swinging a dime in front of your eyes  
+01:25.150 -- Until you will find you're frozen in time  
+01:26.780 -- "This is alright" but even your mind is lured alive, right into shutdown  
+01:29.430 -- "Falling asleep, you're falling asleep"  
+01:30.560 -- And maybe you seemed more dizzy to me  
+01:31.950 -- All you can be is muddled, indeed  
+01:33.090 -- But what do I see? Every trick up your sleeve?!  
+01:34.420 -- Swinging a dime in front of your eyes  
+01:35.760 -- Until you will find you're frozen in time  
+01:39.770 -- Through all the ways you survive this phase, it is unrewarding every day  
+01:44.650 -- You are caught in the chains of a bot-like game  
+01:47.260 -- Looping on and on, it's all the same, it's always never-changing  
+01:50.000 -- You can't embrace even luck or faith so it's meaningless again, in vain  
+01:55.170 -- If you can't get a trace, give it all away  
+01:57.530 -- Having only what you call remains will be your fate, awaiting  
+02:00.600 -- You're tailor-made for this day and age  
+02:02.670 -- 'Cause you're powerless and look like prey  
+02:05.350 -- You are fooled by the way that this act behaves  
+02:07.820 -- And your beating heart has gone insane, it's always resonating  
+02:10.610 -- Joy, all the same, doesn't have much weight  
+02:13.150 -- And that charismatic charm is fake  
+02:15.710 -- If you stare hard and gape at the truth displayed  
+02:18.170 -- You will end up going blind someday so go and practice some restraint  
+02:22.810 --  

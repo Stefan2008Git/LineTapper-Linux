@@ -96,7 +96,7 @@ class IntroState extends FlxState {
 
     override function update(elapsed:Float) {
         if (FlxG.keys.justPressed.T) {
-            Utils.switchState(new TestTransition());
+            Utils.switchState(new UITestState());
         }
         flickerEffectUpdate(elapsed);
         loadingSeqUpdate(elapsed);

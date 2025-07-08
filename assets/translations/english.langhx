@@ -23,6 +23,7 @@
 		"settings": "settings",
 		"settings_graphics": "Graphics",
 		"settings_antialiasing": "Antialiasing",
+		"settings_language": "Language",
 		"settings_gameplay": "Gameplay",
 		"settings_tile_offset": "Tile Offset",
 		"settings_audio": "Audio",

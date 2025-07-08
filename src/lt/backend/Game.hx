@@ -11,4 +11,15 @@ class Game {
      * Lower numbers means older version.
      */
     public static final API_LEVEL:Int = 1;
+    /**
+     * Information about current LineTapper build.
+     */
+    public static final VERSION_LABEL:String = 'LT v${VERSION} API-${API_LEVEL}';
+    /**
+     * Languages that LineTapper supports.
+     */
+    public static final SUPPORTED_LANGUAGES:Array<String> = [
+        'english', 'indonesia'
+    ];
+
 }

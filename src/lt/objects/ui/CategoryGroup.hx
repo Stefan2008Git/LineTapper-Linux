@@ -5,6 +5,7 @@ import flixel.group.FlxSpriteGroup;
 enum abstract CategoryType(String) from String to String {
     var CHECKBOX = "checkbox";
     var SCROLLBAR = "scrollbar";
+    var DROPDOWN = "dropdown";
 }
 
 class CategoryGroup extends FlxSpriteGroup {
@@ -16,11 +17,12 @@ class CategoryGroup extends FlxSpriteGroup {
     var child:FlxSpriteGroup;
 
     public var name:String = "";
+
     public function new(nX:Float, nY:Float, name:String) {
         super(nX, nY);
         this.name = name;
 
-        bg = new FlxSprite().makeGraphic(1,1,0xFF000000);
+        bg = new FlxSprite().makeGraphic(1, 1, 0xFF000000);
         add(bg);
 
         indicator = new FlxSprite().makeGraphic(10, 20, 0xFFFFFFFF);
@@ -32,9 +34,9 @@ class CategoryGroup extends FlxSpriteGroup {
         displayText.antialiasing = Preferences.data.antialiasing;
         add(displayText);
 
-        childIndicator = new FlxSprite(indicator.x + indicator.width*0.5, indicator.y + indicator.height + 10).makeGraphic(1,1,0xFFFFFFFF);
+        childIndicator = new FlxSprite(indicator.x + indicator.width * 0.5, indicator.y + indicator.height + 10).makeGraphic(1, 1, 0xFFFFFFFF);
         add(childIndicator);
-        
+
         child = new FlxSpriteGroup(displayText.x, displayText.y + displayText.height);
         add(child);
     }
@@ -42,26 +44,34 @@ class CategoryGroup extends FlxSpriteGroup {
     override function update(elapsed:Float) {
         var lastHeight:Float = 0;
         var lastPos:Float = child.y;
+
         for (c in child.members) {
-            c.y = lastPos+lastHeight+10;
+            c.y = lastPos + lastHeight + 10;
             lastPos = c.y;
             lastHeight = c.height;
         }
+
         childIndicator.scale.y = child.height;
-        childIndicator.offset.y = -(child.height*0.5);
+        childIndicator.offset.y = -(child.height * 0.5);
+
         super.update(elapsed);
     }
-    
+
     public function addCheckBox(name:String, ?checked:Bool = false, ?callback:Bool -> Void) {
-        var n:Checkbox = new Checkbox(0,0,name, 300, checked);
+        var n:Checkbox = new Checkbox(0, 0, 300, name, callback);
+        n.checked = checked;
+        child.add(n);
+    }
+
+    public function addScrollBar(name:String, suffix:String = "", value:Float = 0.5, min:Float = 0, max:Float = 1, ?step:Float = 0.1, ?callback:Float -> Void) {
+        var n:Scrollbar = new Scrollbar(0, 0, name, suffix, 300, value, min, max, step);
         if (callback != null)
             n.onChanged = callback;
         child.add(n);
     }
-    public function addScrollBar(name:String, suffix:String = "", value:Float = 0.5, min:Float = 0, max:Float = 1, ?callback:Float -> Void) {
-        var n:Scrollbar = new Scrollbar(0,0,name,suffix,300,value, min,max);
-        if (callback != null)
-            n.onChanged = callback;
+
+    public function addDropDown(name:String, data:Array<String>, ?callback:(String, String) -> Void) {
+        var n:DropDown = new DropDown(0, 0, 300, name, data, callback);
         child.add(n);
     }
 }

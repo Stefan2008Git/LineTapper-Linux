@@ -1,5 +1,7 @@
 package;
 
+import lt.backend.Log;
+import lt.backend.objects.Cursor;
 import openfl.events.Event;
 import lt.backend.objects.InfoOverlay;
 import lt.backend.Preferences;
@@ -11,7 +13,7 @@ import openfl.display.Sprite;
 class Main extends Sprite
 {
 	public static var _conductor:Conductor;
-	public var STARTING_STATE = lt.states.IntroState;
+	public var STARTING_STATE = lt.states.UITestState;
 	var overlay:InfoOverlay;
 	public function new()
 	{
@@ -21,6 +23,8 @@ class Main extends Sprite
 		addChild(new FlxGame(0, 0, STARTING_STATE, 120,120,true,false));
 		FlxG.fixedTimestep = FlxG.autoPause = false;
 		postInit();
+
+		addChild(new Cursor());
 	}
 
 	function init() {
@@ -28,6 +32,7 @@ class Main extends Sprite
 		Preferences.init();
 		NativeUtil.setDPIAware();
 		PhraseManager.init();
+		Log.init();
 	}
 
 	function postInit() {
