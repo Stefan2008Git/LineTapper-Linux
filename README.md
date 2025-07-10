@@ -38,6 +38,12 @@ While I was doing this, something came to my mind: "Hey, what if the player were
 ## 🎮 Credits
 | Avatar                | Name       | Role                  |
 |---------------------|------------|-----------------------|
-| [<img src="https://github.com/corecathx.png" width="100" alt="CoreCat">](https://github.com/corecathx) | [CoreCat](https://github.com/corecathx) | Developer & Creator of LineTapper  |
-| [<img src="https://github.com/ZSolarDev.png" width="100" alt="ZSolarDev">](https://github.com/ZSolarDev) | [ZSolarDev](https://github.com/ZSolarDev) | Progamming & Game Designer       |
-| [<img src="https://github.com/sphis-Sinco.png" width="100" alt="Sinco">](https://github.com/sphis-Sinco) | [Sinco](https://github.com/sphis-Sinco) | Programming, Creator of LangHaxe, Bunch of features          |
+| [<img src="https://github.com/corecathx.png" width="80" alt="CoreCat">](https://github.com/corecathx) | [CoreCat](https://github.com/corecathx) | Developer & Creator of LineTapper  |
+| [<img src="https://github.com/ZSolarDev.png" width="80" alt="ZSolarDev">](https://github.com/ZSolarDev) | [ZSolarDev](https://github.com/ZSolarDev) | Programming & Game Designer       |
+| [<img src="https://github.com/sphis-Sinco.png" width="80" alt="Sinco">](https://github.com/sphis-Sinco) | [Sinco](https://github.com/sphis-Sinco) | Programming, Creator of LangHaxe, Bunch of features          |
+
+## 📜 Translation
+| Translator                               | Language                   |
+|------------------------------------------|----------------------------|
+[CoreCat](https://github.com/corecathx)    | Indonesian                 |
+[Toffee](https://github.com/toffeecaramel) | Brazilian Portuguese       |

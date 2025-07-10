@@ -19,7 +19,7 @@ class Game {
      * Languages that LineTapper supports.
      */
     public static final SUPPORTED_LANGUAGES:Array<String> = [
-        'english', 'indonesia'
+        'english', 'indonesia', 'brazilian-portuguese'
     ];
 
 }

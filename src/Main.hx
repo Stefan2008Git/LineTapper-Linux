@@ -1,5 +1,6 @@
 package;
 
+import lt.states.LevelEditorState;
 import lt.backend.Log;
 import lt.backend.objects.Cursor;
 import openfl.events.Event;
@@ -13,7 +14,7 @@ import openfl.display.Sprite;
 class Main extends Sprite
 {
 	public static var _conductor:Conductor;
-	public var STARTING_STATE = lt.states.UITestState;
+	public var STARTING_STATE = LevelEditorState;
 	var overlay:InfoOverlay;
 	public function new()
 	{
@@ -29,8 +30,8 @@ class Main extends Sprite
 
 	function init() {
 		_conductor = new Conductor();
-		Preferences.init();
 		NativeUtil.setDPIAware();
+		Preferences.init();
 		PhraseManager.init();
 		Log.init();
 	}
@@ -38,6 +39,8 @@ class Main extends Sprite
 	function postInit() {
 		overlay = new InfoOverlay(20,20,0xFFFFFF);
 		addChild(overlay);
+
+		Preferences.updateProps();
 
 		FlxG.stage.addEventListener(Event.ENTER_FRAME, update);
 		NativeUtil.setWindowDarkMode(Application.current.window.title, true);

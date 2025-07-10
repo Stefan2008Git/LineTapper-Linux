@@ -14,22 +14,32 @@ class TabGroup extends Panel {
         group = new FlxSpriteGroup();
     }
 
+    override function update(elapsed:Float) {
+        super.update(elapsed);
+        group.update(elapsed);
+    }
+
     override function draw():Void {
         super.draw();
         
+        group.cameras = cameras;
+        for (i in group.members) {
+            i.cameras = cameras;
+        }
         var intendedWidth:Float = width / tabs.length;
         for (index => i in tabs){
+            i.cameras = cameras;
             i.current = index == currentIndex;
             i.setSize(
                 intendedWidth,
-                FlxMath.lerp(i.height, i.current ? 30 : 20, FlxG.elapsed * 12)
+                FlxMath.lerp(i.height, i.current ? 25 : 20, FlxG.elapsed * 12)
             );
             i.setPosition(
                 x + (intendedWidth * index),
                 y - i.height,
             );
 
-            if (FlxG.mouse.overlaps(i) && FlxG.mouse.justReleased) {
+            if (FlxG.mouse.overlaps(i, i.cameras[0]) && FlxG.mouse.justReleased) {
                 currentIndex = index;
                 updateGroup();
             }
@@ -85,6 +95,7 @@ class TabsUI extends Panel {
             y + (height - label.height) * 0.5
         );
         label.alpha = current ? 1 : 0.6;
+        label.cameras = cameras;
         label.draw();
     }
 

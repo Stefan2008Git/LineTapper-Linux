@@ -1,5 +1,6 @@
 package lt.substates;
 
+import lt.objects.ui.DropDown;
 import lt.backend.Game;
 import lt.objects.ui.CategoryGroup;
 import lt.objects.ui.CategoryGroup.CategoryType;
@@ -130,6 +131,9 @@ class SettingsPanel extends Sprite {
             createCheckbox("Antialiasing", 'settings_antialiasing', 'Whether to use antialiasing (smoother visuals)', 'antialiasing', (val:Bool) -> {
                 FlxSprite.defaultAntialiasing = val;
             }),
+            createCheckbox("Fullscreen", 'settings_fullscreen', 'Whether to play the game in fullscreen.', 'fullscreen', (val:Bool) -> {
+                FlxG.fullscreen = val;
+            }),
             createDropdown('Language', "settings_language", "Language used in the game.", 'language', Game.SUPPORTED_LANGUAGES, (val:String)->{
                 PhraseManager.init(); //Reinit phrases.
             })
@@ -168,7 +172,7 @@ class SettingsPanel extends Sprite {
                         group.addDropDown(child.langname, child.data, (v:String, _)->{
                             Reflect.setProperty(Preferences.data, child.field, v);
                             child.onChange(v);
-                        });
+                        }, prefValue);
                 }
             }
             settings.push(group);
@@ -255,7 +259,8 @@ class SettingsPanel extends Sprite {
 
     override function update(elapsed:Float) {
         searchBar.update(elapsed);
-        if (FlxG.mouse.wheel != 0) {
+        var noScrollableElements:Bool = (DropDown.ACTIVE_ELEMENT == null);
+        if (noScrollableElements && FlxG.mouse.wheel != 0) {
             scrollY += 20 * FlxG.mouse.wheel;
         }
         _scrollY = FlxMath.lerp(_scrollY, scrollY, 12 * elapsed);

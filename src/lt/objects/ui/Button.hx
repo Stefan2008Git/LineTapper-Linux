@@ -19,14 +19,13 @@ class Button extends Panel {
         this.onClick = onClick;
         label = new Text(0,0,text,13, CENTER);
         label.applyUIFont();
-    }
-
-    override function draw():Void {
         if (nWidth < 0)
             width = label.width + 2;
         else
             width = nWidth;
+    }
 
+    override function draw():Void {
         height = label.height + 2;
 
         switch (align) {

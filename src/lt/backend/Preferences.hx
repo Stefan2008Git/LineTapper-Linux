@@ -14,6 +14,8 @@ class PrefData {
     /** Defines offset value used in-game (Tile time offset) **/
     public var offset:Float = 0;
 
+    public var fullscreen:Bool = false;
+
     public var masterVolume:Float = 100;
     public var musicVolume:Float = 100;
     public var sfxVolume:Float = 100;
@@ -33,13 +35,17 @@ class Preferences {
         trace(FileSystem.exists(PATH) ? "Found preferences file." : "No preferences file found.");
         if (FileSystem.exists(PATH)) {
             load();
-            FlxSprite.defaultAntialiasing = data.antialiasing;
         } else {
             save();
             load();
         }
 
         trace('Preferences loaded!');
+    }
+
+    public static function updateProps() {
+        FlxSprite.defaultAntialiasing = data.antialiasing;
+        FlxG.fullscreen = data.fullscreen;
     }
 
     /**
@@ -65,7 +71,7 @@ class Preferences {
         for (field in Reflect.fields(w)) {
             Reflect.setProperty(data, field, Reflect.getProperty(w, field));
         }
-        trace(data);
+        //trace(data);
     }
 
     static function convert(data:String):PrefData {

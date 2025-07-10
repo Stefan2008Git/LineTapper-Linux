@@ -1,0 +1,39 @@
+{
+	"name": "Português Brasileiro",
+	"asset_suffix": "",
+	"lang_ver": 1,
+	"phrases": {
+		"linetapper": "LINETAPPER",
+		"main_menu": "Menu Inicial",
+		"gameplay": "Jogar",
+		"leaving_gameplay": "Saindo do Jogo",
+		"song_select": "Seleção de Música",
+		"level_editor": "Editor de Níveis",
+		"credits": "Créditos",
+		"beats_per_minute": "Batidas por Minuto",
+		"song_name": "Nome da Música",
+		"start_typing_your_songs_name": "COMECE A DIGITAR O NOME DA SUA MÚSICA",
+		"settings_messages": [
+			"Ajuste-os de acordo com a sua preferência.",
+			"Deixe-me adivinhar, atraso?",
+			"Procurando por algo?",
+			""
+		],
+		"search_settings": "Pesquise configurações...",
+		"settings": "configurações",
+		"settings_graphics": "Gráficos",
+		"settings_antialiasing": "Antialiasing",
+		"settings_gameplay": "Jogabilidade",
+		"settings_tile_offset": "Atraso de Piso",
+		"settings_audio": "Áudio",
+		"settings_master_volume": "Volume Principal",
+		"settings_music_volume": "Volume da Música",
+		"settings_sfx_volume": "Volume de Efeitos Sonoros",
+		"paused": "PAUSADO",
+		"play": "jogar",
+		"edit": "editar",
+		"loading": "CARREGANDO...",
+		"greet_title": "Olá!",
+		"greet_body": "Boas vindas ao LineTapper! Esse jogo ainda está em desenvolvimento, esteja ciente em caso de bugs e erros. Mas caso encontre algum, não hesite em reportá-los no Repositório de LineTapper em Github."
+	}
+}

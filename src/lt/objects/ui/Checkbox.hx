@@ -28,9 +28,9 @@ class Checkbox extends Sprite {
 
     override function draw() {
         super.draw();
-
+        check.cameras = label.cameras = cameras;
         alpha = 0.7;
-        if (FlxG.mouse.overlaps(this)) {
+        if (FlxG.mouse.overlaps(this, cameras[0])) {
             alpha = FlxG.mouse.pressed ? 0.5 : 1;
 
             if (FlxG.mouse.justReleased) {

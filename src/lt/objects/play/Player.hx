@@ -10,7 +10,7 @@ enum abstract Direction(Int) {
 
 class Player extends Sprite {
 	/** Size of the player sprite (also used by Tile objects). **/
-	public static var BOX_SIZE:Int = 50;
+	public static var BOX_SIZE:Int = 40;
 
 	/** Current facing direction of the player. **/
 	public var direction:Direction = DOWN;

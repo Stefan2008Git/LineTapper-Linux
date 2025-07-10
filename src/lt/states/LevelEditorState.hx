@@ -1,5 +1,8 @@
 package lt.states;
 
+import lt.objects.ui.Checkbox;
+import flixel.group.FlxSpriteGroup;
+import lt.objects.ui.TabGroup;
 import lt.objects.ui.Button;
 import haxe.Json;
 import lt.backend.Game;
@@ -95,34 +98,72 @@ class LevelEditorState extends State {
     }
 
     var audioPath:Text;
+    var tabs:TabGroup;
     function initHUD() {
         var lastY:Float = 10;
         inline function makeInputBox(text:String, defaultTxt:String = '', onChange:(String, FlxInputTextChange)->Void):InputBox {
-            var obj:InputBox = new InputBox(20,lastY+30,200,defaultTxt);
-            obj.label.text = PhraseManager.getPhrase(text);
+            var obj:InputBox = new InputBox(0,lastY+30,330,defaultTxt);
+            obj.label.text = PhraseManager.getPhrase(text, text);
             obj.cameras = [hudCamera];
             obj.onTextChange.add(onChange);
             obj.scrollFactor.set();
-            add(obj);
+            //add(obj);
             
             lastY = obj.y + obj.height;
             return obj;
         }
-        inline function makeText(nx:Float, ny:Float, text:String):Text {
-            var txt:Text = new Text(nx,ny,text, 14, RIGHT);
+        inline function makeText(nx:Float, ny:Float, text:String, nSize:Int = 14):Text {
+            var txt:Text = new Text(nx,ny,text, nSize, RIGHT);
             txt.cameras = [hudCamera];
             txt.applyUIFont();
-            add(txt);
+            //add(txt);
             return txt;
         }
         inline function makeButton(text:String,onClick:Bool->Void,isToggle:Bool) {
-            var btn:Button = new Button(20, lastY,200, text, onClick);
+            var btn:Button = new Button(0, lastY,330, text, onClick);
             btn.isToggle = isToggle;
             btn.cameras = [hudCamera];
-            add(btn);
+            //add(btn);
             lastY = btn.y + btn.height + 10;
             return btn;
         }
+        tabs = new TabGroup(10,30,355, FlxG.height-45);
+        tabs.cameras = [hudCamera];
+        tabs.add('Song', (grp:FlxSpriteGroup) -> {
+            lastY = 0;
+            var songName:InputBox = makeInputBox('Song Name', mapData.name, (t:String, _) -> {
+                mapData.name = t;
+            });
+            grp.add(songName);
+
+            var loadSong:Button = makeButton("Load", (_)->{
+                loadMap(songName.text);
+            }, false);
+            grp.add(loadSong);
+
+            var bpm:InputBox = makeInputBox("Beats Per Minute", '${conduct.bpm}', (t,c)->{
+                mapData.bpm = Std.parseFloat(t);
+                Conductor.instance.updateBPM(mapData.bpm);
+            });
+            bpm.filterMode = CHARS("0123456789.");
+            grp.add(bpm);
+        });
+        tabs.add("View", (p:FlxSpriteGroup)->{
+            p.add(makeText(0,0, "View", 20));
+            p.add(makeText(0,24, "super.view()", 14));
+        });
+        tabs.add("Options", (p:FlxSpriteGroup)->{
+            var autoplayMode:Checkbox = new Checkbox(10,10, -1, PhraseManager.getPhrase('editor_autoplay_mode', 'Use Autoplay'), (val:Bool)->{
+                stage.autoplay = val;
+            });
+            autoplayMode.checked = stage.autoplay;
+            p.add(autoplayMode);
+        });
+        tabs.add("Help", (p:FlxSpriteGroup)->{
+            p.add(makeText(0,0, "Help", 20));
+        });
+        add(tabs);
+
         var songName:InputBox = makeInputBox("Song Name", '${mapData.name}', (t,c)->{
             mapData.name = t;
         });
@@ -140,6 +181,7 @@ class LevelEditorState extends State {
         
         // TEXTS
         audioPath = makeText(0,0,'');
+        add(audioPath);
 
         var version:Text = makeText(20,0,'LT v${Game.VERSION} API-${Game.API_LEVEL} // Development in progress, features may change.');
         version.y = FlxG.height - version.height - 20;
@@ -223,36 +265,43 @@ class LevelEditorState extends State {
     var _lastPlacedTile:Tile = null;
     function _mouseControls(elapsed:Float) {
         var mouseScreen:FlxPoint = FlxG.mouse.getViewPosition();
+        var hoveringHUDElement:Bool = (FlxG.mouse.overlaps(tabs, tabs.cameras[0]));
     
-        // CAMERA //
-        if (FlxG.mouse.justPressedMiddle) {
-            _lastClickPoint = FlxPoint.get(mouseScreen.x, mouseScreen.y);
-            _lastCameraScroll = FlxPoint.get(FlxG.camera.scroll.x, FlxG.camera.scroll.y);
-        }
-        if (FlxG.mouse.pressedMiddle) {
-            FlxG.camera.scroll.x = _lastCameraScroll.x - (mouseScreen.x - _lastClickPoint.x);
-            FlxG.camera.scroll.y = _lastCameraScroll.y - (mouseScreen.y - _lastClickPoint.y);
-        }
-    
-        if (FlxG.mouse.wheel != 0) 
-            zoomLevel += (0.1 * zoomLevel) * FlxG.mouse.wheel;
-    
-        // EDITING //
-        if (!FlxInputText.globalManager.isTyping) {
-            if (FlxG.mouse.justPressed) 
-                placeTile();
-            if (FlxG.mouse.pressed && _lastPlacedTile != null) {
-                _lastPlacedTile.length = Math.round(((dummy.time - conduct.step_ms) - _lastPlacedTile.time) / conduct.step_ms) * conduct.step_ms;
-                _lastPlacedTile.direction = dummy.direction;
+        if (!hoveringHUDElement) {
+            dummy.visible = true;
+            // CAMERA //
+            if (FlxG.mouse.justPressedMiddle) {
+                _lastClickPoint = FlxPoint.get(mouseScreen.x, mouseScreen.y);
+                _lastCameraScroll = FlxPoint.get(FlxG.camera.scroll.x, FlxG.camera.scroll.y);
             }
-            
-            if (FlxG.mouse.justReleased && _lastPlacedTile != null){
-                //_lastPlacedTile.isRelease = true;
-                _lastPlacedTile = null;
+            if (FlxG.mouse.pressedMiddle) {
+                FlxG.camera.scroll.x = _lastCameraScroll.x - (mouseScreen.x - _lastClickPoint.x);
+                FlxG.camera.scroll.y = _lastCameraScroll.y - (mouseScreen.y - _lastClickPoint.y);
             }
-            if (FlxG.mouse.justReleasedRight) 
-                removeTile();
+        
+            if (FlxG.mouse.wheel != 0) 
+                zoomLevel += (0.1 * zoomLevel) * FlxG.mouse.wheel;
+        
+            // EDITING //
+            if (!FlxInputText.globalManager.isTyping) {
+                if (FlxG.mouse.justPressed) 
+                    placeTile();
+                if (FlxG.mouse.pressed && _lastPlacedTile != null) {
+                    _lastPlacedTile.length = Math.round(((dummy.time - conduct.step_ms) - _lastPlacedTile.time) / conduct.step_ms) * conduct.step_ms;
+                    _lastPlacedTile.direction = dummy.direction;
+                }
+                
+                if (FlxG.mouse.justReleased && _lastPlacedTile != null){
+                    //_lastPlacedTile.isRelease = true;
+                    _lastPlacedTile = null;
+                }
+                if (FlxG.mouse.justReleasedRight) 
+                    removeTile();
+            }
+        } else {
+            dummy.visible = false;
         }
+
     }
 
     function removeTile() {

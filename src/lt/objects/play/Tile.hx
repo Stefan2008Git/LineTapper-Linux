@@ -341,9 +341,9 @@ class TileEffect extends Sprite {
             new openfl.geom.Point()
         );
     
-        var actualVal:Float = 1 - val;
-        var innerW = frameWidth * actualVal;
-        var innerH = frameHeight * actualVal;
+        var actualVal:Float = val;
+        var innerW = frameWidth * val;
+        var innerH = frameHeight * val;
         var innerX = (frameWidth - innerW) * 0.5;
         var innerY = (frameHeight - innerH) * 0.5;
     

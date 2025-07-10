@@ -409,7 +409,7 @@ class GameplayStage extends FlxSpriteGroup {
             lastTile.direction = UNKNOWN;
         });
 
-        trace("Done");
+        //trace("Done");
     
         if (lastTile != null) lastTile.direction = UNKNOWN;
     }

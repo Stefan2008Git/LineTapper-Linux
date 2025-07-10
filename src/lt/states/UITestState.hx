@@ -113,6 +113,14 @@ class UITestState extends State {
             trace('Selected: $nData (was $lData)');
         });
 
+        var dropDown2:DropDown = new DropDown(900, 200, 200, 'SideLabel', [
+            'side label',
+            'wawa'
+        ], (nData:String, lData:String) -> {
+            trace('Selected: $nData (was $lData)');
+        }, true);
+        add(dropDown2);
+
         var stepper:Stepper = new Stepper(900, 50, 150, "Stepper example, min 0, max 100, step 10", 50,0,100,10);
         add(stepper);
         
@@ -133,10 +141,11 @@ class UITestState extends State {
             lastY = obj.y + obj.height;
             return obj;
         }
-        inline function makeText(nx:Float, ny:Float, text:String):Text {
+        inline function makeText(nx:Float, ny:Float, text:String, useUIFont:Bool = true):Text {
             var txt:Text = new Text(nx,ny,text, 14, RIGHT);
             txt.cameras = [hudCamera];
-            txt.applyUIFont();
+            if (useUIFont)
+                txt.applyUIFont();
             add(txt);
             return txt;
         }
@@ -157,6 +166,11 @@ class UITestState extends State {
         var version:Text = makeText(20,0,'${Game.VERSION_LABEL} // Development in progress, features may change.');
         version.y = FlxG.height - version.height - 20;
         version.alpha = 0.5;
+
+        var versioen:Text = makeText(20,0,'Musticapro ->` ~ à ã â é ê í ó õ ú ç');
+        versioen.y = FlxG.height - versioen.height - 60;
+        var versioen:Text = makeText(20,0,'Extenro ->` ~ à ã â é ê í ó õ ú ç', false);
+        versioen.y = FlxG.height - versioen.height - 90;
     }
 
     var ue:Bool = false;
