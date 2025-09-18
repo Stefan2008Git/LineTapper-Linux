@@ -27,6 +27,10 @@ jobs:
       - name: Installing / Updating libraries
         run: |
           haxe -cp cli --run Lib
+          haxelib git hxcpp https://github.com/HaxeFoundation/hxcpp.git
+      - name: Rebuild Hxcpp
+        run: |
+          haxelib run lime rebuild hxcpp
       - name: Building the game
         run: |
           haxelib run lime build linux

@@ -7,12 +7,7 @@
         "quiet": true
     },
     {
-        "name": "hxcpp",
-        "type": "git",
-        "dir": null,
-        "ref": "master",
-        "url": "https://github.com/HaxeFoundation/hxcpp"
-
+        "name": "hxcpp"
     },
     {
         "name": "flixel"
