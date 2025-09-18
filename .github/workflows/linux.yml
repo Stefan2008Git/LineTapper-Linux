@@ -27,6 +27,7 @@ jobs:
       - name: Installing / Updating libraries
         run: |
           haxe -cp cli --run Lib
+          haxelib remove hxcpp
           haxelib git hxcpp https://github.com/HaxeFoundation/hxcpp.git
       - name: Rebuild Hxcpp
         run: |
